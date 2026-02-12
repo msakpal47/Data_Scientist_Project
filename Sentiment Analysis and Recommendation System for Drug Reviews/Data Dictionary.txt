@@ -1,0 +1,13 @@
+uniqueID: A unique identifier assigned to each review entry in the dataset.
+
+drugName: Name of the drug being reviewed by the user.
+
+condition: The medical condition or health issue for which the drug was prescribed.
+
+review: A textual user-provided review of the drug, including their experience, effectiveness, and side effects.
+
+rating: A numerical score given by the user to the drug, typically on a scale of 1 to 10, with 10 being the best.
+
+date: The date when the review was submitted.
+
+usefulCount: The number of times other users found the review helpful or useful.

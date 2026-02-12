@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metro Train Maintenance</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1>Metro Train Maintenance</h1>
+        <p class="subtitle">Fault Detection (dataset: fault_detection_manufacturing)</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="row">
+          <div>
+            <h2>Model</h2>
+            <p class="muted">Train a model from the SQLite dataset, then run predictions.</p>
+          </div>
+          <div class="actions">
+            <button id="btn-train" class="btn primary">Train / Retrain</button>
+          </div>
+        </div>
+        <div id="train-status" class="status muted">Loading schema…</div>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <div>
+            <h2>Predict Fault</h2>
+            <p class="muted">Enter sensor values (auto-filled with dataset medians).</p>
+          </div>
+          <div class="actions">
+            <button id="btn-predict" class="btn">Predict</button>
+          </div>
+        </div>
+
+        <div id="form" class="grid"></div>
+
+        <div id="predict-result" class="status"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

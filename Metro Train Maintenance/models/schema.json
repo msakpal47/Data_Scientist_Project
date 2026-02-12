@@ -1,0 +1,127 @@
+{
+  "table": "fault_detection_manufacturing",
+  "target": "fault_occurred",
+  "features": [
+    {
+      "name": "IONGAUGEPRESSURE",
+      "min": -1.357306199,
+      "max": 1.282850236,
+      "median": 0.541638055
+    },
+    {
+      "name": "ETCHBEAMVOLTAGE",
+      "min": -1.128402399,
+      "max": 1.720419368,
+      "median": -0.184730406
+    },
+    {
+      "name": "ETCHBEAMCURRENT",
+      "min": -1.154544122,
+      "max": 3.167564524,
+      "median": 0.068942658
+    },
+    {
+      "name": "ETCHSUPPRESSORVOLTAGE",
+      "min": -1.188503417,
+      "max": 1.417865077,
+      "median": 0.496387119
+    },
+    {
+      "name": "ETCHSUPPRESSORCURRENT",
+      "min": -1.145789683,
+      "max": 4.770381953,
+      "median": 0.285152805
+    },
+    {
+      "name": "FLOWCOOLFLOWRATE",
+      "min": -1.449476738,
+      "max": 1.59518368,
+      "median": 0.684996178
+    },
+    {
+      "name": "FLOWCOOLPRESSURE",
+      "min": -1.218925744,
+      "max": 10.08477409,
+      "median": 0.348717086
+    },
+    {
+      "name": "ETCHGASCHANNEL1READBACK",
+      "min": -1.364314331,
+      "max": 1.397131749,
+      "median": 0.376481307
+    },
+    {
+      "name": "ETCHPBNGASREADBACK",
+      "min": -1.508756043,
+      "max": 2.562373269,
+      "median": 0.733358143
+    },
+    {
+      "name": "FIXTURETILTANGLE",
+      "min": -1.054148775,
+      "max": 13.13872826,
+      "median": -0.409018001
+    },
+    {
+      "name": "ROTATIONSPEED",
+      "min": -2.412734493,
+      "max": 4.213794012,
+      "median": -0.203891658
+    },
+    {
+      "name": "ACTUALROTATIONANGLE",
+      "min": -17.14101535,
+      "max": 5.717029983,
+      "median": -0.15249522
+    },
+    {
+      "name": "FIXTURESHUTTERPOSITION",
+      "min": 0.0,
+      "max": 255.0,
+      "median": 1.0
+    },
+    {
+      "name": "ETCHSOURCEUSAGE",
+      "min": -1.700734342,
+      "max": 0.511639018,
+      "median": -0.3287169435
+    },
+    {
+      "name": "ETCHAUXSOURCETIMER",
+      "min": -1.637957106,
+      "max": 1.16970268,
+      "median": -0.002547082
+    },
+    {
+      "name": "ETCHAUX2SOURCETIMER",
+      "min": -1.590113471,
+      "max": 1.470236207,
+      "median": -0.500413297
+    },
+    {
+      "name": "ACTUALSTEPDURATION",
+      "min": -0.847502648,
+      "max": 8.856233809,
+      "median": -0.200586885
+    },
+    {
+      "name": "TTF_FlowCool Pressure Dropped Below Limit",
+      "min": 0.0,
+      "max": 3856344.0,
+      "median": 1227620.0
+    },
+    {
+      "name": "TTF_Flowcool Pressure Too High Check Flowcool Pump",
+      "min": 4500.0,
+      "max": 9354688.0,
+      "median": 4524382.0
+    },
+    {
+      "name": "TTF_Flowcool leak",
+      "min": 6574144.0,
+      "max": 16891388.0,
+      "median": 11377728.0
+    }
+  ],
+  "generated_at": "2026-02-12T06:08:39.141049+00:00"
+}

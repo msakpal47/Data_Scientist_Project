@@ -1,0 +1,54 @@
+{
+  "trained_at": "2026-02-12T10:24:18+00:00",
+  "table_name": "Telecom_microservices_loan",
+  "target_column": "label",
+  "metrics": {
+    "accuracy": 0.7317,
+    "precision": 0.9580933616247348,
+    "recall": 0.7242781851512374,
+    "f1": 0.8249380138327026,
+    "roc_auc": 0.8240055342200912,
+    "confusion_matrix": [
+      [
+        1991,
+        553
+      ],
+      [
+        4813,
+        12643
+      ]
+    ],
+    "classification_report": {
+      "0": {
+        "precision": 0.2926219870664315,
+        "recall": 0.782625786163522,
+        "f1-score": 0.4259734702610184,
+        "support": 2544.0
+      },
+      "1": {
+        "precision": 0.9580933616247348,
+        "recall": 0.7242781851512374,
+        "f1-score": 0.8249380138327026,
+        "support": 17456.0
+      },
+      "accuracy": 0.7317,
+      "macro avg": {
+        "precision": 0.6253576743455831,
+        "recall": 0.7534519856573797,
+        "f1-score": 0.6254557420468605,
+        "support": 20000.0
+      },
+      "weighted avg": {
+        "precision": 0.8734454027809186,
+        "recall": 0.7317,
+        "f1-score": 0.7741897238903843,
+        "support": 20000.0
+      }
+    }
+  },
+  "row_count": 209593,
+  "train_rows": 50000,
+  "eval_rows": 20000,
+  "live_offset": 70000,
+  "random_state": 42
+}

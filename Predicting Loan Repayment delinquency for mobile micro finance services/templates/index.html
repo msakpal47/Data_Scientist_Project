@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loan Eligibility Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Customer Loan Eligibility Prediction</h1>
+        <p>Paste a single customer record as JSON and click Predict.</p>
+      </header>
+
+      <section class="card">
+        <div class="row">
+          <button id="loadSchemaBtn" class="btn secondary" type="button">Load Expected Fields</button>
+          <button id="loadExampleBtn" class="btn secondary" type="button">Load Example</button>
+        </div>
+
+        <label class="label" for="jsonInput">Input JSON</label>
+        <textarea id="jsonInput" class="textarea" spellcheck="false" rows="14"></textarea>
+
+        <div class="row">
+          <button id="predictBtn" class="btn primary" type="button">Predict</button>
+          <button id="predictLiveBtn" class="btn secondary" type="button">Predict Live Sample</button>
+        </div>
+
+        <div id="result" class="result" aria-live="polite"></div>
+      </section>
+
+      <section class="card">
+        <h2>Live Customers</h2>
+        <div class="row">
+          <button id="filterEligibleBtn" class="btn secondary" type="button">Eligible</button>
+          <button id="filterNotEligibleBtn" class="btn secondary" type="button">Not Eligible</button>
+        </div>
+        <div id="liveOutput" class="pre"></div>
+      </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>

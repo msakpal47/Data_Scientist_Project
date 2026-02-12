@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fault Detection Dashboard</title>
+    <link rel="stylesheet" href="/static/app.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <h1>Fault Detection Dashboard</h1>
+          <div class="sub">HTML + CSS + JS UI with JSON APIs (no Streamlit)</div>
+        </div>
+        <div class="status">
+          <div class="pill"><span id="connDot" class="dot"></span><span id="connText">Not connected</span></div>
+          <div class="pill"><span>Table</span><span id="tableName" style="color: rgba(255,255,255,0.82); font-family: var(--mono);">—</span></div>
+          <div class="pill"><span>Rows</span><span id="rowCount" style="color: rgba(255,255,255,0.82); font-family: var(--mono);">—</span></div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <div class="hd">
+            <h2>Control</h2>
+            <div class="tabs">
+              <div id="tabConnect" class="tab active" onclick="showPanel('connect')">Connect</div>
+              <div id="tabTrain" class="tab" onclick="showPanel('train')">Train</div>
+              <div id="tabInfer" class="tab" onclick="showPanel('infer')">Inference</div>
+            </div>
+          </div>
+          <div class="bd">
+            <div id="panelConnect">
+              <div class="row">
+                <div>
+                  <label>SQLite DB Path</label>
+                  <input id="dbPath" type="text" />
+                </div>
+                <div>
+                  <label>Data Dictionary Path</label>
+                  <input id="ddPath" type="text" />
+                </div>
+                <div class="btns">
+                  <button id="btnConnect" class="primary" onclick="connect()">Connect</button>
+                  <button onclick="refreshPreview()">Refresh Preview</button>
+                </div>
+                <div class="small">
+                  Tip: keep DB on local disk for faster training. This UI trains on the first 500k rows, evaluates on the next 200k, and uses the remainder as live inference.
+                </div>
+              </div>
+            </div>
+
+            <div id="panelTrain" style="display:none">
+              <div class="row">
+                <div>
+                  <label>Target Column</label>
+                  <select id="targetSelect"></select>
+                </div>
+                <div>
+                  <label>Feature Columns (multi-select)</label>
+                  <select id="featureSelect" multiple></select>
+                </div>
+                <div class="split">
+                  <div>
+                    <label>Options</label>
+                    <div class="btns">
+                      <button id="toggleNumeric" onclick="toggleNumeric()">Numeric-only: ON</button>
+                      <button id="toggleAdmin" onclick="toggleAdmin()">Admin fields: OFF</button>
+                      <button id="toggleFast" class="good" onclick="toggleFast()">Fast mode: ON</button>
+                    </div>
+                  </div>
+                  <div>
+                    <label>Chunk Size</label>
+                    <select id="chunkSelect">
+                      <option value="5000">5,000</option>
+                      <option value="10000" selected>10,000</option>
+                      <option value="25000">25,000</option>
+                      <option value="50000">50,000</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="btns">
+                  <button id="btnTrain" class="primary" onclick="train()">Train</button>
+                  <button id="btnDownload" onclick="downloadModel()" disabled>Download Model</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="panelInfer" style="display:none">
+              <div class="row">
+                <div>
+                  <label>Live Row Index</label>
+                  <input id="rowIndex" type="number" value="0" min="0" />
+                </div>
+                <div class="btns">
+                  <button id="btnPredict" class="primary" onclick="predict()">Predict</button>
+                </div>
+                <div class="small" id="inferHint">Train a model first.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="hd">
+            <h2>Workspace</h2>
+            <div class="tabs">
+              <div id="tabData" class="tab active" onclick="showWorkspace('data')">Data</div>
+              <div id="tabMetrics" class="tab" onclick="showWorkspace('metrics')">Metrics</div>
+              <div id="tabChat" class="tab" onclick="showWorkspace('chat')">Chat</div>
+            </div>
+          </div>
+          <div class="bd">
+            <div id="wsData">
+              <div class="split">
+                <div>
+                  <div class="small" style="margin-bottom:8px">Preview (first 50 rows)</div>
+                  <div class="tablewrap" id="previewWrap"></div>
+                </div>
+                <div>
+                  <div class="small" style="margin-bottom:8px">Data Dictionary</div>
+                  <textarea id="ddText" readonly placeholder="Connect to load data dictionary"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div id="wsMetrics" style="display:none">
+              <div id="metricCards" class="cards"></div>
+              <div class="split">
+                <div>
+                  <div class="small" style="margin-bottom:8px">Confusion Matrix</div>
+                  <div class="tablewrap" id="cmWrap"></div>
+                </div>
+                <div>
+                  <div class="small" style="margin-bottom:8px">Top Feature Signals</div>
+                  <div id="featWrap"></div>
+                </div>
+              </div>
+            </div>
+
+            <div id="wsChat" style="display:none">
+              <div class="chat">
+                <div id="chatlog" class="chatlog"></div>
+                <div class="btns">
+                  <button onclick="clearChat()">Clear</button>
+                  <button class="good" onclick="addMsg('system', 'Try: Connect → Refresh Preview → Train → Predict')">Hint</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

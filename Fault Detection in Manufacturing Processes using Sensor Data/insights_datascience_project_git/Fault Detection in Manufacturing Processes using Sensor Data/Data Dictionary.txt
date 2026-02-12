@@ -1,0 +1,19 @@
+time: Timestamp of the data point
+	
+stage: Operational stage during the manufacturing process
+	
+Lot: Lot number of the manufacturing process
+	
+runnum: Run number of the manufacturing batch
+	
+recipe, recipe_step: Recipe and step number in the process
+	
+IONGAUGEPRESSURE, ETCHBEAMVOLTAGE, ...: Sensor readings related to the manufacturing process	
+
+TTF_FlowCool Pressure Dropped Below Limit: Time-to-failure metric related to FlowCool pressure dropping below the limit	
+
+TTF_Flowcool Pressure Too High Check Flowcool Pump: Time-to-failure metric for pressure being too high	
+
+TTF_Flowcool leak: Time-to-failure metric for FlowCool leak	
+
+fault_occurred: Target variable: 1 if a fault occurred, 0 otherwise

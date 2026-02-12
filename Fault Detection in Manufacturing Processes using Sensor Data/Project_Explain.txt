@@ -1,0 +1,77 @@
+One‑Line Pitch
+
+- Built a fault detection model that predicts if a manufacturing run is likely to hit a fault using sensor trends, TTF metrics, and equipment parameters, enabling proactive action to cut downtime and scrap.
+Problem & Data
+
+- Table: fault_detection_manufacturing in classification.db.
+- Size: 810,643 records; split per statement:
+  - 500,000 for training
+  - 200,000 for evaluation
+  - Remaining for live inference
+- Target: fault_occurred (binary), plus multiple numeric sensor columns and TTF metrics.
+Approach
+
+- Data prep:
+  - Convert time to numeric (epoch), keep numeric sensors as features.
+  - Exclude admin fields (stage, Lot, runnum, recipe, recipe_step).
+  - Median imputation for missing numeric values, fitted on train and reused for eval/live.
+  - Class imbalance handled via class‑balanced training (weights) and thresholding.
+- Models:
+  - RandomForestClassifier for robust performance and feature importance.
+  - Fast streaming logistic regression (SGDClassifier) for large-data training with chunked partial_fit to reduce I/O/time.
+- Evaluation:
+  - Accuracy, Precision, Recall, F1, ROC AUC, Confusion Matrix.
+  - Feature importance ranks which sensors drive risk.
+Business Impact
+
+- Preventive maintenance: trigger checks when fault probability is high.
+- Process control: adjust recipe/steps when specific sensors elevate risk.
+- Quality: route at‑risk lots for extra inspection to reduce defects.
+- OEE: fewer unplanned stops, faster repair, higher throughput.
+Deployment & Assets
+
+- Web dashboard (Flask + HTML/CSS/JS) for end‑to‑end demo:
+  - Connect to classification.db, preview data, train/evaluate, visualize metrics/importance, and run live inference.
+- Batch scoring:
+  - predict_batch.py reads live portion and writes predictions_live.csv with predicted_fault and probability.
+- Artifacts & report:
+  - model_artifacts.pkl (model + features + imputation medians)
+  - final_report.txt (model, features, importance, metrics)
+  - project_summery.csv (project summary overview)
+Threshold & Imbalance Strategy
+
+- Use class weights during training to avoid bias toward the majority class.
+- Set decision threshold based on business cost trade‑offs:
+  - Higher recall when missing a fault is costly.
+  - Higher precision when false alarms are expensive.
+How I Validate
+
+- Strict split per statement (500k/200k).
+- Consistent preprocessing across train/eval/live.
+- Monitor confusion matrix to catch “all zeros” predictions; adjust threshold/weights.
+- Review feature importance to ensure signals are physically plausible.
+Risks & Mitigations
+
+- Drift: retrain periodically; monitor metric changes and sensor distributions.
+- Label noise: cross‑check TTF/alarms definitions; harmonize target creation.
+- Latency: use streaming training or downsample for quick iterations; full RF for final runs.
+Demo Script (Interview)
+
+- Open: http://localhost:8000
+- Click Connect; app pins to fault_detection_manufacturing.
+- In Modeling:
+  - Target: fault_occurred
+  - Use Numeric‑only; select features (can include time).
+  - Fast training on 10,000 chunks; click Train.
+- Show:
+  - Metrics, confusion matrix, feature importance; explain a top sensor’s role.
+  - Download Model; show predictions_live.csv from batch script.
+  - Point to final_report.txt and project_summery.csv.
+File References
+
+- Web dashboard: app.py
+- Training script: train_model.py
+- Batch prediction: predict_batch.py
+- Report: final_report.txt
+- Summary: project_summery.csv
+- Predictions: predictions_live.csv

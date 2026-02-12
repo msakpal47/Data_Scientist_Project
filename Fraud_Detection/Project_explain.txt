@@ -1,0 +1,24 @@
+Builder
+
+Thought process
+
+Fraud Detection App
+
+- Goal: Detect fraudulent bank transactions and provide an interactive web UI for exploration and real‑time predictions.
+- Data: Loaded from classification.db; key fields include type, amount, origin/destination balances; high‑cardinality account IDs excluded from modeling.
+- Modeling: Preprocessing with imputation and one‑hot encoding for type; trained HistGradientBoostingClassifier; threshold control for precision/recall trade‑off; class imbalance addressed during training.
+- UI: Attractive HTML/CSS/JS frontend with filter chips (All/Fraud/Non‑fraud/Flagged), pagination, totals, and CSV export; real‑time prediction form with probability display.
+- APIs: /api/transactions for paged table data and filters; /api/predict for single prediction; /api/export for filtered CSV download.
+- Files: Backend app.py , frontend index.html , styles style.css , scripts app.js .
+- Outcome: UI shows fraud probabilities and labels; table filters speed analyst review; CSV export supports audit and offline analysis.
+- Business impact: Reduces potential losses via early detection; improves auditability and analyst efficiency.
+Forest Cover Type Prediction
+
+- Goal: Predict forest cover type (classes 1–7) using terrain and soil features.
+- Data/EDA: Large dataset with mixed continuous and binary flags; class imbalance across 7 classes; outlier checks and schema validation performed.
+- Modeling: RandomForest baseline with engineered features such as hydrology distance, road‑fire distance ratio, elevation–slope interaction, aspect sin/cos; stratified split; artifacts saved.
+- Results: Reported accuracy and macro‑F1; tuned to balance performance across imbalanced classes.
+- Business impact: Automates vegetation classification, supports ecological research and land‑use planning, and provides consistent, auditable decisions via UI.
+Reference
+
+- Summary CSV: Project_summaery.csv

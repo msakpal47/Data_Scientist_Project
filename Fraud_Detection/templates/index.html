@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Fraud Radar Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="app-shell">
+    <section class="hero">
+      <div class="hero-pill">
+        <span class="hero-pill-dot"></span>
+        <span>Live transaction environment</span>
+      </div>
+      <div class="hero-main">
+        <div>
+          <div class="hero-title">Fraud Radar Dashboard</div>
+          <div class="hero-subtitle">
+            Inspect all transactions, filter by fraud class, and score risk in real time.
+          </div>
+        </div>
+        <div class="hero-badge">
+          <span>Model:</span>
+          <span class="hero-badge-mono">HistGradientBoosting</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Portfolio snapshot</div>
+            <div class="card-subtitle">Class balance from current dataset</div>
+          </div>
+          <div class="badge-soft">Auto-refreshed from classification.db</div>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Non-fraud</div>
+            <div class="metric-value" id="metric-nonfraud">0</div>
+            <div class="metric-kicker">Stable traffic</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Fraud</div>
+            <div class="metric-value" id="metric-fraud">0</div>
+            <div class="metric-kicker">Detected attempts</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Fraud rate</div>
+            <div class="metric-value" id="metric-rate">0.00%</div>
+            <div class="metric-kicker">Of all transactions</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Flagged (>200k)</div>
+            <div class="metric-value" id="metric-flagged">0</div>
+            <div class="metric-kicker">Rule-based alerts</div>
+          </div>
+        </div>
+        <div class="caption">
+          Thresholds are handled server‑side. Use the prediction panel to score custom what‑if scenarios.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Single transaction scoring</div>
+            <div class="card-subtitle">Probe risk for any hypothetical transfer</div>
+          </div>
+        </div>
+        <form id="predict-form">
+          <div class="predict-grid">
+            <div class="field">
+              <label for="type">Transaction type</label>
+              <select id="type" name="type">
+                <option value="CASH-IN">CASH-IN</option>
+                <option value="CASH-OUT">CASH-OUT</option>
+                <option value="DEBIT">DEBIT</option>
+                <option value="PAYMENT">PAYMENT</option>
+                <option value="TRANSFER">TRANSFER</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="amount">Amount</label>
+              <input type="number" id="amount" name="amount" value="1000" min="0" step="10" />
+            </div>
+            <div class="field">
+              <label for="oldbalanceOrg">Origin old balance</label>
+              <input type="number" id="oldbalanceOrg" name="oldbalanceOrg" value="5000" min="0" step="10" />
+            </div>
+            <div class="field">
+              <label for="newbalanceOrig">Origin new balance</label>
+              <input type="number" id="newbalanceOrig" name="newbalanceOrig" value="4000" min="0" step="10" />
+            </div>
+            <div class="field">
+              <label for="oldbalanceDest">Destination old balance</label>
+              <input type="number" id="oldbalanceDest" name="oldbalanceDest" value="3000" min="0" step="10" />
+            </div>
+            <div class="field">
+              <label for="newbalanceDest">Destination new balance</label>
+              <input type="number" id="newbalanceDest" name="newbalanceDest" value="3500" min="0" step="10" />
+            </div>
+          </div>
+          <button type="submit" class="btn-primary">
+            <span>Score transaction</span>
+          </button>
+        </form>
+        <div id="prediction-output" class="prediction-output">
+          <div class="prediction-label">Awaiting input</div>
+          <div class="prediction-prob">Adjust values and press “Score transaction”.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:14px">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Transaction stream</div>
+          <div class="card-subtitle">Browse and filter raw events by fraud label</div>
+        </div>
+        <div>
+          <div class="filter-chips" id="filter-chips">
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="fraud">Fraud only</button>
+            <button class="filter-chip" data-filter="nonfraud">Non‑fraud only</button>
+            <button class="filter-chip" data-filter="flagged">Flagged only</button>
+          </div>
+        </div>
+      </div>
+      <div class="caption">
+        Showing live data from the first table in <strong>classification.db</strong>. Use filters to focus the grid.
+      </div>
+      <div class="caption" style="margin-top:4px">
+        <strong>Pagination</strong> —
+        Page: <input id="page" type="number" value="1" min="1" style="width:64px">
+        Limit: <input id="limit" type="number" value="500" min="50" step="50" style="width:80px">
+        <button id="reload" class="btn-primary" style="margin-left:6px">Reload</button>
+        <span id="total_rows" style="margin-left:10px" class="metric-label"></span>
+        <a id="download" class="btn-primary" style="margin-left:10px" href="/api/export?filter=all">Download CSV</a>
+      </div>
+      <div class="table-wrap" style="margin-top:10px">
+        <table>
+          <thead id="tx-head"></thead>
+          <tbody id="tx-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

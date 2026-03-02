@@ -1,0 +1,2 @@
+rating_review:Numeric rating provided by the reviewer.
+review_full: Complete text of the review provided by the reviewer.

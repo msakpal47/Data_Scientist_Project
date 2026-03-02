@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ReviewInsight AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=3" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="container">
+    <h1>ReviewInsight AI</h1>
+    <div class="card">
+      <textarea id="reviewInput" placeholder="Enter customer review..."></textarea>
+      <div class="actions">
+        <button id="analyzeBtn">Analyze</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+      </div>
+      <div id="message" class="hidden"></div>
+      <div id="result" class="hidden">
+        <h3>Prediction Result</h3>
+        <p><b>Theme:</b> <span id="theme"></span></p>
+        <p><b>Sentiment:</b> <span id="sentiment" class="badge"></span></p>
+      </div>
+      <div class="meta">Build <span id="versionTag">loading…</span></div>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}?v=3"></script>
+  <script>
+    document.getElementById('analyzeBtn').addEventListener('click', analyzeReview);
+    document.getElementById('clearBtn').addEventListener('click', clearReview);
+  </script>
+</body>
+</html>

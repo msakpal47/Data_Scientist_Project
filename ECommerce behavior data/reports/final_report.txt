@@ -1,0 +1,62 @@
+Ecommerce Customer Clustering Project
+
+Data source
+- SQLite database: clustering.db
+- Main table: ecommerce_behavior
+
+Feature engineering
+- Aggregated interaction data per user_id
+- Metrics: total_events, total_views, total_purchases, avg_price, total_spent
+- Additional metrics: unique_products, unique_categories, session_count, conversion_rate
+
+Modeling
+- Standardized numeric features with StandardScaler
+- Trained KMeans clustering model with 5 clusters and fixed random seed
+- Evaluated clustering quality using silhouette_score
+
+Model artifact
+- Stored in models/ecommerce_cluster.pkl
+- Contains fitted scaler, clustering model, feature column names and user_id list
+
+API backend
+- Implemented lightweight HTTP server in server.py
+- Endpoint GET /api/predict returns users and assigned cluster labels as JSON
+- Endpoint GET /api/cluster_counts returns count per cluster
+- Endpoint GET /api/health returns server/model status
+
+Web dashboard
+- templates/index.html displays a simple customer segmentation dashboard
+- static/script.js calls the API and renders:
+  - user-cluster table with segment names
+  - summary cards (Total Users, High Value, Low Value)
+  - cluster distribution bar chart
+- static/styles.css provides basic dark-theme styling
+
+How to run
+1) Train model
+   python train.py
+
+2) Start server
+   python server.py
+
+3) Open dashboard in browser
+   http://localhost:8000/templates/index.html
+
+Use cases
+- Customer segmentation and behavior analysis
+- Marketing targeting and personalization
+- Exploratory analysis for business stakeholders and portfolio demonstration
+
+Customer Segmentation Results
+- Cluster 0 → Low Value users (low activity/low purchase)
+- Cluster 1 → Medium Buyers (moderate engagement/spend)
+- Cluster 2 → High Value customers (high purchase/engagement)
+- Cluster 3 → At Risk (declining or minimal recent activity)
+- Cluster 4 → Churn Risk (low engagement and likely to churn)
+
+Business Actions
+- Offer discounts and activation campaigns to Cluster 0
+- Upsell and cross-sell to Cluster 1
+- Loyalty rewards and VIP programs for Cluster 2
+- Re-engagement campaigns for Cluster 3
+- Retention programs for Cluster 4

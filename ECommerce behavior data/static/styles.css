@@ -1,0 +1,81 @@
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    padding: 40px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #22c55e;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background: #16a34a;
+}
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid white;
+    padding: 8px;
+}
+#status {
+    margin-top: 12px;
+    color: #93c5fd;
+}
+#cards {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+.card {
+    background: #1f2937;
+    padding: 12px 16px;
+    border-radius: 8px;
+    min-width: 160px;
+}
+.card-title {
+    font-size: 12px;
+    color: #cbd5e1;
+}
+.card-value {
+    font-size: 20px;
+    font-weight: bold;
+}
+#controls {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+#controls select, #controls input {
+    padding: 6px 8px;
+    background: #111827;
+    color: #e5e7eb;
+    border: 1px solid #374151;
+    border-radius: 6px;
+}
+#controls button {
+    padding: 6px 10px;
+    background: #2563eb;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#controls button:hover {
+    background: #1d4ed8;
+}
+#chart {
+    margin-top: 16px;
+}
+.chart-title {
+    font-size: 14px;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+}

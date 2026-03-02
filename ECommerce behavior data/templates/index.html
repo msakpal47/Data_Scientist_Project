@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ecommerce Customer Clustering</title>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<h1>Customer Segmentation Dashboard</h1>
+<div>
+    <button onclick="predict()">Run Clustering</button>
+    <input id="limitInput" type="number" value="100" min="10" max="5000" />
+    <label for="limitInput">Rows to load</label>
+</div>
+<div id="status"></div>
+<div id="cards">
+    <div class="card"><div class="card-title">Total Users</div><div id="card-total" class="card-value">-</div></div>
+    <div class="card"><div class="card-title">High Value Users</div><div id="card-high" class="card-value">-</div></div>
+    <div class="card"><div class="card-title">Low Value Users</div><div id="card-low" class="card-value">-</div></div>
+    <div class="card"><div class="card-title">Medium Users</div><div id="card-medium" class="card-value">-</div></div>
+    <div class="card"><div class="card-title">At Risk Users</div><div id="card-risk" class="card-value">-</div></div>
+    <div class="card"><div class="card-title">Churn Risk</div><div id="card-churn" class="card-value">-</div></div>
+</div>
+<div id="controls">
+    <select id="clusterFilter">
+        <option value="">All Segments</option>
+        <option value="2">High Value</option>
+        <option value="1">Medium</option>
+        <option value="0">Low Value</option>
+        <option value="3">At Risk</option>
+        <option value="4">Churn Risk</option>
+    </select>
+    <input id="searchInput" type="number" placeholder="Search UserID" />
+    <button id="searchBtn">Search</button>
+    <button id="prevBtn">Prev</button>
+    <button id="nextBtn">Next</button>
+</div>
+<table id="resultTable">
+    <thead>
+    <tr>
+        <th>User ID</th>
+        <th>Cluster</th>
+        <th>Segment Type</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<script src="/static/script.js?v=3"></script>
+</body>
+</html>

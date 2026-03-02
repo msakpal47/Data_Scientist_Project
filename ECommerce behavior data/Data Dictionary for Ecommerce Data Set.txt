@@ -1,0 +1,9 @@
+event_time: Timestamp of the event.
+event_type: Type of event (e.g., view, purchase).
+product_id: Unique identifier of the product.
+category_id: Unique identifier of the product category.
+category_code: Human-readable code of the product category.
+brand: Brand of the product.
+price: Price of the product at the time of the event.
+user_id: Unique identifier of the user.
+user_session: Unique identifier of the user session.

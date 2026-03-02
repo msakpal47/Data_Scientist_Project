@@ -1,0 +1,6 @@
+issue_id,area,file,location,problem,impact,resolution,status
+ISS-001,Feature Engineering,preprocess.py,build_user_features,Division by zero created NaN/inf in conversion_rate,Unstable features and downstream clustering quality,Use safe division with NaN replacement and fill to 0,Resolved
+ISS-002,Data Loading,train.py,main,DB/table errors were unhandled and opaque to users,Training failed with unclear error messages,Add explicit DB existence check and wrap read_sql with clear RuntimeError,Resolved
+ISS-003,API Health,server.py,/api/health,model_loaded relied only on file existence,Health falsely reported model availability,Load model and report True only if deserialization succeeds,Resolved
+ISS-004,API Predict,server.py,/api/predict,Assumed users and labels lengths match; fixed-size counts array,Index errors and incorrect UI counts,Truncate to common length; compute dynamic counts then pad to 5,Resolved
+ISS-005,API Counts,server.py,/api/cluster_counts,Fixed-size counts array not robust to model n_clusters,Incorrect totals for non-5 cluster models,Compute counts size from labels max and pad to 5 for UI,Resolved

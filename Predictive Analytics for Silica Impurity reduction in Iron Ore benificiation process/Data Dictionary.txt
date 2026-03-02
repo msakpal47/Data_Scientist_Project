@@ -1,0 +1,47 @@
+date: Timestamp of the data entry, ranging from March 2017 to September 2017.
+
+% Iron Feed: Percentage of iron in the ore feed before entering the flotation plant.
+
+% Silica Feed: Percentage of silica in the ore feed before entering the flotation plant.
+
+Starch Flow: Flow rate of starch used in the flotation process, measured every 20 seconds.
+
+Amina Flow: Flow rate of amina reagent used in the flotation process, measured every 20 seconds.
+
+Ore Pulp Flow: Flow rate of the ore pulp entering the flotation process.
+
+Ore Pulp pH: pH level of the ore pulp, which impacts the flotation process.
+
+Ore Pulp Density: Density of the ore pulp, a key variable influencing flotation performance.
+
+Flotation Column 01 Air Flow: Airflow rate inside flotation column 01, affecting the separation efficiency.
+
+Flotation Column 02 Air Flow: Airflow rate inside flotation column 02, affecting the separation efficiency.
+
+Flotation Column 03 Air Flow: Airflow rate inside flotation column 03, affecting the separation efficiency.
+
+Flotation Column 04 Air Flow: Airflow rate inside flotation column 04, affecting the separation efficiency.
+
+Flotation Column 05 Air Flow: Airflow rate inside flotation column 05, affecting the separation efficiency.
+
+Flotation Column 06 Air Flow: Airflow rate inside flotation column 06, affecting the separation efficiency.
+
+Flotation Column 07 Air Flow: Airflow rate inside flotation column 07, affecting the separation efficiency.
+
+Flotation Column 01 Level: Pulp level inside flotation column 01.
+
+Flotation Column 02 Level: Pulp level inside flotation column 02.
+
+Flotation Column 03 Level: Pulp level inside flotation column 03.
+
+Flotation Column 04 Level: Pulp level inside flotation column 04.
+
+Flotation Column 05 Level: Pulp level inside flotation column 05.
+
+Flotation Column 06 Level: Pulp level inside flotation column 06.
+
+Flotation Column 07 Level: Pulp level inside flotation column 07.
+
+% Iron Concentrate: Final percentage of iron in the ore concentrate after the flotation process.
+
+% Silica Concentrate: Final percentage of silica in the ore concentrate (Target variable for prediction).

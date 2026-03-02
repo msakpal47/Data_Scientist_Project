@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartOre AI – Silica Reduction</title>
+  <link rel="stylesheet" href="/static/style.css?v=20260224-02">
+</head>
+<body>
+  <div class="container">
+    <h1>SmartOre AI</h1>
+    <h2>Silica Reduction Optimization</h2>
+    <form id="predict-form">
+      <div class="bar">
+        <label>Preset
+          <select id="preset">
+            <option value="custom" selected>Custom</option>
+            <option value="typical">Typical Operation</option>
+            <option value="high_silica">High Silica Feed</option>
+            <option value="low_air">Low Air Flow</option>
+            <option value="high_ph">High pH</option>
+          </select>
+        </label>
+        <div id="model-status" class="status">
+          <span id="model-version">v–</span>
+          <span id="model-trained">–</span>
+          <span id="model-r2">R² –</span>
+          <span id="model-r2-train">R²tr –</span>
+          <span id="model-r2-test">R²te –</span>
+          <span id="model-mae">MAE –</span>
+          <span id="model-rmse">RMSE –</span>
+        </div>
+      </div>
+      <div class="grid">
+        <label>% Silica Feed
+          <input type="number" step="0.01" name="% Silica Feed">
+        </label>
+        <label>Starch Flow
+          <input type="number" step="0.01" name="Starch Flow">
+        </label>
+        <label>Amina Flow
+          <input type="number" step="0.01" name="Amina Flow">
+        </label>
+        <label>Ore Pulp pH
+          <input type="number" step="0.01" name="Ore Pulp pH">
+        </label>
+        <label>Ore Pulp Density
+          <input type="number" step="0.01" name="Ore Pulp Density">
+        </label>
+        <label>Ore Pulp Flow
+          <input type="number" step="0.01" name="Ore Pulp Flow">
+        </label>
+        <label>Avg Air Flow
+          <input type="number" step="0.01" name="Avg Air Flow">
+        </label>
+      </div>
+      <div class="actions">
+        <button id="predict-btn" type="button">Predict</button>
+      </div>
+    </form>
+    <div id="result" class="card hidden">
+      <h3>Prediction</h3>
+      <div class="metric">
+        <span class="label">% Silica Concentrate</span>
+        <span id="silica" class="value">–</span>
+      </div>
+      <div class="metric">
+        <span class="label">Risk</span>
+        <span id="risk" class="value">–</span>
+      </div>
+      <div class="metric">
+        <span class="label">Feature Importance / SHAP</span>
+      </div>
+      <div id="fi" class="fi"></div>
+      <div class="metric">
+        <span class="label">Prediction Trend</span>
+      </div>
+      <canvas id="trend" width="880" height="160"></canvas>
+      <div class="metric">
+        <span class="label">Recommendations</span>
+      </div>
+      <ul id="recs"></ul>
+    </div>
+  </div>
+  <div id="overlay" class="overlay hidden">
+    <div class="spinner"></div>
+  </div>
+  <script src="/static/script.js?v=20260224-02"></script>
+  <script></script>
+</body>
+</html>

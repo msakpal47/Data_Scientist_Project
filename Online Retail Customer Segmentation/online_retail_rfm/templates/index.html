@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RFM Customer Segmentation</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<h1>Customer Segmentation Dashboard</h1>
+<button onclick="loadData()">Load Segments</button>
+<div class="cards">
+  <div class="card">
+    <div class="card-title">Total</div>
+    <div class="card-value" id="totalCount">0</div>
+  </div>
+  <div class="card">
+    <div class="card-title">High Value</div>
+    <div class="card-value" id="highValueCount">0</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Loyal</div>
+    <div class="card-value" id="loyalCount">0</div>
+  </div>
+  <div class="card">
+    <div class="card-title">At Risk</div>
+    <div class="card-value" id="riskCount">0</div>
+  </div>
+  </div>
+<div class="chart-container">
+  <canvas id="segmentChart" width="700" height="250"></canvas>
+  </div>
+<table id="table">
+    <thead>
+        <tr>
+            <th>CustomerID</th>
+            <th>Recency</th>
+            <th>Frequency</th>
+            <th>Monetary</th>
+            <th>Cluster</th>
+            <th>Segment</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<script src="/static/script.js"></script>
+</body>
+</html>

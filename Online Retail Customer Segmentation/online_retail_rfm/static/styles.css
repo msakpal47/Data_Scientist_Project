@@ -1,0 +1,58 @@
+body {
+    background: #0a1a2f;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #00c853;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.cards {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: #0f2744;
+    border: 1px solid #1b3b63;
+    border-radius: 6px;
+    padding: 14px 18px;
+    min-width: 140px;
+}
+
+.card-title {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.card-value {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.chart-container {
+    background: #0f2744;
+    border: 1px solid #1b3b63;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 8px;
+}

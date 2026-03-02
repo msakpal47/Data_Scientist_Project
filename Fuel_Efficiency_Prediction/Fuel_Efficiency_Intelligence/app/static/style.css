@@ -1,0 +1,22 @@
+body{font-family:system-ui,Arial,sans-serif;margin:0;background:#0f172a;color:#e2e8f0}
+.container{max-width:840px;margin:40px auto;padding:24px;background:#111827;border-radius:12px;border:1px solid #1f2937}
+h1{margin:0 0 16px}
+form{margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:12px}
+label{display:flex;flex-direction:column;font-size:14px;gap:6px}
+input,select{padding:10px;border-radius:8px;border:1px solid #374151;background:#0b1220;color:#e2e8f0}
+button{padding:10px 16px;border-radius:8px;border:0;background:#2563eb;color:#fff;cursor:pointer}
+#result{margin-top:12px;font-size:18px;color:#10b981}
+#error{margin-top:12px;font-size:14px;color:#ef4444}
+.note{opacity:.7;font-size:12px;margin-top:16px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
+.kpi{background:#0b1220;border:1px solid #1f2937;border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.kpi-title{font-size:12px;opacity:.8}
+.kpi-value{font-size:20px;font-weight:600}
+#gauge{width:100%;height:16px;background:#1f2937;border-radius:10px;position:relative;margin:8px 0}
+#gauge-needle{height:100%;width:10%;background:linear-gradient(90deg,#10b981,#f59e0b,#ef4444);border-radius:10px;transition:width .3s}
+.panel{margin:12px 0;padding:12px;background:#0b1220;border:1px solid #1f2937;border-radius:10px}
+#fi-bars{display:flex;flex-direction:column;gap:8px}
+.fi-row{display:flex;align-items:center;gap:8px}
+.fi-label{width:180px;font-size:12px;opacity:.85}
+.fi-bar{height:12px;background:#2563eb;border-radius:6px}

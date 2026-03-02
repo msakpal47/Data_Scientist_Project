@@ -1,0 +1,51 @@
+{
+  "status": 200,
+  "body": {
+    "importances": [
+      {
+        "feature": "Fm",
+        "importance": 0.9273237586021423
+      },
+      {
+        "feature": "Ft",
+        "importance": 0.0408913716673851
+      },
+      {
+        "feature": "Ewltp (g/km)",
+        "importance": 0.02505401149392128
+      },
+      {
+        "feature": "ep (KW)",
+        "importance": 0.002642042702063918
+      },
+      {
+        "feature": "ec (cm3)",
+        "importance": 0.0017439060611650348
+      },
+      {
+        "feature": "z (Wh/km)",
+        "importance": 0.0007576336502097547
+      },
+      {
+        "feature": "Mt",
+        "importance": 0.0005360387731343508
+      },
+      {
+        "feature": "Erwltp (g/km)",
+        "importance": 0.0004076160257682204
+      },
+      {
+        "feature": "m (kg)",
+        "importance": 0.0003814574156422168
+      },
+      {
+        "feature": "Electric range (km)",
+        "importance": 0.0002621628809720278
+      },
+      {
+        "feature": "r",
+        "importance": 0.0
+      }
+    ]
+  }
+}

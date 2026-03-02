@@ -1,0 +1,118 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Fuel Efficiency Intelligence API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/predict": {
+      "post": {
+        "summary": "Predict fuel consumption",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Prediction",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "prediction": { "type": "number" },
+                    "lower": { "type": "number" },
+                    "upper": { "type": "number" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/simulate": {
+      "post": {
+        "summary": "Simulate feature change",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "payload": { "type": "object" },
+                  "ep_delta_pct": { "type": "number" },
+                  "feature_name": { "type": "string" }
+                },
+                "required": ["payload"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Simulation result"
+          }
+        }
+      }
+    },
+    "/explain": {
+      "post": {
+        "summary": "Explain a single prediction",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "payload": { "type": "object" }
+                },
+                "required": ["payload"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Local explanation"
+          }
+        }
+      }
+    },
+    "/model-metrics": {
+      "get": {
+        "summary": "Get latest training metrics",
+        "responses": {
+          "200": { "description": "OK" },
+          "404": { "description": "Not found" }
+        }
+      }
+    },
+    "/feature-importance": {
+      "get": {
+        "summary": "Get global feature importances",
+        "responses": {
+          "200": { "description": "OK" }
+        }
+      }
+    },
+    "/api-docs": {
+      "get": {
+        "summary": "OpenAPI specification",
+        "responses": {
+          "200": { "description": "OK" },
+          "404": { "description": "Not found" }
+        }
+      }
+    }
+  }
+}

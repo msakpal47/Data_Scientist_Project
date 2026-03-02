@@ -1,0 +1,1 @@
+{"status": "ok", "model_path": "E:\\Data_Scientist_Project\\Regression_Projects\\Captsone_Project - Regression\\Fuel_Efficiency_Prediction\\Fuel_Efficiency_Intelligence\\models\\fuel_model.pkl", "rmse": 0.19593666761043227, "mae": 0.0663256357635011, "r2": 0.9876686582354276, "rows": 42385, "cv_r2_mean": 0.9800367985787594, "cv_r2_std": 0.001885780497596637}

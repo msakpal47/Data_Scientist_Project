@@ -1,0 +1,149 @@
+{
+  "status": 200,
+  "body": {
+    "info": {
+      "title": "Fuel Efficiency Intelligence API",
+      "version": "1.0.0"
+    },
+    "openapi": "3.0.0",
+    "paths": {
+      "/api-docs": {
+        "get": {
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not found"
+            }
+          },
+          "summary": "OpenAPI specification"
+        }
+      },
+      "/explain": {
+        "post": {
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "payload": {
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "payload"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Local explanation"
+            }
+          },
+          "summary": "Explain a single prediction"
+        }
+      },
+      "/feature-importance": {
+        "get": {
+          "responses": {
+            "200": {
+              "description": "OK"
+            }
+          },
+          "summary": "Get global feature importances"
+        }
+      },
+      "/model-metrics": {
+        "get": {
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "404": {
+              "description": "Not found"
+            }
+          },
+          "summary": "Get latest training metrics"
+        }
+      },
+      "/predict": {
+        "post": {
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "properties": {
+                      "lower": {
+                        "type": "number"
+                      },
+                      "prediction": {
+                        "type": "number"
+                      },
+                      "upper": {
+                        "type": "number"
+                      }
+                    },
+                    "type": "object"
+                  }
+                }
+              },
+              "description": "Prediction"
+            }
+          },
+          "summary": "Predict fuel consumption"
+        }
+      },
+      "/simulate": {
+        "post": {
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "ep_delta_pct": {
+                      "type": "number"
+                    },
+                    "feature_name": {
+                      "type": "string"
+                    },
+                    "payload": {
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "payload"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "Simulation result"
+            }
+          },
+          "summary": "Simulate feature change"
+        }
+      }
+    }
+  }
+}

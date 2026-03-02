@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fuel Efficiency Intelligence</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Fuel Consumption Prediction</h1>
+  <form id="predict-form">
+    <div class="grid">
+      <label>range<input name="r" type="number" step="any" placeholder="e.g., 600" min="100" max="1500"></label>
+      <label>mass (kg)<input name="m (kg)" type="number" step="any" placeholder="e.g., 1500" min="800" max="3500"></label>
+      <label>CO2 Mt<input name="Mt" type="number" step="any" placeholder="e.g., 0.12" min="0" max="1"></label>
+      <label>WLTP CO2 (g/km)<input name="Ewltp (g/km)" type="number" step="any" placeholder="e.g., 110" min="0" max="400"></label>
+      <label>fuel type<select name="Ft">
+        <option value="">Select</option>
+        <option value="petrol">petrol</option>
+        <option value="diesel">diesel</option>
+        <option value="hybrid">hybrid</option>
+        <option value="electric">electric</option>
+      </select></label>
+      <label>fuel mix<select name="Fm">
+        <option value="">Select</option>
+        <option value="E5">E5 (Petrol 5% ethanol)</option>
+        <option value="E10">E10 (Petrol 10% ethanol)</option>
+        <option value="E15">E15 (Petrol 15% ethanol)</option>
+        <option value="E85">E85 (Flex fuel)</option>
+        <option value="B7">B7 (Diesel 7% biodiesel)</option>
+        <option value="B10">B10 (Diesel 10% biodiesel)</option>
+        <option value="B20">B20 (Diesel 20% biodiesel)</option>
+        <option value="CNG">CNG</option>
+        <option value="LPG">LPG</option>
+        <option value="H2">Hydrogen</option>
+        <option value="None">None</option>
+      </select></label>
+      <label>engine capacity (cm3)<input name="ec (cm3)" type="number" step="any" placeholder="e.g., 1600" min="600" max="6000"></label>
+      <label>engine power (KW)<input name="ep (KW)" type="number" step="any" placeholder="e.g., 85" min="20" max="600"></label>
+      <label>energy use (Wh/km)<input name="z (Wh/km)" type="number" step="any" placeholder="e.g., 180" min="0" max="400"></label>
+      <label>WLTP CO2 reduction (g/km)<input name="Erwltp (g/km)" type="number" step="any" placeholder="e.g., 5" min="0" max="200"></label>
+      <label>electric range (km)<input name="Electric range (km)" type="number" step="any" placeholder="e.g., 50" min="0" max="1000"></label>
+      <label>fuel price per liter<input id="fuel-price" type="number" step="any" placeholder="e.g., 100" min="0" max="500"></label>
+      <label>annual distance (km)<input id="annual-km" type="number" step="any" placeholder="e.g., 15000" min="0" max="200000"></label>
+    </div>
+    <button type="submit">Predict</button>
+    <button type="button" id="explain-btn">Explain</button>
+  </form>
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-title">Predicted Efficiency</div><div class="kpi-value" id="kpi-eff">--</div></div>
+    <div class="kpi"><div class="kpi-title">CO2 Impact (g/km)</div><div class="kpi-value" id="kpi-co2">--</div></div>
+    <div class="kpi"><div class="kpi-title">Efficiency Grade</div><div class="kpi-value" id="kpi-grade">--</div></div>
+  </div>
+  <div id="gauge"><div id="gauge-needle"></div></div>
+  <div id="result"></div>
+  <div id="interval"></div>
+  <div class="panel">
+    <h3>Explanation</h3>
+    <div id="explain-output"></div>
+  </div>
+  <div class="sim">
+    <h3>Business Simulation</h3>
+    <label>Change feature
+      <select id="sim-feature">
+        <option value="ep (KW)">Engine power (KW)</option>
+        <option value="m (kg)">Mass (kg)</option>
+        <option value="Ewltp (g/km)">WLTP CO2 (g/km)</option>
+        <option value="Electric range (km)">Electric range (km)</option>
+        <option value="z (Wh/km)">Energy use (Wh/km)</option>
+      </select>
+    </label>
+    <label>Change amount (%) <input id="ep-delta" type="number" value="10" step="1"></label>
+    <button id="simulate-btn">Simulate</button>
+    <div id="sim-result"></div>
+    <div id="sim-business"></div>
+  </div>
+  <div class="panel">
+    <h3>Model Performance</h3>
+    <div id="metrics">Loading metrics…</div>
+  </div>
+  <div class="panel">
+    <h3>Feature Importance</h3>
+    <div id="fi-bars"></div>
+  </div>
+  <div id="error"></div>
+  <p class="note">This is a demo interface. Fields map to model features.</p>
+</div>
+<script src="/static/script.js"></script>
+</body>
+</html>

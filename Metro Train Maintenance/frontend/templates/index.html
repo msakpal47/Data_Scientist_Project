@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Metro Train Maintenance</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1>Metro Train Maintenance</h1>
+        <p class="subtitle">Fault Detection (dataset: fault_detection_manufacturing)</p>
+        <div style="margin-top:10px;">
+          <span id="health-badge" class="btn">Backend: Checking…</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="row">
+          <div>
+            <h2>Model</h2>
+            <p class="muted">Train a model from the SQLite dataset, then run predictions.</p>
+          </div>
+          <div class="actions">
+            <select id="model-select" class="btn">
+              <option value="logreg">Logistic Regression (Fast)</option>
+              <option value="rf">Random Forest</option>
+              <option value="xgb" selected>XGBoost (Recommended)</option>
+            </select>
+            <select id="split-select" class="btn">
+              <option value="random" selected>Random Split</option>
+              <option value="temporal">Time-Based Split</option>
+            </select>
+            <input id="timestamp-col" class="btn" placeholder="Timestamp column (optional)" list="timestamp-options" />
+            <datalist id="timestamp-options"></datalist>
+            <label class="btn" style="display:flex;align-items:center;gap:6px;">
+              <input id="speed-mode" type="checkbox" checked />
+              Speed Mode
+            </label>
+            <label class="btn" style="display:flex;align-items:center;gap:6px;">
+              <input id="calibrate" type="checkbox" />
+              Calibrate
+            </label>
+            <label class="btn" style="display:flex;align-items:center;gap:6px;">
+              <input id="smote" type="checkbox" />
+              SMOTE (train only)
+            </label>
+            <input id="recall-target" class="btn" type="number" min="0" max="1" step="0.01" value="0.85" title="Recall target for Best@Recall (0-1)" />
+            <label class="btn" style="display:flex;align-items:center;gap:6px;">
+              <input id="train-bg" type="checkbox" />
+              Train in Background
+            </label>
+            <button id="btn-refresh-schema" class="btn">Refresh Schema</button>
+            <button id="btn-train" class="btn primary">Train / Retrain</button>
+          </div>
+        </div>
+        <div id="train-status" class="status muted">Loading schema…</div>
+        <div id="recommended-badge" class="badge" style="margin-top:10px;"></div>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <div>
+            <h2>Model Performance</h2>
+            <p class="muted">Key metrics and top contributing sensors.</p>
+          </div>
+        </div>
+        <div id="metrics-panel" class="status"></div>
+        <div id="importance-list" class="status" style="margin-top:10px;"></div>
+        <div id="confusion-panel" class="status" style="margin-top:10px;"></div>
+        <div id="threshold-eval" class="status" style="margin-top:10px;"></div>
+        <div id="model-health" class="status" style="margin-top:10px;"></div>
+        <div class="actions" style="margin-top:10px;">
+          <button id="btn-promote" class="btn">Save as Production</button>
+          <span id="promote-status" class="status" style="min-height:unset;padding:6px 10px;"></span>
+        </div>
+        <div class="status" style="margin-top:10px; overflow:auto;">
+          <canvas id="roc-chart" width="500" height="300" style="max-width:100%;"></canvas>
+        </div>
+        <div class="status" style="margin-top:10px; overflow:auto;">
+          <canvas id="pr-chart" width="500" height="300" style="max-width:100%;"></canvas>
+        </div>
+        <div class="status" style="margin-top:10px; overflow:auto;">
+          <canvas id="cm-chart" width="300" height="220" style="max-width:100%;"></canvas>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="row">
+          <div>
+            <h2>Predict Fault</h2>
+            <p class="muted">Enter sensor values (auto-filled with dataset medians).</p>
+          </div>
+          <div class="actions">
+            <select id="prefill-select" class="btn">
+              <option value="median" selected>Quick Fill: Median</option>
+              <option value="min">Quick Fill: Min</option>
+              <option value="max">Quick Fill: Max</option>
+              <option value="random">Quick Fill: Random</option>
+              <option value="zeros">Quick Fill: Zeros</option>
+            </select>
+            <input id="threshold" class="btn" type="number" min="0" max="1" step="0.01" value="0.70" title="Risk Threshold (0-1)" />
+            <button id="btn-use-best" class="btn">Use Best</button>
+            <button id="btn-use-best-recall" class="btn">Use Best@Recall</button>
+            <label class="btn" style="display:flex;align-items:center;gap:6px;">
+              <input id="auto-best" type="checkbox" />
+              Auto‑apply Best
+            </label>
+            <label class="btn" style="display:flex;align-items:center;gap:6px;">
+              <input id="auto-best-recall" type="checkbox" />
+              Auto‑apply Best@Recall
+            </label>
+            <div id="quick-thresholds" class="btn-row">
+              <button data-th="0.50" class="btn">0.50</button>
+              <button data-th="0.60" class="btn">0.60</button>
+              <button data-th="0.65" class="btn">0.65</button>
+              <button data-th="0.70" class="btn">0.70</button>
+              <button data-th="0.75" class="btn">0.75</button>
+              <button data-th="0.80" class="btn">0.80</button>
+              <button data-th="0.85" class="btn">0.85</button>
+              <button data-th="0.90" class="btn">0.90</button>
+              <button data-th="0.95" class="btn">0.95</button>
+            </div>
+            <button id="btn-predict" class="btn">Predict</button>
+          </div>
+        </div>
+
+        <div id="form" class="grid"></div>
+
+        <div id="predict-result" class="status"></div>
+      </section>
+    </main>
+
+    <script src="/static/js/app.js"></script>
+  </body>
+</html>

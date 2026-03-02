@@ -1,0 +1,109 @@
+{
+  "table": "fault_detection_manufacturing",
+  "target": "fault_occurred",
+  "features": [
+    {
+      "name": "IONGAUGEPRESSURE",
+      "min": -1.357306199,
+      "max": 1.407918242,
+      "median": 0.533875414
+    },
+    {
+      "name": "ETCHBEAMVOLTAGE",
+      "min": -1.128402399,
+      "max": 1.720419368,
+      "median": -0.184730406
+    },
+    {
+      "name": "ETCHBEAMCURRENT",
+      "min": -1.154544122,
+      "max": 3.273169351,
+      "median": 0.068741067
+    },
+    {
+      "name": "ETCHSUPPRESSORVOLTAGE",
+      "min": -1.188503417,
+      "max": 1.420547629,
+      "median": 0.496436115
+    },
+    {
+      "name": "ETCHSUPPRESSORCURRENT",
+      "min": -1.145789683,
+      "max": 20.37007435,
+      "median": 0.291558731
+    },
+    {
+      "name": "FLOWCOOLFLOWRATE",
+      "min": -1.449476738,
+      "max": 2.418428416,
+      "median": 0.684996178
+    },
+    {
+      "name": "FLOWCOOLPRESSURE",
+      "min": -1.219059179,
+      "max": 10.08477409,
+      "median": 0.348717086
+    },
+    {
+      "name": "ETCHGASCHANNEL1READBACK",
+      "min": -1.364314331,
+      "max": 1.398177135,
+      "median": 0.376481307
+    },
+    {
+      "name": "ETCHPBNGASREADBACK",
+      "min": -1.508756043,
+      "max": 2.562373269,
+      "median": 0.733358143
+    },
+    {
+      "name": "FIXTURETILTANGLE",
+      "min": -1.054148775,
+      "max": 13.13872826,
+      "median": -0.409018001
+    },
+    {
+      "name": "ROTATIONSPEED",
+      "min": -2.412734493,
+      "max": 4.213794012,
+      "median": -0.203891658
+    },
+    {
+      "name": "ACTUALROTATIONANGLE",
+      "min": -17.14101535,
+      "max": 5.726434039,
+      "median": -0.15249522
+    },
+    {
+      "name": "FIXTURESHUTTERPOSITION",
+      "min": 0.0,
+      "max": 255.0,
+      "median": 1.0
+    },
+    {
+      "name": "ETCHSOURCEUSAGE",
+      "min": -1.700734342,
+      "max": 0.511639018,
+      "median": -0.32788797
+    },
+    {
+      "name": "ETCHAUXSOURCETIMER",
+      "min": -1.637957106,
+      "max": 1.16971614,
+      "median": 0.001883732
+    },
+    {
+      "name": "ETCHAUX2SOURCETIMER",
+      "min": -1.622992042,
+      "max": 1.470236207,
+      "median": -0.509532989
+    },
+    {
+      "name": "ACTUALSTEPDURATION",
+      "min": -0.847502648,
+      "max": 8.856233809,
+      "median": -0.200586885
+    }
+  ],
+  "generated_at": "2026-02-27T12:27:51.337690+00:00"
+}

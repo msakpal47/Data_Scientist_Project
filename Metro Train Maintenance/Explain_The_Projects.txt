@@ -1,0 +1,35 @@
+What this project does
+
+- We built a Fault Detection app for Metro Train Maintenance.
+- It uses the historical sensor dataset (from classification.db , table fault_detection_manufacturing ) to predict whether a fault will occur ( fault_occurred = 0/1 ).
+- The app has a simple web UI (HTML/CSS/JS) + Python API :
+  - Train/Retrain model from data
+  - Predict fault risk for current sensor readings
+  - Shows fault label + probability
+Why it matters (business problem)
+
+- Metro operations lose money when trains fail unexpectedly:
+  - service delay penalties, refunds, overtime repairs, spare part rush orders
+  - safety risk and reputation damage
+- This project shifts maintenance from reactive (“repair after breakdown”) to predictive (“fix before failure”).
+Business impact (what you tell manager)
+
+- Reduced downtime / service disruption
+  - Early fault alerts let teams schedule maintenance during non-peak hours.
+- Lower maintenance cost
+  - Avoids emergency repairs and reduces unplanned part replacements.
+- Better resource planning
+  - Maintenance teams can prioritize assets with higher predicted risk.
+- Improved safety and compliance
+  - Detect risky conditions early → fewer incidents.
+- Higher asset availability
+  - More trains available for service → better passenger experience and revenue protection.
+How it would be used in real life
+
+- Sensors send latest readings → app predicts fault probability .
+- If risk is high, create a maintenance ticket (next step integration) and schedule inspection.
+- Track outcomes to keep improving model performance over time.
+Important note (manager-style risk/limitation)
+
+- The dataset has very few fault cases compared to normal cases (heavy class imbalance), so accuracy alone can look high.
+- Real success metric should be: fewer breakdowns, fewer delay minutes, reduced emergency work orders , and acceptable false alarms.

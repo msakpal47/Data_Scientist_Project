@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Forest Cover Type Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="header__left">
+          <h1 class="title">Forest Cover Type Prediction</h1>
+          <p class="subtitle">Enter features and get a predicted cover type (1–7).</p>
+        </div>
+        <div class="header__right">
+          <div id="statusBadge" class="badge badge--loading">Loading…</div>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="card">
+          <div class="card__header">
+            <h2 class="card__title">Inputs</h2>
+            <div class="card__actions">
+              <button id="fillExample" class="btn btn--secondary" type="button">Fill example</button>
+              <button id="resetForm" class="btn btn--ghost" type="button">Reset</button>
+            </div>
+          </div>
+
+          <form id="predictForm" class="form">
+            <div class="tabs">
+              <button class="tab tab--active" type="button" data-tab="continuous">Continuous</button>
+              <button class="tab" type="button" data-tab="wilderness">Wilderness</button>
+              <button class="tab" type="button" data-tab="soil">Soil</button>
+            </div>
+
+            <div id="panel-continuous" class="panel panel--active" data-panel="continuous">
+              <div id="continuousFields" class="fields"></div>
+            </div>
+
+            <div id="panel-wilderness" class="panel" data-panel="wilderness">
+              <div class="hint">Select exactly one wilderness area (optional).</div>
+              <div id="wildernessFields" class="fields fields--grid"></div>
+            </div>
+
+            <div id="panel-soil" class="panel" data-panel="soil">
+              <div class="hint">Select the soil type(s). Typically exactly one is 1.</div>
+              <div id="soilFields" class="fields fields--grid"></div>
+            </div>
+
+            <div class="form__footer">
+              <button id="predictBtn" class="btn btn--primary" type="submit">Predict</button>
+            </div>
+          </form>
+        </section>
+
+        <div class="col-right">
+          <section class="card">
+            <div class="card__header">
+              <h2 class="card__title">Result</h2>
+            </div>
+            <div class="result">
+              <div class="result__value" id="resultValue">—</div>
+              <div class="result__meta" id="resultMeta"></div>
+            </div>
+            <div class="card__divider"></div>
+            <div class="kv">
+              <div class="kv__row">
+                <div class="kv__k">Model file</div>
+                <div class="kv__v" id="modelFile">—</div>
+              </div>
+              <div class="kv__row">
+                <div class="kv__k">Metadata</div>
+                <div class="kv__v" id="metadataFile">—</div>
+              </div>
+              <div class="kv__row">
+                <div class="kv__k">Accuracy</div>
+                <div class="kv__v" id="acc">—</div>
+              </div>
+              <div class="kv__row">
+                <div class="kv__k">Macro F1</div>
+                <div class="kv__v" id="f1">—</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card card--scroll">
+            <div class="card__header">
+              <h2 class="card__title">Insights</h2>
+              <div class="card__actions">
+                <button id="refreshInsights" class="btn btn--ghost" type="button">Refresh</button>
+              </div>
+            </div>
+            <div id="insightsRoot" class="kv"></div>
+            <div class="card__divider"></div>
+            <div class="plots">
+              <div class="plot">
+                <div class="kv__k">Confusion Matrix</div>
+                <img src="{{ url_for('static', filename='plots/confusion_matrix.png') }}" alt="Confusion Matrix" class="plot__img">
+              </div>
+              <div class="plot">
+                <div class="kv__k">Feature Importance</div>
+                <img src="{{ url_for('static', filename='plots/feature_importance.png') }}" alt="Feature Importance" class="plot__img">
+              </div>
+              <div class="plot">
+                <div class="kv__k">Correlation Heatmap</div>
+                <img src="{{ url_for('static', filename='plots/correlation.png') }}" alt="Correlation" class="plot__img">
+              </div>
+              <div class="plot">
+                <div class="kv__k">Elevation Distribution</div>
+                <img src="{{ url_for('static', filename='plots/elevation_distribution.png') }}" alt="Elevation Distribution" class="plot__img">
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      window.__BASE_COLUMNS__ = {{ (base_columns or []) | tojson }};
+      window.__MODEL_AVAILABLE__ = {{ (model_available or false) | tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}?v=3"></script>
+  </body>
+</html>

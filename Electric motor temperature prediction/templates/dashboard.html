@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motor Temperature Intelligence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+</head>
+<body>
+    <h1 class="main-title">⚙ Electric Motor Temperature Intelligence Dashboard</h1>
+    <div class="grid-container">
+        <div class="card">
+            <h2 class="section-title">Predict Permanent Magnet Temperature</h2>
+            <div id="predictError" class="error">{% if server_error %}{{ server_error }}{% endif %}</div>
+            <form method="post" action="/predict-ui" onsubmit="document.getElementById('predictSubmit').disabled=true;">
+              <div class="inputs">
+                  <input id="u_q" name="u_q" type="number" step="0.1" inputmode="decimal" placeholder="u_q (V)" value="120.5" />
+                  <input id="u_d" name="u_d" type="number" step="0.1" inputmode="decimal" placeholder="u_d (V)" value="15.2" />
+                  <input id="i_d" name="i_d" type="number" step="0.1" inputmode="decimal" placeholder="i_d (A)" value="3.1" />
+                  <input id="i_q" name="i_q" type="number" step="0.1" inputmode="decimal" placeholder="i_q (A)" value="7.8" />
+                  <input id="coolant" name="coolant" type="number" step="0.1" inputmode="decimal" placeholder="Coolant Temp (°C)" value="25" />
+                  <input id="motor_speed" name="motor_speed" type="number" step="1" inputmode="decimal" placeholder="Motor Speed (rpm)" value="1800" />
+                  <input id="ambient" name="ambient" type="number" step="0.1" inputmode="decimal" placeholder="Ambient Temp (°C)" value="22" />
+              </div>
+              <button id="predictBtn" type="button" onclick="predict()">Predict</button>
+              <button id="predictSubmit" type="submit" style="display:none"></button>
+            </form>
+            <h2 id="result">{% if server_result is not none %}{{ server_result }} °C{% else %}-- °C{% endif %}</h2>
+            <p id="uncertainty">
+              {% if server_uncertainty %}
+                ±RMSE: {{ server_uncertainty.rmse }} °C | Down: {{ server_uncertainty.lower }} °C | Up: {{ server_uncertainty.upper }} °C
+              {% else %}
+                ±RMSE: -- °C | Down: -- °C | Up: -- °C
+              {% endif %}
+            </p>
+            <div class="meter"><div id="confidenceFill" class="meter-fill"></div></div>
+            <div id="confidenceLabel" class="meter-text"></div>
+            <p class="insight" id="modelConfidence"></p>
+            <p class="insight" id="healthWarning"></p>
+        </div>
+        <div class="card">
+            <h2 class="section-title">Feature Importance</h2>
+            <div class="filter-row">
+              <input id="importanceFilter" type="text" placeholder="Filter feature..." />
+              <select id="importanceTopN">
+                <option value="5" selected>Top 5</option>
+                <option value="10">Top 10</option>
+                <option value="20">Top 20</option>
+                <option value="all">All</option>
+              </select>
+            </div>
+            <table id="importanceTable" class="metrics-table">
+              <thead><tr><th>#</th><th>Feature</th><th>Importance</th></tr></thead>
+              <tbody>
+                {% if artifacts and artifacts.importance %}
+                  {% for k,v in artifacts.importance|dictsort(by='value', reverse=true) %}
+                    {% if loop.index <= 5 %}
+                      <tr><td>{{ loop.index }}</td><td>{{ k }}</td><td>{{ '%.4f' % v }}</td></tr>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              </tbody>
+            </table>
+            <div id="importanceError" class="error"></div>
+        </div>
+        <div class="card">
+            <h2 class="section-title">Engineering Insight</h2>
+            <div id="insightPanel" class="fallback"></div>
+        </div>
+        <div class="card">
+            <h2 class="section-title">SHAP Explainability</h2>
+            <div class="filter-row">
+              <input id="shapFilter" type="text" placeholder="Filter feature..." />
+              <select id="shapTopN">
+                <option value="5" selected>Top 5</option>
+                <option value="10">Top 10</option>
+                <option value="20">Top 20</option>
+                <option value="all">All</option>
+              </select>
+            </div>
+            {% set shap_empty = not (artifacts and artifacts.shap and artifacts.shap|length > 0) %}
+            <button id="shapGenerateBtn" style="{% if shap_empty %}display:inline-block{% else %}display:none{% endif %}">Generate SHAP</button>
+            <table id="shapTable" class="metrics-table">
+              <thead><tr><th>#</th><th>Feature</th><th>SHAP |mean|</th></tr></thead>
+              <tbody>
+                {% if artifacts and artifacts.shap and artifacts.shap|length > 0 %}
+                  {% for k,v in artifacts.shap|dictsort(by='value', reverse=true) %}
+                    {% if loop.index <= 5 %}
+                      <tr><td>{{ loop.index }}</td><td>{{ k }}</td><td>{{ '%.4f' % v }}</td></tr>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+              </tbody>
+            </table>
+            <div id="shapError" class="error"></div>
+            <div id="shapDrivers" class="insight"></div>
+            <p id="shapInterpretation" class="insight"></p>
+        </div>
+        <div class="card">
+            <h2 class="section-title">Residual Analysis</h2>
+            <button id="residualSampleBtn">Show sample (50)</button>
+            <table id="residualTable" class="metrics-table"></table>
+            <div id="residualsError" class="error"></div>
+            <div id="residualStats" class="insight"></div>
+        </div>
+        <div class="card">
+            <h2 class="section-title">Model Metrics</h2>
+            <table id="metricsTable" class="metrics-table"></table>
+            <div id="metricsError" class="error"></div>
+        </div>
+        <div class="card">
+            <h2 class="section-title">Model Comparison</h2>
+            <table id="comparisonTable" class="metrics-table"></table>
+            <div id="comparisonError" class="error"></div>
+        </div>
+        <div class="card">
+            <h2 class="section-title">Download Report</h2>
+            <a href="/report" target="_blank">
+                <button>Generate PDF Report</button>
+            </a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}?v=8"></script>
+</body>
+</html>

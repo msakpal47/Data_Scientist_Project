@@ -1,0 +1,123 @@
+*{box-sizing:border-box}
+:root{
+  --bg1:#0f172a;
+  --bg2:#0b1220;
+  --text:#e6eefc;
+  --muted:#a6b6cc;
+  --card:rgba(255,255,255,0.06);
+  --card-hover:rgba(255,255,255,0.1);
+  --border:rgba(255,255,255,0.12);
+  --accent:#22d3ee;
+  --accent-2:#38bdf8;
+  --success-1:#34d399;
+  --success-2:#10b981;
+  --shadow:0 10px 24px rgba(0,0,0,0.35);
+}
+body{
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  margin:0;
+  padding:16px;
+  background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 100%);
+  color:var(--text);
+  text-align:center
+}
+h1{margin-top:0}
+.grid-container,.container{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  padding:8px;
+  max-width:1100px;
+  margin:0 auto
+}
+.card{
+  background:var(--card);
+  padding:14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  backdrop-filter:saturate(120%) blur(2px);
+  min-height:140px;
+  margin-bottom:12px;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease
+}
+.card:hover{
+  transform:translateY(-2px);
+  background:var(--card-hover);
+  box-shadow:var(--shadow)
+}
+.inputs{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-bottom:12px
+}
+input,select{
+  width:100%;
+  margin:4px auto;
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,0.06);
+  color:var(--text);
+  transition:border-color .18s ease, box-shadow .18s ease, background .18s ease
+}
+input:focus,select:focus{
+  outline:0;
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(34,211,238,.25);
+  background:rgba(255,255,255,0.08)
+}
+button{
+  padding:10px 14px;
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 100%);
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  color:#0a1a2b;
+  font-weight:600;
+  transition:transform .12s ease, filter .18s ease, box-shadow .18s ease
+}
+button:hover{
+  filter:brightness(1.05);
+  box-shadow:0 6px 14px rgba(34,211,238,.25)
+}
+button:active{transform:scale(.98)}
+#importanceChart,#shapChart,#residualChart,#modelComparisonChart{
+  width:100%;
+  height:160px
+}
+.error{color:#ef4444;margin-top:8px;font-weight:600}
+.invalid{border-color:#ef4444 !important; outline:0; box-shadow:0 0 0 2px rgba(239,68,68,.2)}
+.fallback{margin-top:8px; text-align:left; width:95%; margin-left:auto; margin-right:auto; font-size:14px; color:#e8f7ff}
+.meter{height:16px;background:rgba(255,255,255,0.15);border-radius:10px;overflow:hidden;margin:10px auto;width:90%}
+.meter-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--success-1),var(--success-2));transition:width .4s ease;border-radius:10px}
+.meter-text{margin-top:6px;font-size:14px;color:#e5f9ff}
+.bars{width:95%;margin:8px auto}
+.bar-row{display:flex;align-items:center;gap:8px;margin:6px 0}
+.bar-label{flex:0 0 40%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#e8f7ff;font-size:13px}
+.bar{flex:1;height:10px;background:rgba(255,255,255,0.25);border-radius:6px;overflow:hidden}
+.bar-fill{height:100%;width:0%;background:linear-gradient(90deg,#60a5fa,#06b6d4);transition:width .4s}
+.bar-value{flex:0 0 60px;text-align:right;color:#cfefff;font-size:12px}
+.section-title{font-size:16px;font-weight:700;margin-bottom:10px}
+.insight{color:var(--muted);font-size:14px;margin:6px auto;max-width:90%;text-align:left}
+.metrics-table{width:95%;margin:8px auto;border-collapse:collapse;table-layout:fixed}
+.metrics-table th,.metrics-table td{border-bottom:1px solid var(--border);padding:10px;text-align:left;color:#eaf6ff;vertical-align:top}
+.metrics-table th:nth-child(1),.metrics-table td:nth-child(1){width:46px}
+.metrics-table th:nth-child(3),.metrics-table td:nth-child(3){text-align:right}
+.metrics-table th{color:#ffffff}
+.metrics-table tbody tr{transition:background .15s ease}
+.metrics-table tbody tr:hover{background:rgba(255,255,255,0.06)}
+.main-title{text-align:center;padding:10px;font-size:22px}
+.shap-img,.residual-img{width:100%;border-radius:10px;display:none}
+.prediction-output{margin-top:12px}
+.filter-row{display:flex;gap:8px;justify-content:flex-end;margin-bottom:8px}
+.filter-row input{flex:1;max-width:220px}
+.filter-row select{padding:8px}
+
+@media (max-width:1280px){
+  .grid-container,.container{grid-template-columns:repeat(2,minmax(0,1fr));max-width:960px}
+}
+@media (max-width:800px){
+  .grid-container,.container{grid-template-columns:1fr;max-width:680px}
+  #importanceChart,#shapChart,#residualChart,#modelComparisonChart{height:180px}
+}

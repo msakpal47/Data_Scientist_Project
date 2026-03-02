@@ -1,0 +1,18 @@
+profile_id: id of the measurement session
+
+u_q: q component of Voltage measured in Volts0
+
+coolant: motor coolant (water in this case) temperature of the motor in °C (measured by a fixed thermal sensor at coolant outlet)
+
+u_d: d component of Voltage measured in Volts
+
+motor speed: ambient temperature around the stator in °C (measured by a fixed thermal sensor)
+
+i_d: d component of Current measured in Amps
+
+i_q: q component of Current measured in Amps
+
+ambient: ambient temperature around the stator in °C (measured by a thermal sensor fixed close to stator)
+
+pm: permanent magnet tooth temperature in °C
+

@@ -1,0 +1,44 @@
+{
+  "top10": [
+    {
+      "feature": "daily_decr90",
+      "mean_abs_shap": 0.7284533381462097
+    },
+    {
+      "feature": "cnt_ma_rech90",
+      "mean_abs_shap": 0.5848510265350342
+    },
+    {
+      "feature": "daily_decr30",
+      "mean_abs_shap": 0.33195731043815613
+    },
+    {
+      "feature": "last_rech_date_ma",
+      "mean_abs_shap": 0.32950830459594727
+    },
+    {
+      "feature": "payback_rate90",
+      "mean_abs_shap": 0.2929268479347229
+    },
+    {
+      "feature": "rental30",
+      "mean_abs_shap": 0.27822816371917725
+    },
+    {
+      "feature": "aon",
+      "mean_abs_shap": 0.21040798723697662
+    },
+    {
+      "feature": "sumamnt_ma_rech90",
+      "mean_abs_shap": 0.20535369217395782
+    },
+    {
+      "feature": "rental90",
+      "mean_abs_shap": 0.20104247331619263
+    },
+    {
+      "feature": "medianmarechprebal90",
+      "mean_abs_shap": 0.16810177266597748
+    }
+  ]
+}

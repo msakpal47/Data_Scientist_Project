@@ -1,0 +1,36 @@
+label			Target variable: 1 (loan taken), 0 (no loan taken)
+msisdn			Unique customer identifier (mobile number masked)
+aon			Age on Network in days (customer tenure)
+daily_decr30		Total balance deducted per day (avg over 30 days)
+daily_decr90		Total balance deducted per day (avg over 90 days)
+rental30		Total rental deduction in last 30 days
+rental90		Total rental deduction in last 90 days
+last_rech_date_ma	Day of last main account recharge (numerical month)
+last_rech_date_da	Day of last main account recharge (numerical day)
+last_rech_amt_ma	Last recharge amount to main account
+cnt_ma_rech30		Number of main account recharges in last 30 days
+fr_ma_rech30		Frequency of main account recharges in last 30 days
+sumamnt_ma_rech30	Sum of main account recharge amount in last 30 days
+medianamnt_ma_rech30	Median recharge amount (main account) in last 30 days
+medianmarechprebal30	Median pre-recharge balance before recharge (30 days)
+cnt_ma_rech90		Number of main account recharges in last 90 days
+fr_ma_rech90		Frequency of main account recharges in last 90 days
+sumamnt_ma_rech90	Sum of recharge amount (main account) in last 90 days
+medianamnt_ma_rech90	Median recharge amount (main account) in last 90 days
+medianmarechprebal90	Median pre-recharge balance before recharge (90 days)
+cnt_da_rech30		Count of data pack recharges in last 30 days
+fr_da_rech30		Frequency of data recharges in last 30 days
+cnt_da_rech90		Count of data pack recharges in last 90 days
+fr_da_rech90		Frequency of data recharges in last 90 days
+cnt_loans30		Number of loans taken in last 30 days
+amnt_loans30		Total loan amount taken in last 30 days
+maxamnt_loans30		Maximum single loan amount in last 30 days
+medianamnt_loans30	Median loan amount in last 30 days
+cnt_loans90		Number of loans taken in last 90 days
+amnt_loans90		Total loan amount taken in last 90 days
+maxamnt_loans90		Maximum single loan amount in last 90 days
+medianamnt_loans90	Median loan amount in last 90 days
+payback30		Number of successful loan repayments in last 30 days
+payback90		Number of successful loan repayments in last 90 days
+pcircle			Telecom circle/region (e.g., UPW = Uttar Pradesh West)
+pdate			Data extraction date (format may vary: dd-mm-yyyy or mm/dd/yyyy)

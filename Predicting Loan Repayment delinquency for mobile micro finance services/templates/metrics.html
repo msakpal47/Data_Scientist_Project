@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Model Metrics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Model Metrics</h1>
+        <p><a class="btn secondary" href="{{ url_for('index') }}">Back to Predict</a></p>
+      </header>
+      <section class="card">
+        <ul id="metricsList"></ul>
+      </section>
+      <section class="card">
+        <h2>Top Features</h2>
+        <div id="featuresBox"></div>
+      </section>
+      <section class="card">
+        <h2>Confusion Matrix</h2>
+        <div id="cmBox"></div>
+      </section>
+      <section class="card">
+        <h2>ROC & Calibration</h2>
+        <div class="row">
+          <img id="rocImg" alt="ROC Curve" style="max-width:48%; border:1px solid rgba(255,255,255,0.12); margin-right:2%" />
+          <img id="calibImg" alt="Calibration Curve" style="max-width:48%; border:1px solid rgba(255,255,255,0.12)" />
+        </div>
+      </section>
+    </div>
+    <script>
+      async function loadMetrics() {
+        const list = document.getElementById("metricsList");
+        const fbox = document.getElementById("featuresBox");
+        const cmBox = document.getElementById("cmBox");
+        const rocImg = document.getElementById("rocImg");
+        const calibImg = document.getElementById("calibImg");
+        list.innerHTML = "";
+        fbox.textContent = "";
+        cmBox.textContent = "";
+        try {
+          const res = await fetch("/api/metrics");
+          const data = await res.json();
+          if (!res.ok) throw new Error(data && data.error ? data.error : ("HTTP " + res.status));
+          const items = [
+            ["Accuracy", data.accuracy],
+            ["Precision", data.precision],
+            ["Recall", data.recall],
+            ["F1", data.f1],
+            ["ROC-AUC", data.roc_auc],
+            ["Threshold", data.threshold],
+            ["Validation Samples", data.validation_samples],
+            ["Positive Class %", (typeof data.positive_rate_pct === "number" ? data.positive_rate_pct.toFixed(2) + "%" : "n/a")],
+            ["Model Version", data.model_version || "v1.0"],
+            ["Trained At", data.trained_at || "n/a"],
+            ["Table Name", data.table_name || "n/a"],
+          ];
+          if (data.threshold_policy) items.push(["Threshold Policy", data.threshold_policy]);
+          if (data.target_fpr !== undefined && data.target_fpr !== null) items.push(["Target FPR", data.target_fpr]);
+          if (data.recall_at_target_fpr !== undefined && data.recall_at_target_fpr !== null) items.push(["Recall@Target FPR", data.recall_at_target_fpr]);
+          if (data.fpr_at_threshold !== undefined && data.fpr_at_threshold !== null) items.push(["FPR@Threshold", data.fpr_at_threshold]);
+          for (const [k, v] of items) {
+            const li = document.createElement("li");
+            li.textContent = k + ": " + (v ?? "n/a");
+            list.appendChild(li);
+          }
+          const feats = Array.isArray(data.top_features) ? data.top_features : [];
+          if (feats.length === 0) {
+            fbox.textContent = "n/a";
+          } else {
+            let html = "<ul>";
+            for (const f of feats) {
+              const name = f.feature || f.name || "";
+              const val = (f.importance !== undefined && f.importance !== null) ? Number(f.importance).toFixed(4) : (f.mean_abs_shap !== undefined ? Number(f.mean_abs_shap).toFixed(4) : "");
+              html += "<li>" + name + ": " + val + "</li>";
+            }
+            html += "</ul>";
+            fbox.innerHTML = html;
+          }
+          const cm = data.confusion_matrix;
+          if (Array.isArray(cm) && cm.length === 2 && Array.isArray(cm[0]) && Array.isArray(cm[1])) {
+            const tn = cm[0][0], fp = cm[0][1], fn = cm[1][0], tp = cm[1][1];
+            let t = "<table style='border-collapse:collapse'><thead><tr><th></th><th>Pred 0</th><th>Pred 1</th></tr></thead><tbody>";
+            t += "<tr><th>Actual 0</th>"
+            t += "<td style='padding:6px; border:1px solid rgba(255,255,255,0.12); background:#95a5a6'>" + tn + "</td>"
+            t += "<td style='padding:6px; border:1px solid rgba(255,255,255,0.12); background:#e74c3c'>" + fp + "</td></tr>";
+            t += "<tr><th>Actual 1</th>"
+            t += "<td style='padding:6px; border:1px solid rgba(255,255,255,0.12); background:#e67e22'>" + fn + "</td>"
+            t += "<td style='padding:6px; border:1px solid rgba(255,255,255,0.12); background:#2ecc71'>" + tp + "</td></tr>";
+            t += "</tbody></table>";
+            cmBox.innerHTML = t;
+          } else {
+            cmBox.textContent = "n/a";
+          }
+          if (data.plots && data.plots.roc) rocImg.src = data.plots.roc;
+          if (data.plots && data.plots.calibration) calibImg.src = data.plots.calibration;
+        } catch (e) {
+          list.innerHTML = "<li>Error: " + e.message + "</li>";
+        }
+      }
+      loadMetrics();
+    </script>
+  </body>
+</html>

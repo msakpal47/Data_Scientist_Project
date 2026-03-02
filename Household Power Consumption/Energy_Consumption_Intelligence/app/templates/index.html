@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<title>Energy Consumption Forecast</title>
+</head>
+<body>
+<div class="container">
+<h1>Energy Consumption Forecast</h1>
+<form id="predict-form">
+{% if columns %}
+{% for col in columns %}
+{% set display = 'Household Consumption Index' if col == 'f0' else col %}
+<label for="{{ col }}">{{ display }}</label>
+<input id="{{ col }}" name="{{ col }}" class="feature-input" type="number" step="0.1" min="0" max="100000" required placeholder="{{ display }}">
+{% endfor %}
+{% else %}
+<label for="features">Features</label>
+<input id="features" name="features" type="text" placeholder="1,2,3">
+{% endif %}
+<button type="submit">Predict</button>
+</form>
+<div id="output">
+<div><strong>Energy Consumption (kWh/day):</strong> <span id="result"></span></div>
+<div><strong>Monthly Cost (₹):</strong> <span id="monthly_cost"></span></div>
+<div><strong>Annual Cost (₹):</strong> <span id="annual_cost"></span></div>
+<div><strong>Annual CO₂ (kg/year):</strong> <span id="annual_co2"></span></div>
+<div><strong>Efficiency Grade:</strong> <span id="grade" class="grade"></span></div>
+<div><small>A ≤ 10, B ≤ 15, C ≤ 20, D > 20</small></div>
+</div>
+</div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

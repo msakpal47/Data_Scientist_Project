@@ -1,0 +1,10 @@
+Date			Date of the observation
+Time			Time of the observation
+Global_active_power	Household global minute-averaged active power (kW)
+Global_reactive_power	Global minute-averaged reactive power (kW)
+Voltage			Average voltage (V)
+Global_intensity	Average current intensity (A)
+Sub_metering_1		Energy sub-metering for kitchen appliances (watt-hour)
+Sub_metering_2		Energy sub-metering for laundry room (watt-hour)
+Sub_metering_3		Energy sub-metering for water heater & AC (watt-hour)
+power_consumption	Target variable — total power consumption (kWh or W/min)

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Fraud Radar Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+<body>
+  <div class="app-shell">
+    <section class="hero">
+      <div class="hero-pill">
+        <span class="hero-pill-dot"></span>
+        <span>Live transaction environment</span>
+      </div>
+      <div class="hero-main">
+        <div>
+          <div class="hero-title">Fraud Radar Dashboard</div>
+          <div class="hero-subtitle">
+            Inspect all transactions, filter by fraud class, and score risk in real time.
+          </div>
+        </div>
+        <div class="hero-badge">
+          <span>Model:</span>
+          <span class="hero-badge-mono">HistGradientBoosting</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Portfolio snapshot</div>
+            <div class="card-subtitle">Class balance from current dataset</div>
+          </div>
+          <div class="badge-soft">Auto-refreshed from classification.db</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+          <label class="metric-label" for="dataset-type-filter">Dataset type filter</label>
+          <select id="dataset-type-filter" style="border-radius:9px;border:1px solid rgba(75,85,99,0.8);background:rgba(15,23,42,0.96);color:#e5e7eb;padding:4px 8px;font-size:12px">
+            <option value="">ALL</option>
+            <option value="CASH-IN">CASH-IN</option>
+            <option value="CASH-OUT">CASH-OUT</option>
+            <option value="DEBIT">DEBIT</option>
+            <option value="PAYMENT">PAYMENT</option>
+            <option value="TRANSFER">TRANSFER</option>
+          </select>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Non-fraud</div>
+            <div class="metric-value" id="metric-nonfraud">0</div>
+            <div class="metric-kicker">Stable traffic</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Fraud</div>
+            <div class="metric-value" id="metric-fraud">0</div>
+            <div class="metric-kicker">Detected attempts</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Fraud rate</div>
+            <div class="metric-value" id="metric-rate">0.00%</div>
+            <div class="metric-kicker">Of all transactions</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Flagged (>200k)</div>
+            <div class="metric-value" id="metric-flagged">0</div>
+            <div class="metric-kicker">Rule-based alerts</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Imbalance ratio</div>
+            <div class="metric-value" id="metric-imb">1:0</div>
+            <div class="metric-kicker">Non-fraud : fraud</div>
+          </div>
+        </div>
+        <div class="caption">
+          Thresholds are handled server‑side. Use the prediction panel to score custom what‑if scenarios.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Single transaction scoring</div>
+            <div class="card-subtitle">Probe risk for any hypothetical transfer</div>
+          </div>
+        </div>
+        <form id="predict-form">
+          <div class="predict-grid">
+            <div class="field">
+              <label for="type">Transaction type</label>
+              <select id="type" name="type">
+                <option value="CASH-IN">CASH-IN</option>
+                <option value="CASH-OUT">CASH-OUT</option>
+                <option value="DEBIT">DEBIT</option>
+                <option value="PAYMENT">PAYMENT</option>
+                <option value="TRANSFER">TRANSFER</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="amount">Amount</label>
+              <input type="number" id="amount" name="amount" value="1000" min="0" step="10" />
+            </div>
+            <div class="field">
+              <label for="oldbalanceOrg">Origin old balance</label>
+              <input type="number" id="oldbalanceOrg" name="oldbalanceOrg" value="5000" min="0" step="10" />
+            </div>
+            <div class="field">
+              <label for="newbalanceOrig">Origin new balance</label>
+              <input type="number" id="newbalanceOrig" name="newbalanceOrig" value="4000" min="0" step="10" />
+            </div>
+            <div class="field">
+              <label for="oldbalanceDest">Destination old balance</label>
+              <input type="number" id="oldbalanceDest" name="oldbalanceDest" value="3000" min="0" step="10" />
+            </div>
+            <div class="field">
+              <label for="newbalanceDest">Destination new balance</label>
+              <input type="number" id="newbalanceDest" name="newbalanceDest" value="3500" min="0" step="10" />
+            </div>
+            <div class="field">
+              <label for="threshold">Fraud threshold</label>
+              <input type="range" id="threshold" name="threshold" min="0" max="1" step="0.01" value="0.50" />
+              <div class="caption">Adjust sensitivity. Current: <span id="threshold-display">50%</span></div>
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  var th = document.getElementById("threshold");
+                  var td = document.getElementById("threshold-display");
+                  if (th && td) {
+                    td.textContent = Math.round(Number(th.value) * 100) + "%";
+                    th.addEventListener("input", function() {
+                      td.textContent = Math.round(Number(th.value) * 100) + "%";
+                    });
+                  }
+                });
+              </script>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary">
+            <span>Score transaction</span>
+          </button>
+        </form>
+        <div id="prediction-output" class="prediction-output">
+          <div class="prediction-label">Awaiting input</div>
+          <div class="prediction-prob">Adjust values and press “Score transaction”.</div>
+        </div>
+        <div class="caption">Risk categories: 0–5% Very Low • 5–20% Low • 20–50% Medium • ≥50% High</div>
+        <div class="caption" style="margin-top:6px">Local explanation</div>
+        <div id="local-explain" class="feat-imp"></div>
+        <div class="caption" style="margin-top:6px">SHAP waterfall</div>
+        <canvas id="shap-waterfall" width="520" height="180" style="width:100%;height:180px;border:1px solid rgba(148,163,184,0.35);border-radius:8px;background:rgba(15,23,42,0.9)"></canvas>
+      </div>
+    </section>
+
+    <section class="grid" style="margin-top:14px">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Model performance</div>
+            <div class="card-subtitle">Evaluated on held‑out test split</div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric">
+            <div class="metric-label">Accuracy</div>
+            <div class="metric-value" id="metric-acc">0.00%</div>
+            <div class="metric-kicker">Overall correctness</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Recall (Fraud)</div>
+            <div class="metric-value" id="metric-rec">0.00%</div>
+            <div class="metric-kicker">Sensitivity on fraud</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">Precision (Fraud)</div>
+            <div class="metric-value" id="metric-prec" title="Low precision due to extreme class imbalance (~0.07% fraud rate).">0.00%</div>
+            <div class="metric-kicker">Cleanliness of alerts</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">ROC‑AUC</div>
+            <div class="metric-value" id="metric-auc">0.000</div>
+            <div class="metric-kicker">Ranking quality</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">F1</div>
+            <div class="metric-value" id="metric-f1">0.000</div>
+            <div class="metric-kicker">Balance of precision/recall</div>
+          </div>
+        </div>
+        <div class="caption">Last evaluated: <span id="metric-ts">—</span></div>
+        <div class="caption">Leakage features removed before training (e.g., isFlaggedFraud is not used).</div>
+        <button id="metrics-reload" class="btn-primary">Reload metrics</button>
+        <div class="caption" style="margin-top:6px">Simulate confusion matrix at current threshold</div>
+        <button id="simulate-cm" class="btn-primary">Simulate</button>
+        <button id="suggest-th" class="btn-primary">Suggest optimal threshold</button>
+        <div class="caption">Optimal threshold: <span id="optimal-th">—</span>, Min loss: <span id="optimal-loss">—</span></div>
+        <div class="caption">Business impact: <span id="biz-reco">—</span></div>
+        <div class="caption">At threshold <span id="impact-th">—</span>: Fraud detected: <span id="impact-detected">—</span> • Fraud missed: <span id="impact-missed">—</span> • False alerts: <span id="impact-false">—</span> • Estimated loss: <span id="impact-loss">—</span></div>
+        <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
+          <label class="metric-label" for="cost-fp">Cost FP</label>
+          <input id="cost-fp" type="number" value="5" min="0" step="1" style="width:90px">
+          <label class="metric-label" for="cost-fn">Cost FN</label>
+          <input id="cost-fn" type="number" value="500" min="0" step="10" style="width:90px">
+          <button id="compute-loss" class="btn-primary">Compute loss</button>
+          <div class="metric-label">Expected loss: <span id="loss-value">0</span></div>
+        </div>
+        <div class="caption">Confusion matrix</div>
+        <div id="cmatrix" style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:6px">
+          <div class="metric"><div class="metric-label">TN</div><div class="metric-value" id="cm-tn">0</div></div>
+          <div class="metric"><div class="metric-label">FP</div><div class="metric-value" id="cm-fp">0</div></div>
+          <div class="metric"><div class="metric-label">FN</div><div class="metric-value" id="cm-fn">0</div></div>
+          <div class="metric"><div class="metric-label">TP</div><div class="metric-value" id="cm-tp">0</div></div>
+        </div>
+        <div class="caption" style="margin-top:6px">Threshold suggestions</div>
+        <div id="th-suggest" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:6px">
+          <button id="set-bestf1" class="btn-primary">Best F1</button>
+          <button id="set-prec08" class="btn-primary">Precision ≥ 0.8</button>
+          <button id="set-rec09" class="btn-primary">Recall ≥ 0.9</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Top features</div>
+            <div class="card-subtitle">Feature importance from trained model</div>
+          </div>
+        </div>
+        <div id="feat-imp" class="feat-imp"></div>
+        <div class="caption" style="margin-top:6px">Precision/Recall vs threshold</div>
+        <canvas id="pr-chart" width="520" height="160" style="width:100%;height:160px;border:1px solid rgba(148,163,184,0.35);border-radius:8px;background:rgba(15,23,42,0.9)"></canvas>
+        <div class="caption" style="margin-top:6px">Expected loss vs threshold</div>
+        <canvas id="cost-chart" width="520" height="160" style="width:100%;height:160px;border:1px solid rgba(148,163,184,0.35);border-radius:8px;background:rgba(15,23,42,0.9)"></canvas>
+        <div class="caption" style="margin-top:6px">Probability histogram (fraud vs non‑fraud)</div>
+        <canvas id="prob-hist" width="520" height="160" style="width:100%;height:160px;border:1px solid rgba(148,163,184,0.35);border-radius:8px;background:rgba(15,23,42,0.9)"></canvas>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Model comparison</div>
+            <div class="card-subtitle">Quick benchmark across algorithms</div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Model</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th><th>ROC‑AUC</th></tr></thead>
+            <tbody id="mc-body"><tr><td>Loading…</td><td></td><td></td><td></td><td></td><td></td></tr></tbody>
+          </table>
+        </div>
+        <div class="caption" id="mc-reco">Recommended production model: —</div>
+      </div>
+    </section>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

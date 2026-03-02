@@ -1,0 +1,13 @@
+# How to run this project (safe to keep as comments)
+# 1) Create venv (optional): python -m venv .venv && .venv\Scripts\activate
+# 2) Install: pip install -r requirements.txt
+# 3) Train artifacts: python -m src.train_model
+# 4) Start app: python -m app.app
+# 5) Open: http://localhost:8501/
+# 6) Optional: re-train and refresh to update metrics/curves
+flask>=3.0.0
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.2.0
+shap>=0.44.0
+scipy>=1.10.0

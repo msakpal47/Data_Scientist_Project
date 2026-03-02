@@ -1,0 +1,15 @@
+key,value
+accuracy,0.9841124550506701
+precision,0.036
+recall,0.8181818181818182
+f1,0.06896551724137931
+roc_auc,0.9906943684423402
+tn,30086
+fp,482
+fn,4
+tp,18
+count_test,30590
+evaluated_at,2026-02-26T10:47:06.016397
+non_fraud_dataset,199853
+fraud_dataset,147
+imbalance_ratio,1:1360

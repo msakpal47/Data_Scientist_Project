@@ -1,0 +1,1 @@
+{"columns": ["step", "amount", "oldbalanceOrg", "newbalanceOrig", "oldbalanceDest", "newbalanceDest", "isFlaggedFraud", "balance_diff_orig", "is_zero_balance_after", "balance_diff_dest", "high_amount_flag"]}

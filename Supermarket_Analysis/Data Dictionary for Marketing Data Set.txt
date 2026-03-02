@@ -1,0 +1,23 @@
+order_id : A unique number to identity the order
+
+user_id : A unique number to identify the user
+
+order_number : Number of the order
+
+order_dow : Day of the Week the order was made
+
+order_hour_of_day :Time of the order
+
+days_since_prior_order : History of the order
+
+product_id : Id of the product
+
+add_to_cart_order : Number of items added to cart
+
+reordered : If the reorder took place
+
+department_id : Unique number allocated to each department
+
+department : Names of the departments
+
+product_name : Name of the products

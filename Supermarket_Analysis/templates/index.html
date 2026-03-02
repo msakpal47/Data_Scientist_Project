@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Segmentation Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>📊 Supermarket Customer Clustering Dashboard</h1>
+
+    <!-- MODEL EVALUATION -->
+    <div class="table-card">
+        <h2>Model Evaluation</h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Total Customers</th>
+                    <th>Clusters</th>
+                    <th>Silhouette Score</th>
+                </tr>
+                <tr>
+                    <td>{{ total_customers }}</td>
+                    <td>{{ num_clusters }}</td>
+                    <td>{{ silhouette_score }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- CLUSTER COUNTS -->
+    <div class="table-card">
+        <h2>Cluster Distribution</h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Cluster</th>
+                    <th>Customers</th>
+                </tr>
+                {% for row in cluster_counts_rows %}
+                <tr>
+                    <td>{{ row.Cluster }}</td>
+                    <td>{{ row.Customers }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+    <!-- CLUSTER INSIGHTS -->
+    <div class="table-card">
+        <h2>Cluster Insights</h2>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Cluster</th>
+                    <th>Total Orders</th>
+                    <th>Total Products</th>
+                    <th>Avg Days</th>
+                    <th>Reorder Ratio</th>
+                    <th>Cart Size</th>
+                    <th>Preferred Hour</th>
+                </tr>
+
+                {% for row in cluster_summary %}
+                <tr>
+                    <td>{{ row.cluster }}</td>
+                    <td>{{ row.total_orders }}</td>
+                    <td>{{ row.total_products }}</td>
+                    <td>{{ row.avg_days_between_orders }}</td>
+                    <td>{{ row.reorder_ratio }}</td>
+                    <td>{{ row.avg_cart_size }}</td>
+                    <td>{{ row.preferred_hour }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

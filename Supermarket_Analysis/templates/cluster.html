@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cluster {{ cluster_id }} Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Cluster {{ cluster_id }} Customers (First 100)</h1>
+
+    <div class="card">
+        <table>
+            <tr>
+                <th>User ID</th>
+                <th>Total Orders</th>
+                <th>Total Products</th>
+                <th>Avg Days</th>
+                <th>Reorder Ratio</th>
+                <th>Cart Size</th>
+                <th>Preferred Hour</th>
+            </tr>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.user_id }}</td>
+                <td>{{ row.total_orders }}</td>
+                <td>{{ row.total_products }}</td>
+                <td>{{ row.avg_days_between_orders }}</td>
+                <td>{{ row.reorder_ratio }}</td>
+                <td>{{ row.avg_cart_size }}</td>
+                <td>{{ row.preferred_hour }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="card">
+        <a href="/">⬅ Back to Dashboard</a><br><br>
+        <a href="/download/cluster/{{ cluster_id }}.csv">⬇ Download CSV</a>
+    </div>
+
+</div>
+
+</body>
+</html>

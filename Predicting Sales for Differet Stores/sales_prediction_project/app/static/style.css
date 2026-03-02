@@ -1,0 +1,38 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;background:#0f172a;color:#e5e7eb}
+.container{max-width:1040px;margin:28px auto;padding:0 18px}
+h1{font-size:34px;margin:0 0 12px;color:#fff}
+.toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.subtitle{color:#9ca3af}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:#111827;border:1px solid #1f2937;border-radius:12px;padding:20px;margin-bottom:18px;box-shadow:0 6px 16px rgba(0,0,0,0.25);transition:box-shadow .2s ease,transform .2s ease}
+.card:hover{box-shadow:0 10px 22px rgba(0,0,0,0.35);transform:translateY(-1px)}
+h2{font-size:20px;margin:0 0 12px;color:#fff}
+.field{margin-bottom:10px;display:flex;flex-direction:column}
+label{font-weight:600;margin-bottom:6px}
+input,select{padding:10px;border-radius:8px;border:1px solid #374151;background:#0b1220;color:#e5e7eb}
+.field select{appearance:auto}
+.field select option{background:#0b1220;color:#e5e7eb}
+.hint{font-size:12px;color:#9ca3af;margin-top:4px}
+.actions{display:flex;gap:10px;margin-top:10px}
+button{padding:10px 14px;border-radius:8px;border:none;background:#4f46e5;color:#fff;cursor:pointer}
+.primary{background:#2563eb}
+.secondary{background:#4f46e5;opacity:.95}
+button[disabled]{opacity:.5;cursor:not-allowed}
+.error{margin-top:10px;color:#ef4444}
+.result-box{background:#0b1220;border:1px solid #1e293b;padding:20px;border-radius:12px;text-align:center}
+.result-box h2{font-size:36px;color:#22c55e;margin:0}
+.result-subtext{color:#9ca3af;margin-top:6px}
+.badge{display:inline-block;padding:4px 8px;border-radius:999px;font-size:12px}
+.badge-success{background:#064e3b;color:#a7f3d0}
+.badge-danger{background:#7c2d12;color:#fed7aa}
+.warning-box{background:#1e293b;border-left:4px solid #f59e0b;padding:12px;border-radius:6px;margin:10px 0;display:flex;align-items:center;justify-content:space-between}
+.metrics{display:flex;gap:16px}
+.metric{background:#0b1220;border:1px solid #1f2937;border-radius:8px;padding:10px;flex:1}
+.metric .label{color:#9ca3af;font-size:12px}
+.metric .value{font-size:18px;font-weight:600}
+.chart-wrap{width:100%;height:300px}
+.table{width:100%;border-collapse:collapse;margin-top:10px}
+.table th,.table td{padding:8px;border-bottom:1px solid #1f2937;text-align:left}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.footer{max-width:1040px;margin:0 auto 28px auto;padding:8px 18px;color:#9ca3af;text-align:center}

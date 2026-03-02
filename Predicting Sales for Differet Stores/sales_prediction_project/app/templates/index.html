@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Store Sales Prediction Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="container">
+<h1>Store Sales Prediction Dashboard</h1>
+<div class="toolbar">
+<div class="subtitle">Machine Learning Powered Forecasting</div>
+<button id="train-header-btn">Train Model</button>
+</div>
+<div class="grid">
+<section class="card">
+<h2>Prediction Form</h2>
+<form id="predict-form">
+<div class="field">
+<label>Store</label>
+<select name="store" id="store-select" required>
+<option value="">Select Store</option>
+{% for s in stores %}
+<option value="{{ s }}">{{ s }}</option>
+{% endfor %}
+</select>
+<span class="hint">Choose from dataset</span>
+</div>
+<div class="field">
+<label>Day Of Week</label>
+<select name="day_of_week" required>
+<option value="0">Monday</option>
+<option value="1">Tuesday</option>
+<option value="2">Wednesday</option>
+<option value="3">Thursday</option>
+<option value="4">Friday</option>
+<option value="5">Saturday</option>
+<option value="6">Sunday</option>
+</select>
+</div>
+<div class="field">
+<label>Date</label>
+<select name="date" id="date-select" required>
+<option value="">Select Date</option>
+{% for d in dates %}
+<option value="{{ d }}">{{ d }}</option>
+{% endfor %}
+</select>
+</div>
+<div class="field">
+<label>Customers</label>
+<select name="customers" id="customers-select" required>
+<option value="">Select Customers</option>
+{% for c in customers %}
+<option value="{{ c }}">{{ c }}</option>
+{% endfor %}
+</select>
+</div>
+<div class="field">
+<label>Promo</label>
+<select name="promo" required>
+<option value="0">No</option>
+<option value="1">Yes</option>
+</select>
+</div>
+<div class="field">
+<label>Holiday</label>
+<select name="holiday" required>
+<option value="0">No Holiday</option>
+<option value="a">Public Holiday (a)</option>
+<option value="b">Public Holiday (b)</option>
+<option value="c">Public Holiday (c)</option>
+</select>
+</div>
+<div class="actions">
+<button type="submit" id="predict-btn">Predict</button>
+<button type="button" id="download-btn">Download Report</button>
+</div>
+<div id="form-error" class="error"></div>
+</form>
+</section>
+<section class="card">
+<h2>Prediction Result</h2>
+<div class="status">
+<span class="badge {% if model_ready %}badge-success{% else %}badge-danger{% endif %}">{% if model_ready %}Model Ready{% else %}Model Not Trained{% endif %}</span>
+</div>
+{% if not model_ready %}
+<div class="warning-box">
+<div>⚠️ Model not trained yet.</div>
+<button id="train-btn">Train Model</button>
+</div>
+{% endif %}
+<div class="result-box">
+<h2>₹ <span id="prediction-value">0.00</span></h2>
+<p class="result-subtext">Estimated Daily Sales</p>
+<div class="confidence" id="prediction-confidence"></div>
+</div>
+</section>
+</div>
+<section class="card">
+<h2>Model Evaluation</h2>
+<div class="metrics">
+<div class="metric"><div class="label">R2</div><div class="value">{{ metrics.get('r2', 'N/A') }}</div></div>
+<div class="metric"><div class="label">MAE</div><div class="value">{{ metrics.get('mae', 'N/A') }}</div></div>
+<div class="metric"><div class="label">RMSE</div><div class="value">{{ metrics.get('rmse', 'N/A') }}</div></div>
+</div>
+</section>
+<section class="card">
+<h2>Feature Importance</h2>
+<div class="chart-wrap">
+<canvas id="fi-chart"></canvas>
+</div>
+<div id="fi-empty" class="hint"></div>
+<table class="table">
+<thead>
+<tr><th>Feature</th><th>Importance</th></tr>
+</thead>
+<tbody id="fi-table-body"></tbody>
+</table>
+</section>
+</div>
+<footer class="footer">
+<div>Built with: Flask • Scikit-Learn • SQLite • Chart.js</div>
+</footer>
+<script>
+window.__FEATURE_IMPORTANCE__ = {{ (feature_importance or [])|tojson }};
+window.__OPTIONS__ = {
+  "stores": {{ (stores or [])|tojson }},
+  "dates": {{ (dates or [])|tojson }},
+  "day_of_week": {{ (dows or [])|tojson }},
+  "customers": {{ (customers or [])|tojson }}
+};
+</script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

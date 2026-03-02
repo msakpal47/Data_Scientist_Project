@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Model Metrics & Feature Importance</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Model Metrics & Feature Importance</h1>
+    <div class="metrics-section">
+      <h2>Summary</h2>
+      <div id="summary"></div>
+      <p class="note">Metrics are computed for validation and production slices. ROC uses predicted probabilities; Calibration shows reliability across bins. Class balance summarizes positive/negative distribution. Top features reflect coefficient magnitudes from the classifier.</p>
+    </div>
+    <div class="metrics-section">
+      <h2>Validation Metrics</h2>
+      <div id="valMetrics"></div>
+      <h3>Validation Confusion Matrix</h3>
+      <div id="valCM"></div>
+      <h3>Validation Class Balance</h3>
+      <div id="valBalance"></div>
+      <h3>Validation ROC Curve</h3>
+      <div id="valROC" class="chart"></div>
+      <h3>Validation Calibration Curve</h3>
+      <div id="valCAL" class="chart"></div>
+    </div>
+    <div class="metrics-section">
+      <h2>Production Metrics</h2>
+      <div id="prodMetrics"></div>
+      <h3>Production Confusion Matrix</h3>
+      <div id="prodCM"></div>
+      <h3>Production Class Balance</h3>
+      <div id="prodBalance"></div>
+      <h3>Production ROC Curve</h3>
+      <div id="prodROC" class="chart"></div>
+      <h3>Production Calibration Curve</h3>
+      <div id="prodCAL" class="chart"></div>
+    </div>
+    <div class="metrics-section">
+      <h2>Top Features</h2>
+      <div class="two-col">
+        <div>
+          <h3>Top Positive</h3>
+          <ul id="topPos"></ul>
+        </div>
+        <div>
+          <h3>Top Negative</h3>
+          <ul id="topNeg"></ul>
+        </div>
+      </div>
+    </div>
+    <div class="metrics-section">
+      <h2>Sentiment Distribution per Condition</h2>
+      <div id="condDist"></div>
+    </div>
+    <div class="metrics-link">
+      <a href="/">Back to Home</a>
+    </div>
+  </div>
+  <script src="/static/metrics.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drug Reviews Sentiment</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sentiment Analysis and Recommendation</h1>
+    <p>Enter a drug review below to predict its sentiment using the trained model.</p>
+    <textarea id="review" placeholder="Type/paste review text..." rows="8"></textarea>
+    <div class="actions">
+      <button id="predictBtn">Predict Sentiment</button>
+    </div>
+    <div id="result" class="result"></div>
+    <hr>
+    <h2>Recommend Drugs by Condition</h2>
+    <div class="rec-form">
+      <select id="condition">
+        <option value="">Loading conditions...</option>
+      </select>
+      <input id="topk" type="number" min="1" value="3" />
+      <input id="minreviews" type="number" min="1" value="5" />
+      <button id="recBtn">Recommend</button>
+    </div>
+    <div id="recResult" class="result"></div>
+    <div class="metrics-link">
+      <a href="/metrics">View Metrics & Feature Importance</a>
+    </div>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>

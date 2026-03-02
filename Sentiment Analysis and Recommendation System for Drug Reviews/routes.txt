@@ -1,0 +1,10 @@
+/ GET|HEAD|OPTIONS
+/__routes GET|HEAD|OPTIONS
+/conditions GET|HEAD|OPTIONS
+/metrics GET|HEAD|OPTIONS
+/metrics_data GET|HEAD|OPTIONS
+/predict OPTIONS|POST
+/predict_sentiment OPTIONS|POST
+/recommend_drug GET|HEAD|OPTIONS|POST
+/static/<path:filename> GET|HEAD|OPTIONS
+/static/<path:filename> GET|HEAD|OPTIONS

@@ -1,0 +1,3249 @@
+{
+  "count": 811,
+  "results": [
+    {
+      "condition": "Birth Control",
+      "count": 28788
+    },
+    {
+      "condition": "Depression",
+      "count": 9069
+    },
+    {
+      "condition": "Pain",
+      "count": 6145
+    },
+    {
+      "condition": "Anxiety",
+      "count": 5904
+    },
+    {
+      "condition": "Acne",
+      "count": 5588
+    },
+    {
+      "condition": "Bipolar Disorde",
+      "count": 4224
+    },
+    {
+      "condition": "Insomnia",
+      "count": 3673
+    },
+    {
+      "condition": "Weight Loss",
+      "count": 3609
+    },
+    {
+      "condition": "Obesity",
+      "count": 3568
+    },
+    {
+      "condition": "ADHD",
+      "count": 3383
+    },
+    {
+      "condition": "Diabetes, Type 2",
+      "count": 2554
+    },
+    {
+      "condition": "Emergency Contraception",
+      "count": 2463
+    },
+    {
+      "condition": "High Blood Pressure",
+      "count": 2321
+    },
+    {
+      "condition": "Vaginal Yeast Infection",
+      "count": 2274
+    },
+    {
+      "condition": "Abnormal Uterine Bleeding",
+      "count": 2096
+    },
+    {
+      "condition": "Bowel Preparation",
+      "count": 1859
+    },
+    {
+      "condition": "ibromyalgia",
+      "count": 1791
+    },
+    {
+      "condition": "Smoking Cessation",
+      "count": 1780
+    },
+    {
+      "condition": "Migraine",
+      "count": 1694
+    },
+    {
+      "condition": "Anxiety and Stress",
+      "count": 1663
+    },
+    {
+      "condition": "Major Depressive Disorde",
+      "count": 1607
+    },
+    {
+      "condition": "Constipation",
+      "count": 1595
+    },
+    {
+      "condition": "Panic Disorde",
+      "count": 1463
+    },
+    {
+      "condition": "Chronic Pain",
+      "count": 1455
+    },
+    {
+      "condition": "Migraine Prevention",
+      "count": 1413
+    },
+    {
+      "condition": "Urinary Tract Infection",
+      "count": 1316
+    },
+    {
+      "condition": "Muscle Spasm",
+      "count": 1244
+    },
+    {
+      "condition": "Osteoarthritis",
+      "count": 1239
+    },
+    {
+      "condition": "Generalized Anxiety Disorde",
+      "count": 1164
+    },
+    {
+      "condition": "Erectile Dysfunction",
+      "count": 1086
+    },
+    {
+      "condition": "Opiate Dependence",
+      "count": 1079
+    },
+    {
+      "condition": "Irritable Bowel Syndrome",
+      "count": 1014
+    },
+    {
+      "condition": "Rheumatoid Arthritis",
+      "count": 995
+    },
+    {
+      "condition": "Allergic Rhinitis",
+      "count": 973
+    },
+    {
+      "condition": "Bacterial Infection",
+      "count": 945
+    },
+    {
+      "condition": "Cough",
+      "count": 927
+    },
+    {
+      "condition": "Sinusitis",
+      "count": 835
+    },
+    {
+      "condition": "Nausea/Vomiting",
+      "count": 747
+    },
+    {
+      "condition": "GERD",
+      "count": 722
+    },
+    {
+      "condition": "Multiple Sclerosis",
+      "count": 698
+    },
+    {
+      "condition": "Overactive Bladde",
+      "count": 683
+    },
+    {
+      "condition": "Hyperhidrosis",
+      "count": 677
+    },
+    {
+      "condition": "Hepatitis C",
+      "count": 656
+    },
+    {
+      "condition": "Back Pain",
+      "count": 616
+    },
+    {
+      "condition": "HIV Infection",
+      "count": 615
+    },
+    {
+      "condition": "High Cholesterol",
+      "count": 611
+    },
+    {
+      "condition": "Psoriasis",
+      "count": 598
+    },
+    {
+      "condition": "Schizophrenia",
+      "count": 594
+    },
+    {
+      "condition": "Constipation, Chronic",
+      "count": 591
+    },
+    {
+      "condition": "Obsessive Compulsive Disorde",
+      "count": 579
+    },
+    {
+      "condition": "Restless Legs Syndrome",
+      "count": 565
+    },
+    {
+      "condition": "Benign Prostatic Hyperplasia",
+      "count": 561
+    },
+    {
+      "condition": "Endometriosis",
+      "count": 558
+    },
+    {
+      "condition": "Bronchitis",
+      "count": 550
+    },
+    {
+      "condition": "Bacterial Vaginitis",
+      "count": 524
+    },
+    {
+      "condition": "Rosacea",
+      "count": 519
+    },
+    {
+      "condition": "Seizures",
+      "count": 508
+    },
+    {
+      "condition": "Narcolepsy",
+      "count": 506
+    },
+    {
+      "condition": "Hypogonadism, Male",
+      "count": 502
+    },
+    {
+      "condition": "Asthma, Maintenance",
+      "count": 501
+    },
+    {
+      "condition": "Headache",
+      "count": 473
+    },
+    {
+      "condition": "Underactive Thyroid",
+      "count": 449
+    },
+    {
+      "condition": "Not Listed / Othe",
+      "count": 439
+    },
+    {
+      "condition": "Onychomycosis, Toenail",
+      "count": 396
+    },
+    {
+      "condition": "Schizoaffective Disorde",
+      "count": 396
+    },
+    {
+      "condition": "Bladder Infection",
+      "count": 395
+    },
+    {
+      "condition": "Social Anxiety Disorde",
+      "count": 389
+    },
+    {
+      "condition": "Alcohol Dependence",
+      "count": 388
+    },
+    {
+      "condition": "Herpes Simplex",
+      "count": 386
+    },
+    {
+      "condition": "Osteoporosis",
+      "count": 372
+    },
+    {
+      "condition": "Cold Sores",
+      "count": 367
+    },
+    {
+      "condition": "Epilepsy",
+      "count": 358
+    },
+    {
+      "condition": "Cough and Nasal Congestion",
+      "count": 356
+    },
+    {
+      "condition": "Influenza",
+      "count": 350
+    },
+    {
+      "condition": "Menstrual Disorders",
+      "count": 350
+    },
+    {
+      "condition": "Plaque Psoriasis",
+      "count": 332
+    },
+    {
+      "condition": "Opiate Withdrawal",
+      "count": 327
+    },
+    {
+      "condition": "Psoriatic Arthritis",
+      "count": 324
+    },
+    {
+      "condition": "Post Traumatic Stress Disorde",
+      "count": 314
+    },
+    {
+      "condition": "Postmenopausal Symptoms",
+      "count": 313
+    },
+    {
+      "condition": "Polycystic Ovary Syndrome",
+      "count": 309
+    },
+    {
+      "condition": "Inflammatory Conditions",
+      "count": 303
+    },
+    {
+      "condition": "Premenstrual Dysphoric Disorde",
+      "count": 298
+    },
+    {
+      "condition": "Nasal Congestion",
+      "count": 290
+    },
+    {
+      "condition": "Pneumonia",
+      "count": 276
+    },
+    {
+      "condition": "Chlamydia Infection",
+      "count": 273
+    },
+    {
+      "condition": "Atrial Fibrillation",
+      "count": 272
+    },
+    {
+      "condition": "Breast Cance",
+      "count": 272
+    },
+    {
+      "condition": "Urticaria",
+      "count": 264
+    },
+    {
+      "condition": "Helicobacter Pylori Infection",
+      "count": 260
+    },
+    {
+      "condition": "Hot Flashes",
+      "count": 255
+    },
+    {
+      "condition": "Neuropathic Pain",
+      "count": 253
+    },
+    {
+      "condition": "Anesthesia",
+      "count": 252
+    },
+    {
+      "condition": "COPD, Maintenance",
+      "count": 250
+    },
+    {
+      "condition": "Ulcerative Colitis",
+      "count": 238
+    },
+    {
+      "condition": "Constipation, Drug Induced",
+      "count": 228
+    },
+    {
+      "condition": "Asthma",
+      "count": 225
+    },
+    {
+      "condition": "Skin or Soft Tissue Infection",
+      "count": 225
+    },
+    {
+      "condition": "Alcohol Withdrawal",
+      "count": 217
+    },
+    {
+      "condition": "Ankylosing Spondylitis",
+      "count": 209
+    },
+    {
+      "condition": "Motion Sickness",
+      "count": 203
+    },
+    {
+      "condition": "Gout, Acute",
+      "count": 196
+    },
+    {
+      "condition": "Crohn's Disease, Maintenance",
+      "count": 192
+    },
+    {
+      "condition": "mance Anxiety",
+      "count": 187
+    },
+    {
+      "condition": "Seizure Prevention",
+      "count": 183
+    },
+    {
+      "condition": "Atrophic Vaginitis",
+      "count": 182
+    },
+    {
+      "condition": "Allergies",
+      "count": 179
+    },
+    {
+      "condition": "Interstitial Cystitis",
+      "count": 178
+    },
+    {
+      "condition": "Peripheral Neuropathy",
+      "count": 176
+    },
+    {
+      "condition": "Diabetic Peripheral Neuropathy",
+      "count": 175
+    },
+    {
+      "condition": "Hashimoto's disease",
+      "count": 173
+    },
+    {
+      "condition": "Upper Respiratory Tract Infection",
+      "count": 171
+    },
+    {
+      "condition": "Crohn's Disease",
+      "count": 168
+    },
+    {
+      "condition": "Urinary Incontinence",
+      "count": 168
+    },
+    {
+      "condition": "Cluster Headaches",
+      "count": 166
+    },
+    {
+      "condition": "Eczema",
+      "count": 166
+    },
+    {
+      "condition": "Herpes Simplex, Suppression",
+      "count": 166
+    },
+    {
+      "condition": "Sedation",
+      "count": 165
+    },
+    {
+      "condition": "Atopic Dermatitis",
+      "count": 162
+    },
+    {
+      "condition": "Trigeminal Neuralgia",
+      "count": 162
+    },
+    {
+      "condition": "Prevention of Thromboembolism in Atrial Fibrillation",
+      "count": 160
+    },
+    {
+      "condition": "COPD",
+      "count": 159
+    },
+    {
+      "condition": "Otitis Media",
+      "count": 152
+    },
+    {
+      "condition": "Ovarian Cysts",
+      "count": 152
+    },
+    {
+      "condition": "Borderline Personality Disorde",
+      "count": 151
+    },
+    {
+      "condition": "Hypothyroidism, After Thyroid Removal",
+      "count": 151
+    },
+    {
+      "condition": "Dry Eye Disease",
+      "count": 147
+    },
+    {
+      "condition": "Bacterial Skin Infection",
+      "count": 146
+    },
+    {
+      "condition": "Diverticulitis",
+      "count": 142
+    },
+    {
+      "condition": "Diabetes, Type 1",
+      "count": 140
+    },
+    {
+      "condition": "Period Pain",
+      "count": 139
+    },
+    {
+      "condition": "Asthma, acute",
+      "count": 135
+    },
+    {
+      "condition": "Ulcerative Colitis, Active",
+      "count": 132
+    },
+    {
+      "condition": "Sciatica",
+      "count": 124
+    },
+    {
+      "condition": "Nausea/Vomiting of Pregnancy",
+      "count": 123
+    },
+    {
+      "condition": "Prostate Cance",
+      "count": 123
+    },
+    {
+      "condition": "Parkinson's Disease",
+      "count": 120
+    },
+    {
+      "condition": "Kidney Infections",
+      "count": 117
+    },
+    {
+      "condition": "Cold Symptoms",
+      "count": 116
+    },
+    {
+      "condition": "Diarrhea",
+      "count": 110
+    },
+    {
+      "condition": "Strep Throat",
+      "count": 109
+    },
+    {
+      "condition": "Keratosis",
+      "count": 106
+    },
+    {
+      "condition": "Tonsillitis/Pharyngitis",
+      "count": 106
+    },
+    {
+      "condition": "Gout",
+      "count": 105
+    },
+    {
+      "condition": "Breast Cancer, Metastatic",
+      "count": 102
+    },
+    {
+      "condition": "Dietary Supplementation",
+      "count": 102
+    },
+    {
+      "condition": "Human Papilloma Virus",
+      "count": 102
+    },
+    {
+      "condition": "Urinary Tract Stones",
+      "count": 101
+    },
+    {
+      "condition": "Vertig",
+      "count": 101
+    },
+    {
+      "condition": "Arrhythmia",
+      "count": 97
+    },
+    {
+      "condition": "Renal Cell Carcinoma",
+      "count": 95
+    },
+    {
+      "condition": "Systemic Lupus Erythematosus",
+      "count": 95
+    },
+    {
+      "condition": "Neuralgia",
+      "count": 94
+    },
+    {
+      "condition": "Non-Small Cell Lung Cance",
+      "count": 94
+    },
+    {
+      "condition": "Angina",
+      "count": 93
+    },
+    {
+      "condition": "Dermatitis",
+      "count": 93
+    },
+    {
+      "condition": "Edema",
+      "count": 93
+    },
+    {
+      "condition": "Amenorrhea",
+      "count": 92
+    },
+    {
+      "condition": "Prostatitis",
+      "count": 91
+    },
+    {
+      "condition": "Autism",
+      "count": 90
+    },
+    {
+      "condition": "Dental Abscess",
+      "count": 90
+    },
+    {
+      "condition": "Alopecia",
+      "count": 89
+    },
+    {
+      "condition": "Benign Essential Trem",
+      "count": 89
+    },
+    {
+      "condition": "Chronic Myelogenous Leukemia",
+      "count": 89
+    },
+    {
+      "condition": "Chronic Fatigue Syndrome",
+      "count": 88
+    },
+    {
+      "condition": "Heart Failure",
+      "count": 88
+    },
+    {
+      "condition": "Hemorrhoids",
+      "count": 88
+    },
+    {
+      "condition": "Muscle Pain",
+      "count": 88
+    },
+    {
+      "condition": "Deep Vein Thrombosis",
+      "count": 86
+    },
+    {
+      "condition": "Sinus Symptoms",
+      "count": 86
+    },
+    {
+      "condition": "Supraventricular Tachycardia",
+      "count": 86
+    },
+    {
+      "condition": "Allergic Reactions",
+      "count": 85
+    },
+    {
+      "condition": "Alzheimer's Disease",
+      "count": 85
+    },
+    {
+      "condition": "Postpartum Depression",
+      "count": 84
+    },
+    {
+      "condition": "Rhinitis",
+      "count": 84
+    },
+    {
+      "condition": "Anorexia",
+      "count": 80
+    },
+    {
+      "condition": "Menorrhagia",
+      "count": 80
+    },
+    {
+      "condition": "Obstructive Sleep Apnea/Hypopnea Syndrome",
+      "count": 80
+    },
+    {
+      "condition": "Nausea/Vomiting, Chemotherapy Induced",
+      "count": 79
+    },
+    {
+      "condition": "moterol)",
+      "count": 79
+    },
+    {
+      "condition": "Dry Skin",
+      "count": 78
+    },
+    {
+      "condition": "Premature Lab",
+      "count": 76
+    },
+    {
+      "condition": "Barrett's Esophagus",
+      "count": 74
+    },
+    {
+      "condition": "Hirsutism",
+      "count": 74
+    },
+    {
+      "condition": "Vitamin/Mineral Supplementation during Pregnancy/Lactation",
+      "count": 74
+    },
+    {
+      "condition": "Conjunctivitis, Allergic",
+      "count": 73
+    },
+    {
+      "condition": "Dysuria",
+      "count": 73
+    },
+    {
+      "condition": "Hypertriglyceridemia",
+      "count": 73
+    },
+    {
+      "condition": "Psychosis",
+      "count": 73
+    },
+    {
+      "condition": "Binge Eating Disorde",
+      "count": 72
+    },
+    {
+      "condition": "Melasma",
+      "count": 72
+    },
+    {
+      "condition": "Stomach Ulce",
+      "count": 72
+    },
+    {
+      "condition": "Postherpetic Neuralgia",
+      "count": 71
+    },
+    {
+      "condition": "Erosive Esophagitis",
+      "count": 70
+    },
+    {
+      "condition": "Hypersomnia",
+      "count": 70
+    },
+    {
+      "condition": "Trichomoniasis",
+      "count": 70
+    },
+    {
+      "condition": "Sexual Dysfunction, SSRI Induced",
+      "count": 69
+    },
+    {
+      "condition": "Prevention of Bladder infection",
+      "count": 68
+    },
+    {
+      "condition": "Pulmonary Embolism",
+      "count": 68
+    },
+    {
+      "condition": "Seasonal Allergic Conjunctivitis",
+      "count": 68
+    },
+    {
+      "condition": "Tourette's Syndrome",
+      "count": 68
+    },
+    {
+      "condition": "Head Lice",
+      "count": 67
+    },
+    {
+      "condition": "emale Infertility",
+      "count": 65
+    },
+    {
+      "condition": "Pulmonary Hypertension",
+      "count": 64
+    },
+    {
+      "condition": "Conjunctivitis, Bacterial",
+      "count": 62
+    },
+    {
+      "condition": "High Cholesterol, Familial Heterozygous",
+      "count": 62
+    },
+    {
+      "condition": "Pseudotumor Cerebri",
+      "count": 62
+    },
+    {
+      "condition": "Chronic Idiopathic Constipation",
+      "count": 60
+    },
+    {
+      "condition": "Light Sedation",
+      "count": 60
+    },
+    {
+      "condition": "Shift Work Sleep Disorde",
+      "count": 60
+    },
+    {
+      "condition": "Eye Redness",
+      "count": 59
+    },
+    {
+      "condition": "Bulimia",
+      "count": 58
+    },
+    {
+      "condition": "Glaucoma, Open Angle",
+      "count": 57
+    },
+    {
+      "condition": "Cervical Dystonia",
+      "count": 56
+    },
+    {
+      "condition": "Heart Attack",
+      "count": 55
+    },
+    {
+      "condition": "Reflex Sympathetic Dystrophy Syndrome",
+      "count": 55
+    },
+    {
+      "condition": "Acute Coronary Syndrome",
+      "count": 54
+    },
+    {
+      "condition": "Basal Cell Carcinoma",
+      "count": 54
+    },
+    {
+      "condition": "Hyperprolactinemia",
+      "count": 54
+    },
+    {
+      "condition": "Keratoconjunctivitis Sicca",
+      "count": 54
+    },
+    {
+      "condition": "Mania",
+      "count": 53
+    },
+    {
+      "condition": "Organ Transplant, Rejection Prophylaxis",
+      "count": 53
+    },
+    {
+      "condition": "Skin and Structure Infection",
+      "count": 53
+    },
+    {
+      "condition": "atigue",
+      "count": 53
+    },
+    {
+      "condition": "Perimenopausal Symptoms",
+      "count": 50
+    },
+    {
+      "condition": "Raynaud's Syndrome",
+      "count": 50
+    },
+    {
+      "condition": "Sjogren's Syndrome",
+      "count": 50
+    },
+    {
+      "condition": "Uterine Fibroids",
+      "count": 49
+    },
+    {
+      "condition": "Androgenetic Alopecia",
+      "count": 48
+    },
+    {
+      "condition": "Indigestion",
+      "count": 48
+    },
+    {
+      "condition": "Burns, External",
+      "count": 47
+    },
+    {
+      "condition": "Crohn's Disease, Acute",
+      "count": 47
+    },
+    {
+      "condition": "Diarrhea, Chronic",
+      "count": 47
+    },
+    {
+      "condition": "Malaria Prevention",
+      "count": 45
+    },
+    {
+      "condition": "Ulcerative Colitis, Maintenance",
+      "count": 45
+    },
+    {
+      "condition": "min)",
+      "count": 45
+    },
+    {
+      "condition": "Opioid-Induced Constipation",
+      "count": 44
+    },
+    {
+      "condition": "Pruritus",
+      "count": 44
+    },
+    {
+      "condition": "Neutropenia Associated with Chemotherapy",
+      "count": 43
+    },
+    {
+      "condition": "Periodic Limb Movement Disorde",
+      "count": 43
+    },
+    {
+      "condition": "Tendonitis",
+      "count": 43
+    },
+    {
+      "condition": "Myasthenia Gravis",
+      "count": 40
+    },
+    {
+      "condition": "Agitated State",
+      "count": 38
+    },
+    {
+      "condition": "Dermatological Disorders",
+      "count": 38
+    },
+    {
+      "condition": "Gastroenteritis",
+      "count": 38
+    },
+    {
+      "condition": "Paranoid Disorde",
+      "count": 38
+    },
+    {
+      "condition": "Postoperative Pain",
+      "count": 38
+    },
+    {
+      "condition": "Clostridial Infection",
+      "count": 37
+    },
+    {
+      "condition": "Colorectal Cance",
+      "count": 37
+    },
+    {
+      "condition": "Gastroparesis",
+      "count": 37
+    },
+    {
+      "condition": "Constipation, Acute",
+      "count": 35
+    },
+    {
+      "condition": "Lyme Disease",
+      "count": 35
+    },
+    {
+      "condition": "Primary Immunodeficiency Syndrome",
+      "count": 35
+    },
+    {
+      "condition": "Vulvodynia",
+      "count": 35
+    },
+    {
+      "condition": "Eye Redness/Itching",
+      "count": 34
+    },
+    {
+      "condition": "Glaucoma",
+      "count": 34
+    },
+    {
+      "condition": "Gouty Arthritis",
+      "count": 34
+    },
+    {
+      "condition": "Iron Deficiency Anemia",
+      "count": 34
+    },
+    {
+      "condition": "Oophorectomy",
+      "count": 34
+    },
+    {
+      "condition": "Tinnitus",
+      "count": 34
+    },
+    {
+      "condition": "Breakthrough Pain",
+      "count": 33
+    },
+    {
+      "condition": "Human Papillomavirus Prophylaxis",
+      "count": 33
+    },
+    {
+      "condition": "ge (amlodipine / valsartan)",
+      "count": 33
+    },
+    {
+      "condition": "acial Wrinkles",
+      "count": 32
+    },
+    {
+      "condition": "Condylomata Acuminata",
+      "count": 31
+    },
+    {
+      "condition": "COPD, Acute",
+      "count": 30
+    },
+    {
+      "condition": "Influenza Prophylaxis",
+      "count": 30
+    },
+    {
+      "condition": "Oral Thrush",
+      "count": 30
+    },
+    {
+      "condition": "Seborrheic Dermatitis",
+      "count": 30
+    },
+    {
+      "condition": "Temporomandibular Joint Disorde",
+      "count": 30
+    },
+    {
+      "condition": "Ventricular Tachycardia",
+      "count": 30
+    },
+    {
+      "condition": "Actinic Keratosis",
+      "count": 29
+    },
+    {
+      "condition": "Duodenal Ulce",
+      "count": 29
+    },
+    {
+      "condition": "Mitral Valve Prolapse",
+      "count": 29
+    },
+    {
+      "condition": "moterol / mometasone)",
+      "count": 29
+    },
+    {
+      "condition": "Cyclic Vomiting Syndrome",
+      "count": 28
+    },
+    {
+      "condition": "Dysautonomia",
+      "count": 28
+    },
+    {
+      "condition": "Herbal Supplementation",
+      "count": 28
+    },
+    {
+      "condition": "Light Anesthesia",
+      "count": 28
+    },
+    {
+      "condition": "Hiccups",
+      "count": 27
+    },
+    {
+      "condition": "Insomnia, Stimulant-Associated",
+      "count": 27
+    },
+    {
+      "condition": "Photoaging of the Skin",
+      "count": 27
+    },
+    {
+      "condition": "Chronic Lymphocytic Leukemia",
+      "count": 26
+    },
+    {
+      "condition": "Juvenile Rheumatoid Arthritis",
+      "count": 26
+    },
+    {
+      "condition": "Night Terrors",
+      "count": 26
+    },
+    {
+      "condition": "Otitis Externa",
+      "count": 26
+    },
+    {
+      "condition": "Postural Orthostatic Tachycardia Syndrome",
+      "count": 26
+    },
+    {
+      "condition": "min / sitagliptin)",
+      "count": 26
+    },
+    {
+      "condition": "Extrapyramidal Reaction",
+      "count": 25
+    },
+    {
+      "condition": "Herpes Zoste",
+      "count": 25
+    },
+    {
+      "condition": "Nocturnal Leg Cramps",
+      "count": 25
+    },
+    {
+      "condition": "Precocious Puberty",
+      "count": 25
+    },
+    {
+      "condition": "Tinea Corporis",
+      "count": 25
+    },
+    {
+      "condition": "Inflammatory Bowel Disease",
+      "count": 24
+    },
+    {
+      "condition": "Labor Pain",
+      "count": 24
+    },
+    {
+      "condition": "Pharyngitis",
+      "count": 24
+    },
+    {
+      "condition": "Pneumococcal Disease Prophylaxis",
+      "count": 24
+    },
+    {
+      "condition": "Postoperative Ocular Inflammation",
+      "count": 24
+    },
+    {
+      "condition": "Atrophic Urethritis",
+      "count": 23
+    },
+    {
+      "condition": "Vitamin/Mineral Supplementation and Deficiency",
+      "count": 23
+    },
+    {
+      "condition": "Allergic Urticaria",
+      "count": 22
+    },
+    {
+      "condition": "Bone infection",
+      "count": 22
+    },
+    {
+      "condition": "Chronic Spasticity",
+      "count": 22
+    },
+    {
+      "condition": "Ischemic Stroke, Prophylaxis",
+      "count": 22
+    },
+    {
+      "condition": "Skin Cance",
+      "count": 22
+    },
+    {
+      "condition": "Tinea Versicol",
+      "count": 22
+    },
+    {
+      "condition": "Atrial Flutte",
+      "count": 21
+    },
+    {
+      "condition": "Hyperphosphatemia of Renal Failure",
+      "count": 21
+    },
+    {
+      "condition": "Hypoestrogenism",
+      "count": 21
+    },
+    {
+      "condition": "Insulin Resistance Syndrome",
+      "count": 21
+    },
+    {
+      "condition": "Melanoma, Metastatic",
+      "count": 21
+    },
+    {
+      "condition": "Swine Flu",
+      "count": 21
+    },
+    {
+      "condition": "Tinea Pedis",
+      "count": 21
+    },
+    {
+      "condition": "Angina Pectoris Prophylaxis",
+      "count": 20
+    },
+    {
+      "condition": "Lennox-Gastaut Syndrome",
+      "count": 20
+    },
+    {
+      "condition": "Meniere's Disease",
+      "count": 20
+    },
+    {
+      "condition": "Non-Hodgkin's Lymphoma",
+      "count": 20
+    },
+    {
+      "condition": "Prevention of Osteoporosis",
+      "count": 20
+    },
+    {
+      "condition": "Breast Cancer, Adjuvant",
+      "count": 19
+    },
+    {
+      "condition": "Burning Mouth Syndrome",
+      "count": 19
+    },
+    {
+      "condition": "Diabetic Kidney Disease",
+      "count": 19
+    },
+    {
+      "condition": "Gas",
+      "count": 19
+    },
+    {
+      "condition": "Left Ventricular Dysfunction",
+      "count": 19
+    },
+    {
+      "condition": "Malaria",
+      "count": 19
+    },
+    {
+      "condition": "Methicillin-Resistant Staphylococcus Aureus Infection",
+      "count": 19
+    },
+    {
+      "condition": "Vitamin D Deficiency",
+      "count": 19
+    },
+    {
+      "condition": "Xerostomia",
+      "count": 19
+    },
+    {
+      "condition": "Anemia",
+      "count": 18
+    },
+    {
+      "condition": "Diaper Rash",
+      "count": 18
+    },
+    {
+      "condition": "Lactose Intolerance",
+      "count": 18
+    },
+    {
+      "condition": "Nausea/Vomiting, Postoperative",
+      "count": 18
+    },
+    {
+      "condition": "Nightmares",
+      "count": 18
+    },
+    {
+      "condition": "Progesterone Insufficiency",
+      "count": 18
+    },
+    {
+      "condition": "Pseudobulbar Affect",
+      "count": 18
+    },
+    {
+      "condition": "Uveitis",
+      "count": 18
+    },
+    {
+      "condition": "Benzodiazepine Withdrawal",
+      "count": 17
+    },
+    {
+      "condition": "Hereditary Angioedema",
+      "count": 17
+    },
+    {
+      "condition": "Juvenile Idiopathic Arthritis",
+      "count": 17
+    },
+    {
+      "condition": "Macular Degeneration",
+      "count": 17
+    },
+    {
+      "condition": "Multiple Myeloma",
+      "count": 17
+    },
+    {
+      "condition": "Myelodysplastic Syndrome",
+      "count": 17
+    },
+    {
+      "condition": "Onychomycosis, Fingernail",
+      "count": 17
+    },
+    {
+      "condition": "Ovarian Cance",
+      "count": 17
+    },
+    {
+      "condition": "Chronic Pancreatitis",
+      "count": 16
+    },
+    {
+      "condition": "Ovulation Induction",
+      "count": 16
+    },
+    {
+      "condition": "Seasonal Affective Disorde",
+      "count": 16
+    },
+    {
+      "condition": "Soft Tissue Sarcoma",
+      "count": 16
+    },
+    {
+      "condition": "Undifferentiated Connective Tissue Disease",
+      "count": 16
+    },
+    {
+      "condition": "Diagnosis and Investigation",
+      "count": 15
+    },
+    {
+      "condition": "Giardiasis",
+      "count": 15
+    },
+    {
+      "condition": "Lyme Disease, Neurologic",
+      "count": 15
+    },
+    {
+      "condition": "Pancreatic Cance",
+      "count": 15
+    },
+    {
+      "condition": "Primary Ovarian Failure",
+      "count": 15
+    },
+    {
+      "condition": "Behcet's Disease",
+      "count": 14
+    },
+    {
+      "condition": "Deep Vein Thrombosis, Prophylaxis",
+      "count": 14
+    },
+    {
+      "condition": "Diabetes Insipidus",
+      "count": 14
+    },
+    {
+      "condition": "Expectoration",
+      "count": 14
+    },
+    {
+      "condition": "High Cholesterol, Familial Homozygous",
+      "count": 14
+    },
+    {
+      "condition": "Hyperlipoproteinemia",
+      "count": 14
+    },
+    {
+      "condition": "Streptococcal Infection",
+      "count": 14
+    },
+    {
+      "condition": "Tinea Cruris",
+      "count": 14
+    },
+    {
+      "condition": "Trichotillomania",
+      "count": 14
+    },
+    {
+      "condition": "zen Shoulde",
+      "count": 14
+    },
+    {
+      "condition": "Bronchiectasis",
+      "count": 13
+    },
+    {
+      "condition": "Computed Tomography",
+      "count": 13
+    },
+    {
+      "condition": "Dyspareunia",
+      "count": 13
+    },
+    {
+      "condition": "Hepatitis B",
+      "count": 13
+    },
+    {
+      "condition": "Hypertensive Emergency",
+      "count": 13
+    },
+    {
+      "condition": "Ischemic Stroke",
+      "count": 13
+    },
+    {
+      "condition": "Lichen Sclerosus",
+      "count": 13
+    },
+    {
+      "condition": "New Daily Persistent Headache",
+      "count": 13
+    },
+    {
+      "condition": "Pain/Feve",
+      "count": 13
+    },
+    {
+      "condition": "Surgical Prophylaxis",
+      "count": 13
+    },
+    {
+      "condition": "Anal Fissure and Fistula",
+      "count": 12
+    },
+    {
+      "condition": "Asperger Syndrome",
+      "count": 12
+    },
+    {
+      "condition": "Autoimmune Hepatitis",
+      "count": 12
+    },
+    {
+      "condition": "Conjunctivitis",
+      "count": 12
+    },
+    {
+      "condition": "Cutaneous Candidiasis",
+      "count": 12
+    },
+    {
+      "condition": "Cystic Fibrosis",
+      "count": 12
+    },
+    {
+      "condition": "Hyperlipoproteinemia Type IIa, Elevated LDL",
+      "count": 12
+    },
+    {
+      "condition": "Hyperthyroidism",
+      "count": 12
+    },
+    {
+      "condition": "Intermittent Claudication",
+      "count": 12
+    },
+    {
+      "condition": "Intraocular Hypertension",
+      "count": 12
+    },
+    {
+      "condition": "Nasal Polyps",
+      "count": 12
+    },
+    {
+      "condition": "Osteolytic Bone Metastases of Solid Tumors",
+      "count": 12
+    },
+    {
+      "condition": "Persistent Depressive Disorde",
+      "count": 12
+    },
+    {
+      "condition": "Post-Cholecystectomy Diarrhea",
+      "count": 12
+    },
+    {
+      "condition": "Premenstrual Syndrome",
+      "count": 12
+    },
+    {
+      "condition": "Secondary Hyperparathyroidism",
+      "count": 12
+    },
+    {
+      "condition": "Skin Rash",
+      "count": 12
+    },
+    {
+      "condition": "eve",
+      "count": 12
+    },
+    {
+      "condition": "mulation) (phenylephrine)",
+      "count": 12
+    },
+    {
+      "condition": "Addison's Disease",
+      "count": 11
+    },
+    {
+      "condition": "Bursitis",
+      "count": 11
+    },
+    {
+      "condition": "Diarrhea, Acute",
+      "count": 11
+    },
+    {
+      "condition": "Dystonia",
+      "count": 11
+    },
+    {
+      "condition": "Lichen Planus",
+      "count": 11
+    },
+    {
+      "condition": "Opiate Adjunct",
+      "count": 11
+    },
+    {
+      "condition": "Polycythemia Vera",
+      "count": 11
+    },
+    {
+      "condition": "Prevention of Cardiovascular Disease",
+      "count": 11
+    },
+    {
+      "condition": "Scabies",
+      "count": 11
+    },
+    {
+      "condition": "Traveler's Diarrhea",
+      "count": 11
+    },
+    {
+      "condition": "Vitamin B12 Deficiency",
+      "count": 11
+    },
+    {
+      "condition": "Adult Human Growth Hormone Deficiency",
+      "count": 10
+    },
+    {
+      "condition": "Chronic Myofascial Pain",
+      "count": 10
+    },
+    {
+      "condition": "Herpes Simplex, Mucocutaneous/Immunocompetent Host",
+      "count": 10
+    },
+    {
+      "condition": "Impetig",
+      "count": 10
+    },
+    {
+      "condition": "Opioid Overdose",
+      "count": 10
+    },
+    {
+      "condition": "Prevention of Hypokalemia",
+      "count": 10
+    },
+    {
+      "condition": "Thyroid Cance",
+      "count": 10
+    },
+    {
+      "condition": "Tuberculosis, Latent",
+      "count": 10
+    },
+    {
+      "condition": "Ulcerative Proctitis",
+      "count": 10
+    },
+    {
+      "condition": "min / saxagliptin)",
+      "count": 10
+    },
+    {
+      "condition": "Body Dysmorphic Disorde",
+      "count": 9
+    },
+    {
+      "condition": "Costochondritis",
+      "count": 9
+    },
+    {
+      "condition": "Deep Vein Thrombosis, First Event",
+      "count": 9
+    },
+    {
+      "condition": "Deep Vein Thrombosis, Recurrent Event",
+      "count": 9
+    },
+    {
+      "condition": "Dermatomyositis",
+      "count": 9
+    },
+    {
+      "condition": "Hypoparathyroidism",
+      "count": 9
+    },
+    {
+      "condition": "Intraabdominal Infection",
+      "count": 9
+    },
+    {
+      "condition": "Lactation Augmentation",
+      "count": 9
+    },
+    {
+      "condition": "Local Anesthesia",
+      "count": 9
+    },
+    {
+      "condition": "Menopausal Disorders",
+      "count": 9
+    },
+    {
+      "condition": "Pelvic Inflammatory Disease",
+      "count": 9
+    },
+    {
+      "condition": "Perioral Dermatitis",
+      "count": 9
+    },
+    {
+      "condition": "Prevention of Dental Caries",
+      "count": 9
+    },
+    {
+      "condition": "Pulmonary Embolism, Recurrent Event",
+      "count": 9
+    },
+    {
+      "condition": "Sore Throat",
+      "count": 9
+    },
+    {
+      "condition": "Spondylolisthesis",
+      "count": 9
+    },
+    {
+      "condition": "TSH Suppression",
+      "count": 9
+    },
+    {
+      "condition": "Adrenocortical Insufficiency",
+      "count": 8
+    },
+    {
+      "condition": "Agitation",
+      "count": 8
+    },
+    {
+      "condition": "Atherosclerosis",
+      "count": 8
+    },
+    {
+      "condition": "B12 Nutritional Deficiency",
+      "count": 8
+    },
+    {
+      "condition": "Bacterial Endocarditis Prevention",
+      "count": 8
+    },
+    {
+      "condition": "Brain Tum",
+      "count": 8
+    },
+    {
+      "condition": "Bronchospasm Prophylaxis",
+      "count": 8
+    },
+    {
+      "condition": "Candidemia",
+      "count": 8
+    },
+    {
+      "condition": "Dandruff",
+      "count": 8
+    },
+    {
+      "condition": "Dermatologic Lesion",
+      "count": 8
+    },
+    {
+      "condition": "Gastrointestinal Stromal Tum",
+      "count": 8
+    },
+    {
+      "condition": "Hepatic Encephalopathy",
+      "count": 8
+    },
+    {
+      "condition": "Labor Induction",
+      "count": 8
+    },
+    {
+      "condition": "Lyme Disease, Arthritis",
+      "count": 8
+    },
+    {
+      "condition": "Lymphoma",
+      "count": 8
+    },
+    {
+      "condition": "Nasal Carriage of Staphylococcus aureus",
+      "count": 8
+    },
+    {
+      "condition": "Pancreatic Exocrine Dysfunction",
+      "count": 8
+    },
+    {
+      "condition": "Pediatric Growth Hormone Deficiency",
+      "count": 8
+    },
+    {
+      "condition": "Status Epilepticus",
+      "count": 8
+    },
+    {
+      "condition": "lic Acid Deficiency",
+      "count": 8
+    },
+    {
+      "condition": "Abortion",
+      "count": 7
+    },
+    {
+      "condition": "Bleeding Disorde",
+      "count": 7
+    },
+    {
+      "condition": "Diabetic Macular Edema",
+      "count": 7
+    },
+    {
+      "condition": "Endometrial Cance",
+      "count": 7
+    },
+    {
+      "condition": "Head and Neck Cance",
+      "count": 7
+    },
+    {
+      "condition": "Hypoactive Sexual Desire Disorde",
+      "count": 7
+    },
+    {
+      "condition": "Idiopathic Thrombocytopenic Purpura",
+      "count": 7
+    },
+    {
+      "condition": "Immunosuppression",
+      "count": 7
+    },
+    {
+      "condition": "Lipodystrophy",
+      "count": 7
+    },
+    {
+      "condition": "Macular Edema",
+      "count": 7
+    },
+    {
+      "condition": "Mountain Sickness / Altitude Sickness",
+      "count": 7
+    },
+    {
+      "condition": "NSAID-Induced Gastric Ulce",
+      "count": 7
+    },
+    {
+      "condition": "Ophthalmic Surgery",
+      "count": 7
+    },
+    {
+      "condition": "Performance Anxiety",
+      "count": 7
+    },
+    {
+      "condition": "Pinworm Infection (Enterobius vermicularis)",
+      "count": 7
+    },
+    {
+      "condition": "Tinea Capitis",
+      "count": 7
+    },
+    {
+      "condition": "Wegener's Granulomatosis",
+      "count": 7
+    },
+    {
+      "condition": "von Willebrand's Disease",
+      "count": 7
+    },
+    {
+      "condition": "Anemia Associated with Chronic Renal Failure",
+      "count": 6
+    },
+    {
+      "condition": "Biliary Cirrhosis",
+      "count": 6
+    },
+    {
+      "condition": "Candida Urinary Tract Infection",
+      "count": 6
+    },
+    {
+      "condition": "Carcinoid Tum",
+      "count": 6
+    },
+    {
+      "condition": "Cataplexy",
+      "count": 6
+    },
+    {
+      "condition": "Dermatophytosis",
+      "count": 6
+    },
+    {
+      "condition": "Dietary Fiber Supplementation",
+      "count": 6
+    },
+    {
+      "condition": "Dumping Syndrome",
+      "count": 6
+    },
+    {
+      "condition": "Endometrial Hyperplasia",
+      "count": 6
+    },
+    {
+      "condition": "Gingivitis",
+      "count": 6
+    },
+    {
+      "condition": "Glioblastoma Multi",
+      "count": 6
+    },
+    {
+      "condition": "Hepatocellular Carcinoma",
+      "count": 6
+    },
+    {
+      "condition": "Herpes Simplex, Mucocutaneous/Immunocompromised Host",
+      "count": 6
+    },
+    {
+      "condition": "Herpes Zoster, Prophylaxis",
+      "count": 6
+    },
+    {
+      "condition": "Iritis",
+      "count": 6
+    },
+    {
+      "condition": "Mucositis",
+      "count": 6
+    },
+    {
+      "condition": "NSAID-Induced Ulcer Prophylaxis",
+      "count": 6
+    },
+    {
+      "condition": "Nephrotic Syndrome",
+      "count": 6
+    },
+    {
+      "condition": "Premature Ventricular Depolarizations",
+      "count": 6
+    },
+    {
+      "condition": "Still's Disease",
+      "count": 6
+    },
+    {
+      "condition": "Systemic Mastocytosis",
+      "count": 6
+    },
+    {
+      "condition": "Thrombocythemia",
+      "count": 6
+    },
+    {
+      "condition": "amilial Mediterranean Feve",
+      "count": 6
+    },
+    {
+      "condition": "AIDS Related Wasting",
+      "count": 5
+    },
+    {
+      "condition": "Anaplastic Oligodendroglioma",
+      "count": 5
+    },
+    {
+      "condition": "Auditory Processing Disorde",
+      "count": 5
+    },
+    {
+      "condition": "CMV Prophylaxis",
+      "count": 5
+    },
+    {
+      "condition": "Cance",
+      "count": 5
+    },
+    {
+      "condition": "Cardiovascular Risk Reduction",
+      "count": 5
+    },
+    {
+      "condition": "Cyclothymic Disorde",
+      "count": 5
+    },
+    {
+      "condition": "Ear Wax Impaction",
+      "count": 5
+    },
+    {
+      "condition": "Endometrial Hyperplasia, Prophylaxis",
+      "count": 5
+    },
+    {
+      "condition": "Glaucoma/Intraocular Hypertension",
+      "count": 5
+    },
+    {
+      "condition": "Glioblastoma Multiforme",
+      "count": 5
+    },
+    {
+      "condition": "Gonococcal Infection, Uncomplicated",
+      "count": 5
+    },
+    {
+      "condition": "Gout, Prophylaxis",
+      "count": 5
+    },
+    {
+      "condition": "Head Injury",
+      "count": 5
+    },
+    {
+      "condition": "Herpes Simplex Dendritic Keratitis",
+      "count": 5
+    },
+    {
+      "condition": "Hypercalcemia of Malignancy",
+      "count": 5
+    },
+    {
+      "condition": "Hypokalemia",
+      "count": 5
+    },
+    {
+      "condition": "Leukemia",
+      "count": 5
+    },
+    {
+      "condition": "Melanoma",
+      "count": 5
+    },
+    {
+      "condition": "Mild Cognitive Impairment",
+      "count": 5
+    },
+    {
+      "condition": "Pe",
+      "count": 5
+    },
+    {
+      "condition": "Peptic Ulce",
+      "count": 5
+    },
+    {
+      "condition": "Periodontitis",
+      "count": 5
+    },
+    {
+      "condition": "Peripheral Arterial Disease",
+      "count": 5
+    },
+    {
+      "condition": "Pre-Exposure Prophylaxis",
+      "count": 5
+    },
+    {
+      "condition": "Prevention of Atherothrombotic Events",
+      "count": 5
+    },
+    {
+      "condition": "Primary Hyperaldosteronism",
+      "count": 5
+    },
+    {
+      "condition": "Primary Nocturnal Enuresis",
+      "count": 5
+    },
+    {
+      "condition": "Pulmonary Embolism, First Event",
+      "count": 5
+    },
+    {
+      "condition": "Pupillary Dilation",
+      "count": 5
+    },
+    {
+      "condition": "Reiter's Syndrome",
+      "count": 5
+    },
+    {
+      "condition": "SIADH",
+      "count": 5
+    },
+    {
+      "condition": "Sarcoidosis",
+      "count": 5
+    },
+    {
+      "condition": "Spondyloarthritis",
+      "count": 5
+    },
+    {
+      "condition": "Transient Ischemic Attack",
+      "count": 5
+    },
+    {
+      "condition": "Turner's Syndrome",
+      "count": 5
+    },
+    {
+      "condition": "Varicella-Zoste",
+      "count": 5
+    },
+    {
+      "condition": "Ventricular Fibrillation",
+      "count": 5
+    },
+    {
+      "condition": "min / pioglitazone)",
+      "count": 5
+    },
+    {
+      "condition": "mis",
+      "count": 5
+    },
+    {
+      "condition": "Acute Lymphoblastic Leukemia",
+      "count": 4
+    },
+    {
+      "condition": "Alpha-1 Proteinase Inhibitor Deficiency",
+      "count": 4
+    },
+    {
+      "condition": "Anemia, Sickle Cell",
+      "count": 4
+    },
+    {
+      "condition": "Anesthetic Adjunct",
+      "count": 4
+    },
+    {
+      "condition": "Ascariasis",
+      "count": 4
+    },
+    {
+      "condition": "Breast Cancer, Prevention",
+      "count": 4
+    },
+    {
+      "condition": "Bullous Pemphigoid",
+      "count": 4
+    },
+    {
+      "condition": "CNS Magnetic Resonance Imaging",
+      "count": 4
+    },
+    {
+      "condition": "Deep Neck Infection",
+      "count": 4
+    },
+    {
+      "condition": "Dementia",
+      "count": 4
+    },
+    {
+      "condition": "Enterocolitis",
+      "count": 4
+    },
+    {
+      "condition": "Eosinophilic Esophagitis",
+      "count": 4
+    },
+    {
+      "condition": "Gastric Ulcer Maintenance Treatment",
+      "count": 4
+    },
+    {
+      "condition": "Gastritis/Duodenitis",
+      "count": 4
+    },
+    {
+      "condition": "Granuloma Annulare",
+      "count": 4
+    },
+    {
+      "condition": "Hypocalcemia",
+      "count": 4
+    },
+    {
+      "condition": "Hypoglycemia",
+      "count": 4
+    },
+    {
+      "condition": "ICU Agitation",
+      "count": 4
+    },
+    {
+      "condition": "Infection Prophylaxis",
+      "count": 4
+    },
+    {
+      "condition": "Lymphocytic Colitis",
+      "count": 4
+    },
+    {
+      "condition": "Mycobacterium avium-intracellulare, Treatment",
+      "count": 4
+    },
+    {
+      "condition": "Nausea/Vomiting, Radiation Induced",
+      "count": 4
+    },
+    {
+      "condition": "Nephrocalcinosis",
+      "count": 4
+    },
+    {
+      "condition": "Noninfectious Colitis",
+      "count": 4
+    },
+    {
+      "condition": "Nonoccupational Exposure",
+      "count": 4
+    },
+    {
+      "condition": "Oral and Dental Conditions",
+      "count": 4
+    },
+    {
+      "condition": "Osteolytic Bone Lesions of Multiple Myeloma",
+      "count": 4
+    },
+    {
+      "condition": "Paroxysmal Supraventricular Tachycardia",
+      "count": 4
+    },
+    {
+      "condition": "Peripheral T-cell Lymphoma",
+      "count": 4
+    },
+    {
+      "condition": "Porphyria",
+      "count": 4
+    },
+    {
+      "condition": "Prosthetic Heart Valves, Mechanical Valves - Thrombosis Prophylaxis",
+      "count": 4
+    },
+    {
+      "condition": "Pudendal Neuralgia",
+      "count": 4
+    },
+    {
+      "condition": "Reversal of Opioid Sedation",
+      "count": 4
+    },
+    {
+      "condition": "STD Prophylaxis",
+      "count": 4
+    },
+    {
+      "condition": "Topical Disinfection",
+      "count": 4
+    },
+    {
+      "condition": "cal Segmental Glomerulosclerosis",
+      "count": 4
+    },
+    {
+      "condition": "ge HCT (amlodipine / hydrochlorothiazide / valsartan)",
+      "count": 4
+    },
+    {
+      "condition": "Acute Promyelocytic Leukemia",
+      "count": 3
+    },
+    {
+      "condition": "Amebiasis",
+      "count": 3
+    },
+    {
+      "condition": "Anal Itching",
+      "count": 3
+    },
+    {
+      "condition": "Anaplastic Astrocytoma",
+      "count": 3
+    },
+    {
+      "condition": "Anemia, Chemotherapy Induced",
+      "count": 3
+    },
+    {
+      "condition": "Anorexia/Feeding Problems",
+      "count": 3
+    },
+    {
+      "condition": "Antiphospholipid Syndrome",
+      "count": 3
+    },
+    {
+      "condition": "Aphthous Ulce",
+      "count": 3
+    },
+    {
+      "condition": "Aspiration Pneumonia",
+      "count": 3
+    },
+    {
+      "condition": "Autoimmune Hemolytic Anemia",
+      "count": 3
+    },
+    {
+      "condition": "Cerebral Spasticity",
+      "count": 3
+    },
+    {
+      "condition": "Chronic Inflammatory Demyelinating Polyradiculoneuropathy",
+      "count": 3
+    },
+    {
+      "condition": "Cutaneous T-cell Lymphoma",
+      "count": 3
+    },
+    {
+      "condition": "Dientamoeba fragilis",
+      "count": 3
+    },
+    {
+      "condition": "Dupuytren's contracture",
+      "count": 3
+    },
+    {
+      "condition": "Ectopic Pregnancy",
+      "count": 3
+    },
+    {
+      "condition": "Endoscopy or Radiology Premedication",
+      "count": 3
+    },
+    {
+      "condition": "Esophageal Candidiasis",
+      "count": 3
+    },
+    {
+      "condition": "Esophageal Variceal Hemorrhage Prophylaxis",
+      "count": 3
+    },
+    {
+      "condition": "Gender Dysphoria",
+      "count": 3
+    },
+    {
+      "condition": "Hemophilia A",
+      "count": 3
+    },
+    {
+      "condition": "Hidradenitis Suppurativa",
+      "count": 3
+    },
+    {
+      "condition": "Histoplasmosis",
+      "count": 3
+    },
+    {
+      "condition": "Hyperekplexia",
+      "count": 3
+    },
+    {
+      "condition": "Hyperkalemia",
+      "count": 3
+    },
+    {
+      "condition": "Lewy Body Dementia",
+      "count": 3
+    },
+    {
+      "condition": "Meningitis",
+      "count": 3
+    },
+    {
+      "condition": "Neurosurgery",
+      "count": 3
+    },
+    {
+      "condition": "Ocular Rosacea",
+      "count": 3
+    },
+    {
+      "condition": "Oligospermia",
+      "count": 3
+    },
+    {
+      "condition": "Pemphigus",
+      "count": 3
+    },
+    {
+      "condition": "Peritonitis",
+      "count": 3
+    },
+    {
+      "condition": "Pseudomembranous Colitis",
+      "count": 3
+    },
+    {
+      "condition": "Rejection Prophylaxis",
+      "count": 3
+    },
+    {
+      "condition": "Rhinorrhea",
+      "count": 3
+    },
+    {
+      "condition": "Severe Mood Dysregulation",
+      "count": 3
+    },
+    {
+      "condition": "Small Bowel Bacterial Overgrowth",
+      "count": 3
+    },
+    {
+      "condition": "Small Fiber Neuropathy",
+      "count": 3
+    },
+    {
+      "condition": "Squamous Cell Carcinoma",
+      "count": 3
+    },
+    {
+      "condition": "Stress Ulcer Prophylaxis",
+      "count": 3
+    },
+    {
+      "condition": "Sunburn",
+      "count": 3
+    },
+    {
+      "condition": "Thromboembolic Stroke Prophylaxis",
+      "count": 3
+    },
+    {
+      "condition": "Tuberculosis, Prophylaxis",
+      "count": 3
+    },
+    {
+      "condition": "Uterine Bleeding",
+      "count": 3
+    },
+    {
+      "condition": "Varicose Veins",
+      "count": 3
+    },
+    {
+      "condition": "Warts",
+      "count": 3
+    },
+    {
+      "condition": "Wolff-Parkinson-White Syndrome",
+      "count": 3
+    },
+    {
+      "condition": "Women (oxybutynin)",
+      "count": 3
+    },
+    {
+      "condition": "actor IX Deficiency",
+      "count": 3
+    },
+    {
+      "condition": "ailure to Thrive",
+      "count": 3
+    },
+    {
+      "condition": "amilial Cold Autoinflammatory Syndrome",
+      "count": 3
+    },
+    {
+      "condition": "Abdominal Distension",
+      "count": 2
+    },
+    {
+      "condition": "Aggressive Behavi",
+      "count": 2
+    },
+    {
+      "condition": "Anaphylaxis",
+      "count": 2
+    },
+    {
+      "condition": "Angioedema",
+      "count": 2
+    },
+    {
+      "condition": "Anthrax",
+      "count": 2
+    },
+    {
+      "condition": "Avian Influenza",
+      "count": 2
+    },
+    {
+      "condition": "Babesiosis",
+      "count": 2
+    },
+    {
+      "condition": "Blepharitis",
+      "count": 2
+    },
+    {
+      "condition": "Body Imaging",
+      "count": 2
+    },
+    {
+      "condition": "Breast Cancer, Palliative",
+      "count": 2
+    },
+    {
+      "condition": "Campylobacter Gastroenteritis",
+      "count": 2
+    },
+    {
+      "condition": "Cholera",
+      "count": 2
+    },
+    {
+      "condition": "Chronic Eosinophilic Leukemia",
+      "count": 2
+    },
+    {
+      "condition": "Coronary Artery Disease",
+      "count": 2
+    },
+    {
+      "condition": "Croup",
+      "count": 2
+    },
+    {
+      "condition": "Cutaneous Larva Migrans",
+      "count": 2
+    },
+    {
+      "condition": "Deep Vein Thrombosis Prophylaxis after Hip Replacement Surgery",
+      "count": 2
+    },
+    {
+      "condition": "Deep Vein Thrombosis Prophylaxis after Knee Replacement Surgery",
+      "count": 2
+    },
+    {
+      "condition": "Delayed Puberty, Male",
+      "count": 2
+    },
+    {
+      "condition": "Duodenal Ulcer Prophylaxis",
+      "count": 2
+    },
+    {
+      "condition": "Euvolemic Hyponatremia",
+      "count": 2
+    },
+    {
+      "condition": "Eyelash Hypotrichosis",
+      "count": 2
+    },
+    {
+      "condition": "Gastrointestinal Decontamination",
+      "count": 2
+    },
+    {
+      "condition": "Gaucher Disease",
+      "count": 2
+    },
+    {
+      "condition": "Gonococcal Infection, Disseminated",
+      "count": 2
+    },
+    {
+      "condition": "Hairy Cell Leukemia",
+      "count": 2
+    },
+    {
+      "condition": "Hepatic Tum",
+      "count": 2
+    },
+    {
+      "condition": "Hyperlipoproteinemia Type IV, Elevated VLDL",
+      "count": 2
+    },
+    {
+      "condition": "Hyperparathyroidism Secondary to Renal Impairment",
+      "count": 2
+    },
+    {
+      "condition": "Hyperphosphatemia",
+      "count": 2
+    },
+    {
+      "condition": "Hypomagnesemia",
+      "count": 2
+    },
+    {
+      "condition": "Hypotension",
+      "count": 2
+    },
+    {
+      "condition": "Ichthyosis",
+      "count": 2
+    },
+    {
+      "condition": "Intermittent Explosive Disorde",
+      "count": 2
+    },
+    {
+      "condition": "Leukocytoclastic Vasculitis",
+      "count": 2
+    },
+    {
+      "condition": "Liver Magnetic Resonance Imaging",
+      "count": 2
+    },
+    {
+      "condition": "Malignant Glioma",
+      "count": 2
+    },
+    {
+      "condition": "Mixed Connective Tissue Disease",
+      "count": 2
+    },
+    {
+      "condition": "Mononucleosis",
+      "count": 2
+    },
+    {
+      "condition": "Muscle Twitching",
+      "count": 2
+    },
+    {
+      "condition": "Myxedema Coma",
+      "count": 2
+    },
+    {
+      "condition": "Neck Pain",
+      "count": 2
+    },
+    {
+      "condition": "Neurosis",
+      "count": 2
+    },
+    {
+      "condition": "Niacin Deficiency",
+      "count": 2
+    },
+    {
+      "condition": "Nocardiosis",
+      "count": 2
+    },
+    {
+      "condition": "Nonalcoholic Fatty Liver Disease",
+      "count": 2
+    },
+    {
+      "condition": "Paget's Disease",
+      "count": 2
+    },
+    {
+      "condition": "Pathological Hypersecretory Conditions",
+      "count": 2
+    },
+    {
+      "condition": "Percutaneous Coronary Intervention",
+      "count": 2
+    },
+    {
+      "condition": "Pertussis",
+      "count": 2
+    },
+    {
+      "condition": "Peyronie's Disease",
+      "count": 2
+    },
+    {
+      "condition": "Pityriasis rubra pilaris",
+      "count": 2
+    },
+    {
+      "condition": "Platelet Aggregation Inhibition",
+      "count": 2
+    },
+    {
+      "condition": "Prosthetic Heart Valves, Tissue Valves - Thrombosis Prophylaxis",
+      "count": 2
+    },
+    {
+      "condition": "Renal Transplant",
+      "count": 2
+    },
+    {
+      "condition": "Salivary Gland Cance",
+      "count": 2
+    },
+    {
+      "condition": "Schistosoma japonicum",
+      "count": 2
+    },
+    {
+      "condition": "Schnitzler Syndrome",
+      "count": 2
+    },
+    {
+      "condition": "Skin Disinfection, Preoperative",
+      "count": 2
+    },
+    {
+      "condition": "Sleep Paralysis",
+      "count": 2
+    },
+    {
+      "condition": "Solid Tumors",
+      "count": 2
+    },
+    {
+      "condition": "Submental Fullness",
+      "count": 2
+    },
+    {
+      "condition": "Systemic Sclerosis",
+      "count": 2
+    },
+    {
+      "condition": "Tardive Dyskinesia",
+      "count": 2
+    },
+    {
+      "condition": "Testicular Cance",
+      "count": 2
+    },
+    {
+      "condition": "Tetanus",
+      "count": 2
+    },
+    {
+      "condition": "Thrombocytopenia",
+      "count": 2
+    },
+    {
+      "condition": "Tic Disorde",
+      "count": 2
+    },
+    {
+      "condition": "Toothache",
+      "count": 2
+    },
+    {
+      "condition": "Typhoid Feve",
+      "count": 2
+    },
+    {
+      "condition": "Urinary Retention",
+      "count": 2
+    },
+    {
+      "condition": "Vitamin K Deficiency",
+      "count": 2
+    },
+    {
+      "condition": "min / rosiglitazone)",
+      "count": 2
+    },
+    {
+      "condition": "t Care",
+      "count": 2
+    },
+    {
+      "condition": "t Pac with Cyclobenzaprine (cyclobenzaprine)",
+      "count": 2
+    },
+    {
+      "condition": "tic (mycophenolic acid)",
+      "count": 2
+    },
+    {
+      "condition": "AV Heart Block",
+      "count": 1
+    },
+    {
+      "condition": "Acetaminophen Overdose",
+      "count": 1
+    },
+    {
+      "condition": "Acute Nonlymphocytic Leukemia",
+      "count": 1
+    },
+    {
+      "condition": "Amyotrophic Lateral Sclerosis",
+      "count": 1
+    },
+    {
+      "condition": "Anti NMDA Receptor Encephalitis",
+      "count": 1
+    },
+    {
+      "condition": "Aspergillosis, Aspergilloma",
+      "count": 1
+    },
+    {
+      "condition": "Asystole",
+      "count": 1
+    },
+    {
+      "condition": "Bartonellosis",
+      "count": 1
+    },
+    {
+      "condition": "Cachexia",
+      "count": 1
+    },
+    {
+      "condition": "Cerebral Edema",
+      "count": 1
+    },
+    {
+      "condition": "Cerebrovascular Insufficiency",
+      "count": 1
+    },
+    {
+      "condition": "Cluster-Tic Syndrome",
+      "count": 1
+    },
+    {
+      "condition": "Coccidioidomycosis",
+      "count": 1
+    },
+    {
+      "condition": "Cogan's Syndrome",
+      "count": 1
+    },
+    {
+      "condition": "Corneal Ulce",
+      "count": 1
+    },
+    {
+      "condition": "Cyclitis",
+      "count": 1
+    },
+    {
+      "condition": "Dercum's Disease",
+      "count": 1
+    },
+    {
+      "condition": "Dermatitis Herpeti",
+      "count": 1
+    },
+    {
+      "condition": "Dermatitis Herpetiformis",
+      "count": 1
+    },
+    {
+      "condition": "Diagnostic Bronchograms",
+      "count": 1
+    },
+    {
+      "condition": "Dissociative Identity Disorde",
+      "count": 1
+    },
+    {
+      "condition": "Ehrlichiosis",
+      "count": 1
+    },
+    {
+      "condition": "Epicondylitis, Tennis Elbow",
+      "count": 1
+    },
+    {
+      "condition": "Epididymitis, Sexually Transmitted",
+      "count": 1
+    },
+    {
+      "condition": "Esophageal Spasm",
+      "count": 1
+    },
+    {
+      "condition": "Gallbladder Disease",
+      "count": 1
+    },
+    {
+      "condition": "Gastric Cance",
+      "count": 1
+    },
+    {
+      "condition": "Gestational Diabetes",
+      "count": 1
+    },
+    {
+      "condition": "Giant Cell Tumor of Bone",
+      "count": 1
+    },
+    {
+      "condition": "Gonadotropin Inhibition",
+      "count": 1
+    },
+    {
+      "condition": "Hemangioma",
+      "count": 1
+    },
+    {
+      "condition": "Hemophilia B",
+      "count": 1
+    },
+    {
+      "condition": "Hepatitis B Prevention",
+      "count": 1
+    },
+    {
+      "condition": "Hodgkin's Lymphoma",
+      "count": 1
+    },
+    {
+      "condition": "Hydrocephalus",
+      "count": 1
+    },
+    {
+      "condition": "Hyperbilirubinemia",
+      "count": 1
+    },
+    {
+      "condition": "Hypercalcemia",
+      "count": 1
+    },
+    {
+      "condition": "Hyperlipoproteinemia Type III, Elevated beta-VLDL   IDL",
+      "count": 1
+    },
+    {
+      "condition": "Hyperuricemia Secondary to Chemotherapy",
+      "count": 1
+    },
+    {
+      "condition": "Hypodermoclysis",
+      "count": 1
+    },
+    {
+      "condition": "Hypokalemic Periodic Paralysis",
+      "count": 1
+    },
+    {
+      "condition": "Hypopituitarism",
+      "count": 1
+    },
+    {
+      "condition": "Infectious Diarrhea",
+      "count": 1
+    },
+    {
+      "condition": "Joint Infection",
+      "count": 1
+    },
+    {
+      "condition": "Keratitis",
+      "count": 1
+    },
+    {
+      "condition": "Klinefelter Syndrome",
+      "count": 1
+    },
+    {
+      "condition": "Legionella Pneumonia",
+      "count": 1
+    },
+    {
+      "condition": "Linear IgA Disease",
+      "count": 1
+    },
+    {
+      "condition": "Manscaping Pain",
+      "count": 1
+    },
+    {
+      "condition": "Meningitis, Meningococcal",
+      "count": 1
+    },
+    {
+      "condition": "Meningococcal Meningitis Prophylaxis",
+      "count": 1
+    },
+    {
+      "condition": "Microscopic polyangiitis",
+      "count": 1
+    },
+    {
+      "condition": "Multiple Endocrine Adenomas",
+      "count": 1
+    },
+    {
+      "condition": "Mumps Prophylaxis",
+      "count": 1
+    },
+    {
+      "condition": "Mycoplasma Pneumonia",
+      "count": 1
+    },
+    {
+      "condition": "Myelofibrosis",
+      "count": 1
+    },
+    {
+      "condition": "Myeloproliferative Disorders",
+      "count": 1
+    },
+    {
+      "condition": "Neoplastic Diseases",
+      "count": 1
+    },
+    {
+      "condition": "Neuritis",
+      "count": 1
+    },
+    {
+      "condition": "Neurotic Depression",
+      "count": 1
+    },
+    {
+      "condition": "Neutropenia",
+      "count": 1
+    },
+    {
+      "condition": "Occipital Neuralgia",
+      "count": 1
+    },
+    {
+      "condition": "Oppositional Defiant Disorde",
+      "count": 1
+    },
+    {
+      "condition": "Organ Transplant, Rejection Reversal",
+      "count": 1
+    },
+    {
+      "condition": "Paragonimus westermani, Lung Fluke",
+      "count": 1
+    },
+    {
+      "condition": "Parkinsonian Trem",
+      "count": 1
+    },
+    {
+      "condition": "Parkinsonism",
+      "count": 1
+    },
+    {
+      "condition": "Patent Ductus Arteriosus",
+      "count": 1
+    },
+    {
+      "condition": "Pemphigoid",
+      "count": 1
+    },
+    {
+      "condition": "Portal Hypertension",
+      "count": 1
+    },
+    {
+      "condition": "Postoperative Increased Intraocular Pressure",
+      "count": 1
+    },
+    {
+      "condition": "Postpartum Breast Pain",
+      "count": 1
+    },
+    {
+      "condition": "Prevention of Perinatal Group B Streptococcal Disease",
+      "count": 1
+    },
+    {
+      "condition": "Primary Hyperaldosteronism Diagnosis",
+      "count": 1
+    },
+    {
+      "condition": "Pruritus of Partial Biliary Obstruction",
+      "count": 1
+    },
+    {
+      "condition": "Pseudogout, Prophylaxis",
+      "count": 1
+    },
+    {
+      "condition": "Q Feve",
+      "count": 1
+    },
+    {
+      "condition": "Rabies Prophylaxis",
+      "count": 1
+    },
+    {
+      "condition": "Radionuclide Myocardial Perfusion Study",
+      "count": 1
+    },
+    {
+      "condition": "Ramsay Hunt Syndrome",
+      "count": 1
+    },
+    {
+      "condition": "Reversal of Nondepolarizing Muscle Relaxants",
+      "count": 1
+    },
+    {
+      "condition": "Schilling Test",
+      "count": 1
+    },
+    {
+      "condition": "Scleroderma",
+      "count": 1
+    },
+    {
+      "condition": "Secondary Cutaneous Bacterial Infections",
+      "count": 1
+    },
+    {
+      "condition": "Sepsis",
+      "count": 1
+    },
+    {
+      "condition": "Short Stature",
+      "count": 1
+    },
+    {
+      "condition": "Short Stature for Age",
+      "count": 1
+    },
+    {
+      "condition": "Small Bowel or Pancreatic Fistula",
+      "count": 1
+    },
+    {
+      "condition": "Somatoform Pain Disorde",
+      "count": 1
+    },
+    {
+      "condition": "Sporotrichosis",
+      "count": 1
+    },
+    {
+      "condition": "Stomach Cance",
+      "count": 1
+    },
+    {
+      "condition": "Strabismus",
+      "count": 1
+    },
+    {
+      "condition": "Strongyloidiasis",
+      "count": 1
+    },
+    {
+      "condition": "Subarachnoid Hemorrhage",
+      "count": 1
+    },
+    {
+      "condition": "Syringomyelia",
+      "count": 1
+    },
+    {
+      "condition": "Systemic Candidiasis",
+      "count": 1
+    },
+    {
+      "condition": "Thyroid Suppression Test",
+      "count": 1
+    },
+    {
+      "condition": "Thyrotoxicosis",
+      "count": 1
+    },
+    {
+      "condition": "Tinea Barbae",
+      "count": 1
+    },
+    {
+      "condition": "Transverse Myelitis",
+      "count": 1
+    },
+    {
+      "condition": "Tuberculosis, Active",
+      "count": 1
+    },
+    {
+      "condition": "Upper Limb Spasticity",
+      "count": 1
+    },
+    {
+      "condition": "Ventricular Arrhythmia",
+      "count": 1
+    },
+    {
+      "condition": "Wilson's Disease",
+      "count": 1
+    },
+    {
+      "condition": "Women (minoxidil)",
+      "count": 1
+    },
+    {
+      "condition": "Wound Cleansing",
+      "count": 1
+    },
+    {
+      "condition": "Zollinger-Ellison Syndrome",
+      "count": 1
+    },
+    {
+      "condition": "acial Lipoatrophy",
+      "count": 1
+    },
+    {
+      "condition": "ibrocystic Breast Disease",
+      "count": 1
+    },
+    {
+      "condition": "llicular Lymphoma",
+      "count": 1
+    },
+    {
+      "condition": "m Pain Disorde",
+      "count": 1
+    },
+    {
+      "condition": "me",
+      "count": 1
+    },
+    {
+      "condition": "mist (",
+      "count": 1
+    },
+    {
+      "condition": "unctional Gastric Disorde",
+      "count": 1
+    },
+    {
+      "condition": "ungal Infection Prophylaxis",
+      "count": 1
+    },
+    {
+      "condition": "ungal Pneumonia",
+      "count": 1
+    }
+  ]
+}

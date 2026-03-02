@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flight Fare Intelligence</title>
+  <link href="/static/style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Flight Fare Intelligence</h1>
+    <p>Dynamic Pricing Prediction Engine</p>
+    <form id="predict-form">
+      <div class="field">
+        <label for="travel_class">Travel Class</label>
+        <select id="travel_class" name="travel_class">
+          <option value="Economy" selected>Economy</option>
+          <option value="Business">Business</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="booking_lead_days">Booking Lead Time (days)</label>
+        <select id="booking_lead_days" name="booking_lead_days" required>
+          <option value="0">0 (same day)</option>
+          <option value="3">3</option>
+          <option value="7">7</option>
+          <option value="14">14</option>
+          <option value="21">21</option>
+          <option value="30" selected>30</option>
+          <option value="45">45</option>
+          <option value="60">60</option>
+          <option value="90">90</option>
+          <option value="120">120</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="route">Route (e.g., DEL-BOM)</label>
+        <select id="route" name="route" required>
+          <option value="DEL-BOM" selected>DEL-BOM</option>
+          <option value="DEL-BLR">DEL-BLR</option>
+          <option value="BOM-BLR">BOM-BLR</option>
+          <option value="DEL-HYD">DEL-HYD</option>
+          <option value="DEL-MAA">DEL-MAA</option>
+          <option value="BOM-HYD">BOM-HYD</option>
+          <option value="BLR-HYD">BLR-HYD</option>
+          <option value="BLR-MAA">BLR-MAA</option>
+          <option value="DEL-GOI">DEL-GOI</option>
+          <option value="BOM-GOI">BOM-GOI</option>
+          <option value="DEL-CCU">DEL-CCU</option>
+          <option value="BOM-DEL">BOM-DEL</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="carrier">Carrier</label>
+        <select id="carrier" name="carrier" required>
+          <option value="IndiGo" selected>IndiGo</option>
+          <option value="Air India">Air India</option>
+          <option value="Vistara">Vistara</option>
+          <option value="SpiceJet">SpiceJet</option>
+          <option value="AirAsia India">AirAsia India</option>
+          <option value="Go First">Go First</option>
+          <option value="Akasa Air">Akasa Air</option>
+          <option value="Air India Express">Air India Express</option>
+          <option value="Alliance Air">Alliance Air</option>
+          <option value="GenericAir">GenericAir</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="departure_time">Departure Time</label>
+        <select id="departure_time" name="departure_time" required>
+          <option value="Early_Morning">Early Morning</option>
+          <option value="Morning" selected>Morning</option>
+          <option value="Afternoon">Afternoon</option>
+          <option value="Evening">Evening</option>
+          <option value="Night">Night</option>
+          <option value="Late_Night">Late Night</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="stops">Stops</label>
+        <select id="stops" name="stops" required>
+          <option value="0" selected>Non-stop</option>
+          <option value="1">1 stop</option>
+          <option value="2">2+ stops</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="arrival_time">Arrival Time</label>
+        <select id="arrival_time" name="arrival_time" required>
+          <option value="Early_Morning">Early Morning</option>
+          <option value="Morning">Morning</option>
+          <option value="Afternoon">Afternoon</option>
+          <option value="Evening" selected>Evening</option>
+          <option value="Night">Night</option>
+          <option value="Late_Night">Late Night</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="duration_minutes">Duration (minutes)</label>
+        <select id="duration_minutes" name="duration_minutes" required>
+          <option value="60" selected>60</option>
+          <option value="90">90</option>
+          <option value="120">120</option>
+          <option value="150">150</option>
+          <option value="180">180</option>
+          <option value="210">210</option>
+          <option value="240">240</option>
+          <option value="300">300</option>
+          <option value="360">360</option>
+          <option value="420">420</option>
+        </select>
+      </div>
+
+      <button type="submit">Predict Fare</button>
+    </form>
+
+    <div id="result" class="result hidden"></div>
+
+    <section class="insights">
+      <h2>Insights</h2>
+      <ul>
+        <li>Separate models for Economy and Business classes</li>
+        <li>Lead time, stops, and duration influence fares</li>
+        <li>Plug in real models by placing .pkl files in the models folder</li>
+      </ul>
+    </section>
+
+    <section class="analytics">
+      <h2>Price Trend (Lead Days → Fare)</h2>
+      <canvas id="trendChart" height="120"></canvas>
+    </section>
+
+    <section class="analytics">
+      <h2>Reports</h2>
+      <a class="btn" href="/project_summary.csv">Download Project Summary (CSV)</a>
+    </section>
+
+    <section class="analytics">
+      <h2>Model Report</h2>
+      <div class="result" id="modelReport">Models not loaded</div>
+      <div class="note" id="positioningNote"></div>
+      <div class="note" id="modelMeta"></div>
+    </section>
+
+    <section class="analytics">
+      <h2>Prediction Drivers (Local Contribution)</h2>
+      <canvas id="fiChart" height="120"></canvas>
+      <div id="fiNote" class="note"></div>
+      <div class="note">Top factors for this prediction:</div>
+      <ul id="topFactors" class="note"></ul>
+    </section>
+
+    <section class="analytics">
+      <h2>Revenue Impact Simulator</h2>
+      <div class="sim-grid">
+        <div class="field">
+          <label for="elasticity">Demand Elasticity</label>
+          <select id="elasticity">
+            <option value="-0.3">-0.3 (low sensitivity)</option>
+            <option value="-0.6" selected>-0.6 (medium)</option>
+            <option value="-1.0">-1.0 (high)</option>
+            <option value="-1.5">-1.5 (very high)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="adjPct">Price Adjustment (%)</label>
+          <input type="range" id="adjPct" min="-30" max="30" value="0" step="1">
+          <div class="note"><span id="adjVal">0%</span></div>
+        </div>
+      </div>
+      <canvas id="revChart" height="120"></canvas>
+      <div class="result" id="revSummary"></div>
+    </section>
+
+    <section class="analytics">
+      <h2>Booking Recommendation</h2>
+      <div id="recommendBox" class="result"></div>
+    </section>
+  </div>
+  <script src="/static/script.js"></script>
+  </body>
+</html>

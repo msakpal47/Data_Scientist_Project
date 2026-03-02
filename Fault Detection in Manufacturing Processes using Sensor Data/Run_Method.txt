@@ -1,0 +1,30 @@
+Quick Start
+
+- Open this URL in your browser: http://localhost:8000
+- If it doesn’t open, start it from the project folder:
+  - Open PowerShell in: e:\Data_Scientist_Project\Classifcation Projects\Fault Detection in Manufacturing Processes using Sensor Data
+  - Run: python app.py
+App Steps
+
+- Click Connect; defaults point to classification.db and Data Dictionary.txt in the project.
+- Modeling:
+  - Target column: fault_occurred
+  - Pick features (use Numeric-only, and toggle Include admin fields if you want time/stage/recipe/etc.)
+  - Fast training: leave checked for quicker runs; set Chunk size (e.g., 5,000–10,000).
+  - Click Train to train on 500k and evaluate on 200k.
+- Review results:
+  - Accuracy, Precision, Recall, F1, ROC AUC
+  - Confusion Matrix and Feature Importance
+  - Download Model button saves the trained artifacts
+- Inference:
+  - Browse live records (remaining rows) and see predicted_fault and probability per row.
+Tips
+
+- If training is slow, try a smaller Chunk size and keep Fast mode enabled.
+- To stop and restart:
+  - Stop: Ctrl+C in the terminal that’s running the app
+  - Restart: python app.py
+Dependencies
+
+- Needed: flask, pandas, scikit-learn
+- If needed, install: python -m pip install flask pandas scikit-learn

@@ -1,0 +1,6 @@
+PS E:\Data_Scientist_Project\Classifcation Projects\Fake News Classification\Fake News Classifier\Classifcation Projects\Fake News Classification> python -m pip install -r requirements.txt
+PS E:\Data_Scientist_Project\Classifcation Projects\Fake News Classification\Fake News Classifier\Classifcation Projects\Fake News Classification> python backend\train_model.py
+PS E:\Data_Scientist_Project\Classifcation Projects\Fake News Classification\Fake News Classifier\Classifcation Projects\Fake News Classification> python -m flask --app backend.app run --host 0.0.0.0 --port 5000
+
+  Local URL: http://localhost:5000
+  Network URL: http://<your-lan-ip>:5000

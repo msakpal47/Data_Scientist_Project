@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fake News Classifier</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📰 Fake News Classifier</h1>
+      <div class="sub">Paste a news paragraph and classify it.</div>
+      <form id="cls-form" action="/predict" method="post">
+        <textarea id="news" name="news" rows="8" placeholder="Paste your news text here...">{{ input_text or '' }}</textarea>
+        <br />
+        <button type="submit">Classify</button>
+      </form>
+
+      <div id="result" style="display:none"></div>
+      {% if accuracy %}
+      <p style="margin-top:12px"><strong>Model Accuracy:</strong> {{ (accuracy*100)|round(2) }}%</p>
+      {% endif %}
+
+      <div id="panel" style="display:none;margin-top:10px">
+        <div id="score" style="font-size:18px;font-weight:700"></div>
+        <div class="confbar" style="height:10px;background:#e5e7eb;border-radius:999px;margin:8px 0;overflow:hidden">
+          <div id="fill" style="height:10px;width:0;background:linear-gradient(90deg,#0ea5e9,#22c55e)"></div>
+        </div>
+        <div id="tags" class="chips"></div>
+      </div>
+    </div>
+    <script>
+      const form = document.getElementById('cls-form');
+      const ta = document.getElementById('news');
+      const res = document.getElementById('result');
+      const btn = form.querySelector('button');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const text = ta.value.trim();
+        if (!text) {
+          res.style.display = 'block';
+          res.textContent = 'No input provided';
+          return;
+        }
+        try {
+          btn.disabled = true;
+          btn.textContent = 'Classifying...';
+          const r = await fetch('/api/predict', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({texts: [text]})
+          });
+          const j = await r.json();
+          const it = j.results && j.results[0] ? j.results[0] : null;
+          if (!it) {
+            res.style.display = 'block';
+            res.textContent = 'Prediction error';
+            btn.disabled = false;
+            btn.textContent = 'Classify';
+            return;
+          }
+          const label = it.class_name;
+          const p = Number(it.proba_true || 0).toFixed(3);
+          const t = Number(it.threshold || 0.5).toFixed(2);
+          res.style.display = 'block';
+          res.textContent = `${label} (P(${label})=${p}, threshold=${t})`;
+          res.className = (label && label.toUpperCase() === 'TRUE') ? 'real' : 'fake';
+          const panel = document.getElementById('panel');
+          panel.style.display = 'block';
+          const score = document.getElementById('score');
+          score.textContent = `Confidence Score: ${(Number(p)*100).toFixed(1)}% • ${it.confidence}`;
+          const fill = document.getElementById('fill');
+          fill.style.width = `${Math.max(4, Math.min(100, Number(p)*100))}%`;
+          const tags = document.getElementById('tags');
+          tags.innerHTML = '';
+          (it.top_words || []).forEach(w=>{
+            const el = document.createElement('div');
+            el.className = 'chip';
+            el.style.background = (w.weight>=0) ? '#dcfce7' : '#fee2e2';
+            el.style.color = (w.weight>=0) ? '#166534' : '#7f1d1d';
+            el.textContent = w.token;
+            tags.appendChild(el);
+          });
+          btn.disabled = false;
+          btn.textContent = 'Classify';
+        } catch {
+          res.style.display = 'block';
+          res.textContent = 'Network error';
+          btn.disabled = false;
+          btn.textContent = 'Classify';
+        }
+      });
+    </script>
+  </body>
+</html>

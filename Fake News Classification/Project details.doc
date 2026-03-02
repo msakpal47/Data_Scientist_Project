@@ -1,0 +1,9 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset0 Arial;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1
+\pard\sa200\sl276\slmult1\b\f0\fs32 Fake News Classification Project - Guide\par
+\pard\sa200\sl276\slmult1\b0\fs28 1. Overview\par\b0\fs22\par \b Goal:\b0 Classify news articles as 'Factual' or 'Fake' using text.\par\par\b Workflow:\b0\par1) Data: SQLite database (classification.db), table 'fake_news_classification' with columns text, label.\par2) Cleaning: Lowercase, remove URLs/HTML/non-letters; normalize labels True/False to 1/0.\par3) Training: TF-IDF (unigrams+bigrams) + Logistic Regression. Fixed split: 55,031 train; 15,723 val; remainder production.\par4) Evaluation: Accuracy and class-wise precision/recall/F1. Coefficient-based feature importance.\par5) Serving: Flask app with '/' UI and '/api/predict' endpoint.\par6) Tracking: Append metrics to Project_Summary.csv.\par
+\pard\sa200\sl276\slmult1\b0\fs28 2. How to Build and Run\par\b0\fs22\par \b Prerequisites:\b0 Python 3.x; pandas, numpy, scikit-learn, Flask, joblib.\par\par\b Steps:\b0\par1) Install: python -m pip install -r requirements.txt\par2) Train: python backend/train_model.py\par3) Serve: python -m flask --app backend.app run --host 0.0.0.0 --port 5000\par4) UI: open http://127.0.0.1:5000 and classify text.\par
+\pard\sa200\sl276\slmult1\b0\fs28 3. Samples (20 Fake + 20 Real)\par\b0\fs22\par File: news_samples_20_fake_20_real.csv contains curated examples for demos.\par
+\pard\sa200\sl276\slmult1\b0\fs28 4. Libraries\par\b0\fs22\par Flask, scikit-learn, pandas, numpy, joblib, sqlite3.\par
+\pard\sa200\sl276\slmult1\b0\fs28 5. Notes\par\b0\fs22\par Ensure classification.db exists and table name is 'fake_news_classification'. Re-run training when data changes.\par
+}

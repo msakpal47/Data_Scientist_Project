@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>AQI Predictor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h2>AQI Prediction App</h2>
+
+    <input type="number" id="CO" placeholder="CO" step="any" />
+    <input type="number" id="CO2" placeholder="CO2" step="any" />
+    <input type="number" id="NO2" placeholder="NO2" step="any" />
+    <input type="number" id="SO2" placeholder="SO2" step="any" />
+    <input type="number" id="O3" placeholder="O3" step="any" />
+    <input type="number" id="PM25" placeholder="PM2.5" step="any" />
+    <input type="number" id="PM10" placeholder="PM10" step="any" />
+    <input type="datetime-local" id="Date" />
+
+    <button id="predictBtn">Predict AQI</button>
+
+    <h3 id="result"></h3>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

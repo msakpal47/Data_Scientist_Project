@@ -1,0 +1,12 @@
+Date	Timestamp of the measurement (UTC, hourly frequency)
+City	City name (constant: Brasília)
+CO	Carbon Monoxide concentration (µg/m³)
+CO2	Carbon Dioxide concentration (µg/m³), may have missing values
+NO2	Nitrogen Dioxide concentration (µg/m³)
+SO2	Sulfur Dioxide concentration (µg/m³)
+O3	Ozone concentration (µg/m³)
+PM2.5	Particulate Matter ≤ 2.5μm (µg/m³)
+PM10	Particulate Matter ≤ 10μm (µg/m³)
+AQI	Air Quality Index (target variable, continuous numeric)
+
+

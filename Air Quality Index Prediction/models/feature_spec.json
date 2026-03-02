@@ -1,0 +1,1 @@
+{"features": ["CO", "CO2", "NO2", "SO2", "O3", "PM2.5", "PM10", "Hour", "PM10_lag1", "PM2.5_lag1", "NO2_lag1", "PM10_rolling_3", "PM25_rolling_3"], "use_scaler": false}

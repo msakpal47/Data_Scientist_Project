@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>AQI Intelligence Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  </head>
+  <body>
+    <h1>🌍 Air Quality Intelligence Dashboard</h1>
+
+    <div class="cards">
+      <div class="card">
+        <h2 id="aqiValue">AQI: --</h2>
+        <h3 id="aqiCategory" class="cat-neutral">--</h3>
+        <p id="healthAdvice"></p>
+        <span class="live-tag">📡 LIVE MONITORING</span>
+      </div>
+
+      <div class="card">
+        <canvas id="trendChart"></canvas>
+      </div>
+
+      <div class="card">
+        <canvas id="importanceChart"></canvas>
+      </div>
+
+      <div class="card">
+        <h3>Model Confidence</h3>
+        <h2 id="confidenceScore">--</h2>
+        <p id="confidenceDesc" class="muted"></p>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Model Comparison</h3>
+        <table id="modelTable" class="metric-table">
+          <thead>
+            <tr><th>Model</th><th>MAE</th><th>RMSE</th><th>R²</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3>SHAP Summary</h3>
+        <img class="analytics-image" alt="SHAP Summary" src="{{ url_for('static', filename='analytics/shap_summary.png') }}" onerror="this.style.display='none'">
+      </div>
+      <div class="card">
+        <h3>Residuals</h3>
+        <img class="analytics-image" alt="Residuals Plot" src="{{ url_for('static', filename='analytics/residuals.png') }}" onerror="this.style.display='none'">
+      </div>
+      <div class="card">
+        <h3>Correlation Heatmap</h3>
+        <img class="analytics-image" alt="Correlation Heatmap" src="{{ url_for('static', filename='analytics/corr_heatmap.png') }}" onerror="this.style.display='none'">
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

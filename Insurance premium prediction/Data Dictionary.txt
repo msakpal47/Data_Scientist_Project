@@ -1,0 +1,12 @@
+age: Age of the individual.
+gender: Gender of the individual (male/female).
+bmi: Body Mass Index (BMI) of the individual.
+children: Number of children the individual has.
+smoker: Whether the individual is a smoker (yes/no).
+region: Region where the individual resides.
+medical_history: Any specific medical history or condition the individual has.
+family_medical_history: Any family medical history or conditions.
+exercise_frequency: Frequency of exercise by the individual.
+occupation: Type of occupation of the individual.
+coverage_level: Level of health insurance coverage.
+charges: Medical charges or expenses incurred by the individual.

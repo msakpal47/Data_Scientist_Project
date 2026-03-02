@@ -1,0 +1,64 @@
+{
+  "best_model": "Ridge",
+  "model_type": "Ridge",
+  "r2": 0.8933245373519276,
+  "mae": 1.2167109587173826,
+  "rmse": 1.7363063499359899,
+  "feature_importance": [
+    {
+      "feature": "locality",
+      "importance": 0.00016458941599344356
+    },
+    {
+      "feature": "latitude",
+      "importance": -7.570816414705916e-05
+    },
+    {
+      "feature": "longitude",
+      "importance": 8.77546587746414e-06
+    },
+    {
+      "feature": "network_type",
+      "importance": 90.46892377470688
+    },
+    {
+      "feature": "throughput_mbps",
+      "importance": 2.272933258300469e-05
+    },
+    {
+      "feature": "latency_ms",
+      "importance": 9.268663147272704e-05
+    },
+    {
+      "feature": "signal_quality_pct",
+      "importance": 0.0
+    },
+    {
+      "feature": "bb60c_dbm",
+      "importance": 1.771786165778839
+    },
+    {
+      "feature": "srsran_dbm",
+      "importance": 29.222906076760488
+    },
+    {
+      "feature": "bladerf_dbm",
+      "importance": 12.944796382347747
+    }
+  ],
+  "features": [
+    "locality",
+    "latitude",
+    "longitude",
+    "network_type",
+    "throughput_mbps",
+    "latency_ms",
+    "signal_quality_pct",
+    "bb60c_dbm",
+    "srsran_dbm",
+    "bladerf_dbm"
+  ],
+  "rows_trained": 13463,
+  "model_version": "Ridge-v1",
+  "last_trained_iso": "2026-02-25T05:24:05.247003+00:00"
+}

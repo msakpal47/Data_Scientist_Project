@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NetPulse AI</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <span class="logo">📡</span>
+      <div class="titles">
+        <h1>NetPulse AI</h1>
+        <p>Predict. Optimize. Strengthen Connectivity.</p>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="metric-title">R²</div>
+        <div id="metric-r2" class="metric-value">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">MAE (dBm)</div>
+        <div id="metric-mae" class="metric-value">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">RMSE (dBm)</div>
+        <div id="metric-rmse" class="metric-value">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Rows Trained</div>
+        <div id="metric-rows" class="metric-value">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Model Version</div>
+        <div id="metric-version" class="metric-value">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Model Type</div>
+        <div id="metric-model" class="metric-value">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Last Trained</div>
+        <div id="metric-last" class="metric-value small">—</div>
+      </div>
+      <button id="trainBtn" class="ghost-btn" type="button">Train Model</button>
+      <button id="refreshKpiBtn" class="ghost-btn" type="button">Refresh KPIs</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="input-card">
+      <h2>Smart Signal Strength Prediction</h2>
+      <form id="predictForm">
+      <div class="grid">
+        <div class="field">
+          <label>Locality</label>
+          <select id="locality_select">
+            <option value="" selected>Select Locality</option>
+            <option>Patna</option>
+            <option>Gaya</option>
+            <option>Bhagalpur</option>
+            <option>Muzaffarpur</option>
+            <option>Purnia</option>
+            <option>Darbhanga</option>
+            <option value="custom">Custom…</option>
+          </select>
+          <input id="locality" name="locality" placeholder="e.g., Patna City">
+        </div>
+        <div class="field">
+          <label>Latitude</label>
+          <select id="latitude_select">
+            <option value="" selected>Select Latitude</option>
+            <option>24.8</option>
+            <option>25.0</option>
+            <option>25.2</option>
+            <option>25.4</option>
+            <option>25.6</option>
+            <option>25.8</option>
+            <option value="custom">Custom…</option>
+          </select>
+          <input id="latitude" name="latitude" type="number" step="0.000001" placeholder="25.6">
+        </div>
+        <div class="field">
+          <label>Longitude</label>
+          <select id="longitude_select">
+            <option value="" selected>Select Longitude</option>
+            <option>84.8</option>
+            <option>85.0</option>
+            <option>85.1</option>
+            <option>85.2</option>
+            <option>85.4</option>
+            <option value="custom">Custom…</option>
+          </select>
+          <input id="longitude" name="longitude" type="number" step="0.000001" placeholder="85.1">
+        </div>
+        <div class="field">
+          <label for="network_type">Network Type</label>
+          <select name="Network Type" id="network_type" required>
+            <option value="" disabled selected>Select Network</option>
+            <option value="All">All</option>
+            <option value="3G">3G</option>
+            <option value="4G">4G</option>
+            <option value="LTE">LTE</option>
+            <option value="5G">5G</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Data Throughput (Mbps)</label>
+          <select id="throughput_select">
+            <option value="" selected>Select Throughput</option>
+            <option>1</option>
+            <option>5</option>
+            <option>10</option>
+            <option>20</option>
+            <option>50</option>
+            <option value="custom">Custom…</option>
+          </select>
+          <input id="throughput_mbps" name="throughput_mbps" type="number" step="0.01" placeholder="12.5">
+        </div>
+        <div class="field">
+          <label>Latency (ms)</label>
+          <select id="latency_select">
+            <option value="" selected>Select Latency</option>
+            <option>20</option>
+            <option>50</option>
+            <option>80</option>
+            <option>100</option>
+            <option>150</option>
+            <option value="custom">Custom…</option>
+          </select>
+          <input id="latency_ms" name="latency_ms" type="number" step="1" placeholder="45">
+        </div>
+        <div class="field">
+          <label>Signal Quality (%)</label>
+          <select id="quality_select">
+            <option value="" selected>Select Signal Quality</option>
+            <option>40</option>
+            <option>60</option>
+            <option>80</option>
+            <option>95</option>
+            <option value="custom">Custom…</option>
+          </select>
+          <input id="signal_quality_pct" name="signal_quality_pct" type="number" step="1" placeholder="78">
+        </div>
+        <div class="field">
+          <label>BB60C Measurement (dBm)</label>
+          <select id="bb60c_select">
+            <option value="" selected>Select BB60C dBm</option>
+            <option>-70</option>
+            <option>-80</option>
+            <option>-85</option>
+            <option>-90</option>
+            <option>-95</option>
+            <option value="custom">Custom…</option>
+          </select>
+          <input id="bb60c_dbm" name="bb60c_dbm" type="number" step="0.1" placeholder="-85">
+        </div>
+        <div class="field">
+          <label>srsRAN Measurement (dBm)</label>
+          <select id="srsran_select">
+            <option value="" selected>Select srsRAN dBm</option>
+            <option>-70</option>
+            <option>-80</option>
+            <option>-85</option>
+            <option>-88</option>
+            <option>-90</option>
+            <option value="custom">Custom…</option>
+          </select>
+          <input id="srsran_dbm" name="srsran_dbm" type="number" step="0.1" placeholder="-88">
+        </div>
+        <div class="field">
+          <label>BladeRFxA9 Measurement (dBm)</label>
+          <select id="bladerf_select">
+            <option value="" selected>Select BladeRFxA9 dBm</option>
+            <option>-70</option>
+            <option>-80</option>
+            <option>-86</option>
+            <option>-90</option>
+            <option>-95</option>
+            <option value="custom">Custom…</option>
+          </select>
+          <input id="bladerf_dbm" name="bladerf_dbm" type="number" step="0.1" placeholder="-86">
+        </div>
+      </div>
+      </form>
+      <button id="predictBtn" class="glow-btn" type="button">Predict</button>
+      <button id="resetBtn" class="ghost-btn" type="button">Reset</button>
+    </section>
+
+    <section class="output">
+      <div class="cards">
+        <div class="card">
+          <div class="card-title">Predicted Signal Strength</div>
+          <div id="pred-dbms" class="card-value">—</div>
+          <div id="pred-ci" class="metric-title"> </div>
+        </div>
+        <div class="card gauge">
+          <div class="card-title">Signal Meter</div>
+          <canvas id="signalGauge" width="160" height="160"></canvas>
+        </div>
+        <div class="card">
+          <div class="card-title">Coverage Level</div>
+          <div id="coverage-level" class="badge">—</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Network Health Score</div>
+          <div id="health-score" class="card-value">—</div>
+          <div id="inference-time" class="metric-title"> </div>
+        </div>
+      </div>
+      <div class="suggestions">
+        <h3>Optimization Suggestions</h3>
+        <ul id="suggestions-list"></ul>
+      </div>
+    </section>
+
+    <section class="charts">
+      <div class="panel">
+        <h3>Feature Importance</h3>
+        <canvas id="importanceChart" height="180"></canvas>
+        <div id="explain-text" class="metric-title"></div>
+      </div>
+      <div class="panel">
+        <h3>Simulated Short‑term Projection</h3>
+        <canvas id="trendChart" height="180"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

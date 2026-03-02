@@ -1,0 +1,12 @@
+Timestamp			Time of measurement (mm:ss.ms format)
+Locality			Name of the area or neighborhood in Bihar
+Latitude			GPS latitude of the test location
+Longitude			GPS longitude of the test location
+Signal Strength (dBm)		Measured signal strength in decibel-milliwatts (target column for regression)
+Signal Quality (%)		Quality of signal as percentage (0–100%)
+Data Throughput (Mbps)		Download speed at the time of measurement
+Latency (ms)			Network response delay in milliseconds
+Network Type			Type of network used (e.g., 3G, 4G, LTE, 5G)
+BB60C Measurement (dBm)		Signal strength captured by the BB60C SDR device
+srsRAN Measurement (dBm)	Signal strength measured via srsRAN software stack
+BladeRFxA9 Measurement (dBm)	Signal measurement from BladeRFxA9 hardware

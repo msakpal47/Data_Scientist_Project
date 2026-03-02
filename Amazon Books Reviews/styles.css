@@ -1,0 +1,33 @@
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;background:#0f172a;color:#e2e8f0}
+.app-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#111827;border-bottom:1px solid #1f2937}
+.app-header h1{margin:0;font-size:20px}
+.file-controls{display:flex;gap:10px}
+.app-main{padding:16px 20px;max-width:1200px;margin:0 auto}
+.summary-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.card{background:#111827;border:1px solid #1f2937;border-radius:8px;padding:12px}
+.card-title{font-size:12px;color:#9ca3af}
+.card-value{font-size:22px;font-weight:600}
+.controls{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:16px}
+.control{display:flex;flex-direction:column;gap:6px}
+.control input,.control select,.control button{padding:8px 10px;border-radius:6px;border:1px solid #374151;background:#0b1220;color:#e2e8f0}
+.actions{grid-column:span 2;display:flex;align-items:end;gap:10px}
+.chart-section{margin-bottom:16px}
+.chart-card{background:#111827;border:1px solid #1f2937;border-radius:8px;padding:12px}
+.chart-title{font-size:14px;margin-bottom:8px;color:#cbd5e1}
+.chart-card canvas{width:100%;max-width:100%}
+.table-section{background:#111827;border:1px solid #1f2937;border-radius:8px;padding:12px}
+.table-controls{display:flex;justify-content:flex-end;margin-bottom:8px}
+table{width:100%;border-collapse:collapse}
+thead th{position:sticky;top:0;background:#0b1220;color:#cbd5e1;text-align:left;padding:10px;border-bottom:1px solid #1f2937;cursor:pointer}
+tbody td{padding:10px;border-bottom:1px solid #1f2937;vertical-align:top}
+.pagination{display:flex;justify-content:center;gap:12px;padding-top:8px}
+.app-footer{padding:12px 20px;color:#94a3b8;font-size:12px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center}
+.modal.hidden{display:none}
+.modal-content{background:#111827;border:1px solid #1f2937;border-radius:8px;width:min(800px,90vw);max-height:80vh;overflow:auto}
+.modal-header{display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid #1f2937}
+.modal-title{font-weight:600}
+.modal-body{padding:12px}
+@media(max-width:900px){.summary-cards{grid-template-columns:repeat(2,1fr)}.controls{grid-template-columns:repeat(2,1fr)}.actions{grid-column:span 2}}
+@media(max-width:600px){.summary-cards{grid-template-columns:1fr}.controls{grid-template-columns:1fr}.actions{grid-column:span 1}}

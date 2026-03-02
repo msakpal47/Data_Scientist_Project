@@ -1,0 +1,22 @@
+Amazon Books Reviews Clustering Report
+
+Model: KMeans
+Clusters: 5
+
+Features Used:
+- TF-IDF text vectors
+- Rating score
+- Helpfulness ratio
+- Log(price)
+- Review length
+
+Silhouette Score: 0.3160
+Davies–Bouldin: 0.8906
+Inertia: 29670.28
+
+Cluster Sizes:
+Cluster 3: 8930
+Cluster 1: 62786
+Cluster 0: 25944
+Cluster 2: 2235
+Cluster 4: 105
